@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Unsere Methodik: Wie wir historische Bedeutung, Innovation und Wirkung von Brettspielen in Deutschland untersuchen." name="description"/>
+<meta content="#213448" name="theme-color"/>
+<title>Unsere Methodik | Der Brettspielkanon</title>
+<style>
+    :root { --navy:#213448; --navy-deep:#182838; --ivory:#f4f0e8; --paper:#fffdf9; --gold:#b08d57; --ink:#343434; --muted:#5d646c; --line:#dcd4c7; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:88px; }
+    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; color:var(--ink); background:var(--ivory); line-height:1.7; }
+    a { color:inherit; }
+    a:focus-visible, summary:focus-visible { outline:3px solid var(--gold); outline-offset:4px; }
+    .container { width:min(1120px, calc(100% - 44px)); margin-inline:auto; }
+    .site-header { background:var(--navy-deep); color:#fff; border-bottom:1px solid #415365; }
+    .header-inner { min-height:86px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
+    .brand { font-weight:750; font-size:1.05rem; text-decoration:none; letter-spacing:.08em; line-height:1.25; }
+    .site-nav { display:flex; flex-wrap:wrap; align-items:center; gap:10px 25px; }
+    .site-nav a { font-size:.92rem; text-decoration:none; color:#f0eee9; }
+    .site-nav a:hover { color:#e8c991; }
+    .hero { color:#fff; background:var(--navy); }
+    .hero-inner { padding:clamp(80px,12vw,155px) 0 clamp(85px,12vw,145px); max-width:1000px; }
+    .eyebrow { margin:0 0 22px; font-size:.77rem; font-weight:760; letter-spacing:.19em; text-transform:uppercase; color:var(--gold); }
+    .hero .eyebrow { color:#ddbb83; }
+    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:normal; line-height:1.16; letter-spacing:-.025em; }
+    h1 { font-size:clamp(2.7rem,6.5vw,5.35rem); margin:0 0 28px; max-width:1000px; }
+    .hero-description { max-width:720px; font-size:clamp(1.04rem,1.6vw,1.28rem); color:#e0e5e9; line-height:1.75; }
+    .gold-line { width:68px; height:3px; background:var(--gold); margin:0 0 27px; }
+    .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:14px 30px; margin-top:36px; }
+    .button { padding:13px 23px; display:inline-block; text-decoration:none; background:var(--gold); color:#182838; font-weight:720; border:1px solid var(--gold); border-radius:3px; }
+    .button:hover { background:#dec08e; border-color:#dec08e; }
+    .text-link { text-decoration:none; font-weight:650; border-bottom:1px solid currentColor; padding-bottom:3px; }
+    .text-link:hover { color:var(--gold); }
+    main section { padding:clamp(65px,9vw,110px) 0; }
+    .section-grid { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(25px,6vw,100px); align-items:start; }
+    .section-grid h2, .section-title { font-size:clamp(2.05rem,3.8vw,3.25rem); color:var(--navy); margin:0 0 23px; }
+    .prose { max-width:690px; font-size:1.08rem; }
+    .prose p:first-child { margin-top:0; }
+    .prose p:last-child { margin-bottom:0; }
+    .rule { border-top:1px solid var(--line); }
+    .section-heading { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:34px; }
+    .section-heading .section-title { margin-bottom:0; }
+    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
+    .card { background:var(--paper); border:1px solid var(--line); padding:27px; min-height:245px; }
+    .card .index { color:#8d6d3e; font-size:.82rem; letter-spacing:.12em; font-weight:730; }
+    .card h3 { font-size:1.65rem; color:var(--navy); margin:22px 0 12px; }
+    .card p { color:var(--muted); margin:0; font-size:.97rem; }
+    .soft { background:#eae3d7; }
+    .manifesto { background:var(--paper); padding:clamp(30px,5vw,65px); border-left:4px solid var(--gold); }
+    .manifesto blockquote { font-family:Georgia,"Times New Roman",serif; font-size:clamp(1.45rem,3vw,2.2rem); line-height:1.42; color:var(--navy); margin:0 0 22px; }
+    .manifesto p { margin-bottom:0; }
+    .history-row { display:grid; grid-template-columns:1fr 1fr; gap:clamp(25px,5vw,70px); align-items:center; }
+    .history-panel { min-height:250px; padding:34px; background:var(--navy); color:#f7f4ed; display:flex; flex-direction:column; justify-content:space-between; }
+    .history-panel strong { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:normal; line-height:1.2; }
+    .history-panel span { text-transform:uppercase; letter-spacing:.16em; color:#d8b883; font-size:.78rem; }
+    .site-footer { background:var(--navy-deep); color:#e8e9e9; padding:45px 0; }
+    .footer-inner { display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; align-items:start; }
+    .footer-inner p { margin:8px 0 0; color:#c0cbd3; font-size:.92rem; }
+    .footer-note { max-width:450px; font-size:.85rem; color:#c0cbd3; }
+    .back-top { color:#fff; font-size:.9rem; text-underline-offset:4px; }
+    @media(max-width:850px) { .header-inner { flex-direction:column; align-items:flex-start; padding-block:22px; } .site-nav { gap:8px 20px; } .section-grid,.history-row { grid-template-columns:1fr; } .cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+    @media(max-width:590px) { .container { width:min(100% - 32px,1120px); } .cards { grid-template-columns:1fr; } .section-heading { align-items:start; flex-direction:column; } h1 { font-size:2.6rem; } .hero-inner { padding:70px 0 80px; } .card { min-height:auto; } }
+    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  
+.method-text{max-width:800px}.method-text h3{font-size:clamp(1.3rem,2.3vw,1.7rem);color:var(--navy);margin:40px 0 12px}.method-text p{font-size:1.03rem;line-height:1.85;margin:0}.method-text .method-closing{margin-top:34px;padding:23px 26px;border-left:3px solid var(--gold);background:var(--paper);font-family:Georgia,serif;font-size:1.3rem;line-height:1.6}.cards .card{min-height:unset}.cards .card .index{display:block}.cards .card h3{margin:12px 0}.cards .card p{margin:0}
+</style>
+</head>
+<body id="oben">
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="Der Brettspielkanon – zur Startseite" class="brand" href="index.html">DER BRETTSPIELKANON</a>
+<nav aria-label="Hauptnavigation" class="site-nav"><a href="index.html#idee">Die Idee</a><a href="kanon.html">Der Kanon</a><a aria-current="page" href="methodik.html" style="color:#e8c991;text-decoration:underline;text-underline-offset:6px">Die Methodik</a></nav>
+</div>
+</header>
+<main><section aria-labelledby="method-page-title" class="hero"><div class="container" style="padding:75px 0 80px"><p class="eyebrow">Forschung · Quellen · Einordnung</p><h1 id="method-page-title">Unsere Methodik</h1><p class="hero-description">Wie wählen wir historisch bedeutende Brettspiele aus? Unsere Kriterien, unsere Quellen und der Weg zu einem nachvollziehbaren Kanon.</p></div></section><section aria-labelledby="methodik-title" class="method-full" id="methodik"><div class="container"><p class="eyebrow">Die Methodik</p><h2 class="section-title" id="methodik-title">Wie entsteht der Brettspielkanon?</h2><div class="method-text">
+<h3>Was macht ein Brettspiel historisch bedeutend?</h3>
+<p>Ist es ein Spiel, das Millionen Menschen gespielt haben? Eines, das völlig neue Ideen eingeführt hat? Oder eines, das andere Spieleautoren maßgeblich beeinflusste? Der Brettspielkanon beschäftigt sich mit den Spielen, die die moderne Brettspielkultur in Deutschland nachhaltig geprägt haben. Dabei geht es ausdrücklich nicht um die besten oder beliebtesten Brettspiele aller Zeiten, sondern um ihre historische und kulturelle Bedeutung. Wir untersuchen vor allem Spiele seit 1945, berücksichtigen aber auch ältere Titel, wenn sie für die Entwicklung moderner Gesellschaftsspiele besonders wichtig waren. Entscheidend ist nicht, wo ein Spiel entwickelt wurde, sondern welchen nachweisbaren Beitrag es zur deutschen Spielekultur geleistet hat.</p>
+<h3>Nach welchen Kriterien bewerten wir die Spiele?</h3>
+<p>Unsere Untersuchungen beruhen auf fünf unterschiedlich gewichteten Kriterien: <strong>spielmechanische Innovation, Einfluss auf spätere Spiele, kulturelle und gesellschaftliche Bedeutung, Nachhaltigkeit sowie Markt- und Branchenwirkung</strong>. Wir fragen beispielsweise, ob ein Spiel neue Mechanismen eingeführt, bekannte Ideen auf besondere Weise kombiniert, spätere Spiele beeinflusst oder die Spielgewohnheiten in Deutschland verändert hat. Dabei unterscheiden wir zwischen tatsächlichen Innovationen, Weiterentwicklungen bestehender Ideen und bloßen Ähnlichkeiten. Auch ein Spiel, das keine grundlegenden Neuerungen hervorgebracht hat, kann historisch bedeutend sein, wenn es beispielsweise Generationen von Spielern geprägt hat.</p>
+<h3>Wie treffen wir unsere Entscheidungen?</h3>
+<p>Jeder Kandidat wird anhand historischer Quellen untersucht und mit wichtigen Vorläufern und Nachfolgern verglichen. Die fünf Kriterien bewerten wir jeweils mit null bis vier Punkten und dokumentieren zusätzlich, wie zuverlässig die zugrunde liegenden Erkenntnisse sind. Die gewichtete Gesamtbewertung ermöglicht einen systematischen Vergleich, entscheidet aber nicht allein über die Aufnahme. Ausschlaggebend bleibt ein begründetes historisches Gesamturteil. Besonders wichtig ist uns, die tatsächliche Wirkung eines Spiels nachzuvollziehen: Mehrere Fortsetzungen durch denselben Autor sind beispielsweise nicht automatisch ein Beweis für einen weitreichenden Einfluss auf die gesamte Brettspielentwicklung. Wo Quellen fehlen oder historische Zusammenhänge unsicher sind, machen wir diese Grenzen transparent.</p>
+<h3>Warum höchstens 50 Spiele?</h3>
+<p>Unser Ziel ist ein konzentrierter, historisch begründeter Kanon mit <strong>maximal 50 Spielen</strong>. Diese Zahl ist eine Obergrenze, keine Vorgabe. Wir nehmen keine Titel auf, nur um die Liste zu vervollständigen. Ebenso gibt es keine festen Plätze für bestimmte Autoren, Verlage, Genres oder Jahrzehnte. Jedes aufgenommene Spiel muss einen eigenständigen Beitrag zur Geschichte der Brettspielkultur nachweisen können. Dabei betrachten wir unterschiedliche Wege zur historischen Bedeutung als gleichberechtigt: Ein Spiel kann durch Innovationen, seine kulturelle Prägung oder seinen Einfluss auf spätere Entwicklungen kanonwürdig werden.</p>
+<h3>Ein Kanon, der sich weiterentwickelt</h3>
+<p>Die Zusammenstellung des Brettspielkanons ist ein fortlaufender Forschungsprozess. Wir untersuchen Kandidaten, vergleichen Entwicklungslinien, überprüfen historische Quellen und überarbeiten unsere Einschätzungen, wenn neue Erkenntnisse hinzukommen. Unsere Entscheidungen sollen transparent, nachvollziehbar und überprüfbar sein. Der Kanon versteht sich deshalb nicht als unumstößliches Urteil, sondern als wissenschaftlich orientierter Beitrag zur Kulturgeschichte des Spielens.</p>
+<p class="method-closing"><strong>Nicht welche Spiele wir am liebsten spielen, steht im Mittelpunkt. Sondern welche Spiele verändert haben, wie wir spielen.</strong></p>
+<p style="margin-top:34px"><a class="button" href="kanon.html">Zum vorläufigen Kanon →</a></p></div></div></section></main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<div>
+<a class="brand" href="index.html">DER BRETTSPIELKANON</a>
+<p>Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p>
+<p class="footer-note">Hinweis vor der öffentlichen Bekanntmachung: Impressum und Datenschutzinformationen sind noch zu ergänzen, soweit rechtlich erforderlich.</p>
+</div>
+<a class="back-top" href="#oben">Zurück nach oben ↑</a>
+</div>
+</footer>
+</body>
+</html>
