@@ -1,0 +1,114 @@
+[
+  {
+    "id": "acquire",
+    "titel": "Acquire",
+    "jahr": 1964,
+    "autoren": [
+      "Sid Sackson"
+    ],
+    "mechaniken": [
+      "Wirtschaft",
+      "Aktien / Investition"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Ein Beispiel für wirtschaftliche Entscheidungen und strategische Beteiligungen."
+  },
+  {
+    "id": "hase-und-igel",
+    "titel": "Hase und Igel",
+    "jahr": 1973,
+    "autoren": [
+      "David Parlett"
+    ],
+    "mechaniken": [
+      "Rennspiel",
+      "Ressourcenmanagement"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Ein frühes Beispiel für taktisches Rennen statt Würfelglück."
+  },
+  {
+    "id": "scotland-yard",
+    "titel": "Scotland Yard",
+    "jahr": 1983,
+    "autoren": [
+      "Projektteam Ravensburger"
+    ],
+    "mechaniken": [
+      "Deduktion",
+      "Verdeckte Bewegung"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Ein bekanntes Beispiel für asymmetrische Verfolgung und Deduktion."
+  },
+  {
+    "id": "el-grande",
+    "titel": "El Grande",
+    "jahr": 1995,
+    "autoren": [
+      "Wolfgang Kramer",
+      "Richard Ulrich"
+    ],
+    "mechaniken": [
+      "Mehrheiten",
+      "Aktionswahl"
+    ],
+    "phase": "Aufbruch",
+    "kurz": "Ein Beispiel für Mehrheitenmechanismen und taktisches Gebietsringen."
+  },
+  {
+    "id": "siedler-von-catan",
+    "titel": "Die Siedler von Catan",
+    "jahr": 1995,
+    "autoren": [
+      "Klaus Teuber"
+    ],
+    "mechaniken": [
+      "Handel",
+      "Netzwerkbau"
+    ],
+    "phase": "Aufbruch",
+    "kurz": "Ein Beispiel für Rohstoffhandel und den Ausbau von Siedlungen."
+  },
+  {
+    "id": "carcassonne",
+    "titel": "Carcassonne",
+    "jahr": 2000,
+    "autoren": [
+      "Klaus-Jürgen Wrede"
+    ],
+    "mechaniken": [
+      "Plättchenlegen",
+      "Gebietswertung"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Ein Beispiel für zugängliches Plättchenlegen mit taktischen Mehrheiten."
+  },
+  {
+    "id": "dominion",
+    "titel": "Dominion",
+    "jahr": 2008,
+    "autoren": [
+      "Donald X. Vaccarino"
+    ],
+    "mechaniken": [
+      "Deckbuilding"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Ein prägnantes Beispiel für das Aufbauen des eigenen Kartendecks während des Spiels."
+  },
+  {
+    "id": "7-wonders",
+    "titel": "7 Wonders",
+    "jahr": 2010,
+    "autoren": [
+      "Antoine Bauza"
+    ],
+    "mechaniken": [
+      "Drafting",
+      "Tableau-Aufbau"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Ein Beispiel für simultane Kartenwahl und den Aufbau einer Zivilisation."
+  }
+]
