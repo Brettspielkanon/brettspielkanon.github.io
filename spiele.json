@@ -1,5 +1,21 @@
 [
   {
+    "id": "malefiz",
+    "titel": "Malefiz",
+    "jahr": 1960,
+    "autoren": [
+      "Werner Schöppner"
+    ],
+    "mechaniken": [
+      "Würfel-Laufspiel",
+      "Blockaden"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Ein generationsübergreifender deutscher Familienklassiker, der bekannte Laufspielprinzipien mit beweglichen Sperrsteinen verbindet.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Kulturprägendes Spiel"
+  },
+  {
     "id": "acquire",
     "titel": "Acquire",
     "jahr": 1964,
@@ -8,38 +24,46 @@
     ],
     "mechaniken": [
       "Wirtschaft",
-      "Aktien / Investition"
+      "Aktien / Investition",
+      "Plättchenlegen"
     ],
     "phase": "Wegbereiter",
-    "kurz": "Ein Beispiel für wirtschaftliche Entscheidungen und strategische Beteiligungen."
+    "kurz": "Ein richtungsweisendes Wirtschaftsspiel, das Unternehmensfusionen, Aktienmehrheiten und räumliches Wachstum strategisch verknüpft.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Historischer Entwicklungswegweiser"
   },
   {
-    "id": "hase-und-igel",
-    "titel": "Hase und Igel",
-    "jahr": 1973,
+    "id": "wizard",
+    "titel": "Wizard",
+    "jahr": 1986,
     "autoren": [
-      "David Parlett"
+      "Ken Fisher"
     ],
     "mechaniken": [
-      "Rennspiel",
+      "Stichspiel",
+      "Stichvorhersage"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Ein in Deutschland seit 1996 besonders langlebiges Ansage-Stichspiel mit eigenständiger Turnier- und Spielkultur.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Kulturprägendes Spiel"
+  },
+  {
+    "id": "catan",
+    "titel": "Die Siedler von Catan",
+    "jahr": 1995,
+    "autoren": [
+      "Klaus Teuber"
+    ],
+    "mechaniken": [
+      "Handel",
+      "Netzwerkbau",
       "Ressourcenmanagement"
     ],
-    "phase": "Wegbereiter",
-    "kurz": "Ein frühes Beispiel für taktisches Rennen statt Würfelglück."
-  },
-  {
-    "id": "scotland-yard",
-    "titel": "Scotland Yard",
-    "jahr": 1983,
-    "autoren": [
-      "Projektteam Ravensburger"
-    ],
-    "mechaniken": [
-      "Deduktion",
-      "Verdeckte Bewegung"
-    ],
-    "phase": "Wegbereiter",
-    "kurz": "Ein bekanntes Beispiel für asymmetrische Verfolgung und Deduktion."
+    "phase": "Aufbruch",
+    "kurz": "Handel, variable Landschaften und gemeinsames Rohstoffmanagement prägten den Aufbruch des modernen deutschen Autorenspiels.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Innovation und Kultur"
   },
   {
     "id": "el-grande",
@@ -51,24 +75,13 @@
     ],
     "mechaniken": [
       "Mehrheiten",
-      "Aktionswahl"
+      "Aktionswahl",
+      "Gebietskontrolle"
     ],
     "phase": "Aufbruch",
-    "kurz": "Ein Beispiel für Mehrheitenmechanismen und taktisches Gebietsringen."
-  },
-  {
-    "id": "siedler-von-catan",
-    "titel": "Die Siedler von Catan",
-    "jahr": 1995,
-    "autoren": [
-      "Klaus Teuber"
-    ],
-    "mechaniken": [
-      "Handel",
-      "Netzwerkbau"
-    ],
-    "phase": "Aufbruch",
-    "kurz": "Ein Beispiel für Rohstoffhandel und den Ausbau von Siedlungen."
+    "kurz": "Ein maßgebliches Strategiespiel, das regionale Mehrheiten, Zugreihenfolge und indirekte Konfrontation verbindet.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Historischer Entwicklungswegweiser"
   },
   {
     "id": "carcassonne",
@@ -82,7 +95,25 @@
       "Gebietswertung"
     ],
     "phase": "Moderne Klassiker",
-    "kurz": "Ein Beispiel für zugängliches Plättchenlegen mit taktischen Mehrheiten."
+    "kurz": "Ein zugängliches Landschaftslegespiel, dessen Spielprinzip und Gefolgsleute zum festen Bestandteil moderner Brettspielkultur wurden.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Kultur und Einfluss"
+  },
+  {
+    "id": "pandemie",
+    "titel": "Pandemie",
+    "jahr": 2008,
+    "autoren": [
+      "Matt Leacock"
+    ],
+    "mechaniken": [
+      "Kooperativ",
+      "Krisenmanagement"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Kooperatives Krisenmanagement gegen ein eskalierendes Infektionssystem; ein wichtiger Entwicklungsschritt moderner Teamspiele.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Innovationspionier"
   },
   {
     "id": "dominion",
@@ -92,23 +123,12 @@
       "Donald X. Vaccarino"
     ],
     "mechaniken": [
-      "Deckbuilding"
+      "Deckbuilding",
+      "Kartenspiel"
     ],
     "phase": "Moderne Klassiker",
-    "kurz": "Ein prägnantes Beispiel für das Aufbauen des eigenen Kartendecks während des Spiels."
-  },
-  {
-    "id": "7-wonders",
-    "titel": "7 Wonders",
-    "jahr": 2010,
-    "autoren": [
-      "Antoine Bauza"
-    ],
-    "mechaniken": [
-      "Drafting",
-      "Tableau-Aufbau"
-    ],
-    "phase": "Moderne Klassiker",
-    "kurz": "Ein Beispiel für simultane Kartenwahl und den Aufbau einer Zivilisation."
+    "kurz": "Etablierte das gezielte Aufbauen und Optimieren eines eigenen Kartendecks als zentrales Spielprinzip.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Innovationspionier"
   }
 ]

@@ -12,8 +12,8 @@ function render(){
  const q=norm(el('suchfeld').value.trim()), phase=el('phase').value, mechanic=el('mechanik').value, sort=el('sortierung').value;
  const matches=state.spiele.filter(s => (!q || norm([s.titel,s.jahr,...s.autoren,...s.mechaniken].join(' ')).includes(q)) && (!phase||s.phase===phase) && (!mechanic||s.mechaniken.includes(mechanic)));
  matches.sort((a,b)=>sort==='az'?a.titel.localeCompare(b.titel,'de'):(sort==='neu'?b.jahr-a.jahr:a.jahr-b.jahr)||a.titel.localeCompare(b.titel,'de'));
- el('anzahl').textContent=`${matches.length} ${matches.length===1?'Spiel':'Spiele'} (Demonstrationsdaten)`;
- el('karten').innerHTML=matches.map(s=>`<article class="card"><div class="art" role="img" aria-label="Grafischer Platzhalter für eine spätere Spielabbildung"><span class="art-title">${esc(s.titel)}</span><small>Abbildung folgt</small></div><div class="card-content"><span class="year">${esc(s.jahr)}</span><h3>${esc(s.titel)}</h3><p class="byline">${s.autoren.map(esc).join(' · ')}</p><p class="summary">${esc(s.kurz)}</p><div class="tags">${s.mechaniken.map(m=>`<span class="tag">${esc(m)}</span>`).join('')}</div><div class="phase">Arbeitskategorie: ${esc(s.phase)}</div></div></article>`).join('');
+ el('anzahl').textContent=`${matches.length} ${matches.length===1?'Spiel':'Spiele'} im vorläufigen Kanon`;
+ el('karten').innerHTML=matches.map(s=>`<article class="card"><div class="art" role="img" aria-label="Grafischer Platzhalter für eine spätere Spielabbildung"><span class="art-title">${esc(s.titel)}</span><small>Abbildung folgt</small></div><div class="card-content"><span class="year">${esc(s.jahr)}</span><h3>${esc(s.titel)}</h3><p class="byline">${s.autoren.map(esc).join(' · ')}</p><p class="summary">${esc(s.kurz)}</p><div class="tags">${s.mechaniken.map(m=>`<span class="tag">${esc(m)}</span>`).join('')}</div><div class="phase">Vorläufig aufgenommen · ${esc(s.beitrag)}</div></div></article>`).join('');
  el('keine-treffer').style.display=matches.length?'none':'block';
 }
 async function init(){

@@ -1,12 +1,13 @@
-<!doctype html>
+<!DOCTYPE html>
+
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Der Brettspielkanon: Ein sorgf&#228;ltig zusammengestellter Kanon bedeutender Brettspiele, die die deutsche Spielekultur nachhaltig gepr&#228;gt haben.">
-  <meta name="theme-color" content="#213448">
-  <title>Der Brettspielkanon &#8211; Die bedeutendsten Brettspiele der deutschen Spielekultur</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="Der Brettspielkanon: Ein sorgfältig zusammengestellter Kanon bedeutender Brettspiele, die die deutsche Spielekultur nachhaltig geprägt haben." name="description"/>
+<meta content="#213448" name="theme-color"/>
+<title>Der Brettspielkanon – Die bedeutendsten Brettspiele der deutschen Spielekultur</title>
+<style>
     :root { --navy:#213448; --navy-deep:#182838; --ivory:#f4f0e8; --paper:#fffdf9; --gold:#b08d57; --ink:#343434; --muted:#5d646c; --line:#dcd4c7; }
     * { box-sizing:border-box; }
     html { scroll-behavior:smooth; scroll-padding-top:88px; }
@@ -63,135 +64,86 @@
     @media(max-width:850px) { .header-inner { flex-direction:column; align-items:flex-start; padding-block:22px; } .site-nav { gap:8px 20px; } .section-grid,.history-row { grid-template-columns:1fr; } .cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
     @media(max-width:590px) { .container { width:min(100% - 32px,1120px); } .cards { grid-template-columns:1fr; } .section-heading { align-items:start; flex-direction:column; } h1 { font-size:2.6rem; } .hero-inner { padding:70px 0 80px; } .card { min-height:auto; } }
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
-  </style>
+  
+.method-text{max-width:800px}.method-text h3{font-size:clamp(1.3rem,2.3vw,1.7rem);color:var(--navy);margin:40px 0 12px}.method-text p{font-size:1.03rem;line-height:1.85;margin:0}.method-text .method-closing{margin-top:34px;padding:23px 26px;border-left:3px solid var(--gold);background:var(--paper);font-family:Georgia,serif;font-size:1.3rem;line-height:1.6}.cards .card{min-height:unset}.cards .card .index{display:block}.cards .card h3{margin:12px 0}.cards .card p{margin:0}
+</style>
 </head>
 <body id="oben">
-  <header class="site-header">
-    <div class="container header-inner">
-      <a class="brand" href="#oben" aria-label="Der Brettspielkanon &#8211; zur Startseite">DER BRETTSPIELKANON</a>
-      <nav class="site-nav" aria-label="Hauptnavigation">
-        <a href="#idee">Die Idee</a>
-        <a href="kanon.html">Der Kanon</a>
-        <a href="#methodik">Methodik</a>
-        <a href="#geschichte">Geschichte</a>
-        <a href="#projekt">&#220;ber das Projekt</a>
-      </nav>
-    </div>
-  </header>
+<header class="site-header">
+<div class="container header-inner">
+<a aria-label="Der Brettspielkanon – zur Startseite" class="brand" href="#oben">DER BRETTSPIELKANON</a>
+<nav aria-label="Hauptnavigation" class="site-nav">
+<a href="#idee">Die Idee</a>
+<a href="kanon.html">Der Kanon</a>
+<a href="#methodik">Methodik</a>
 
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container hero-inner">
-        <p class="eyebrow">Spiel &#183; Geschichte &#183; Kultur</p>
-        <h1 id="hero-title">Die bedeutendsten Brettspiele der deutschen Spielekultur.</h1>
-        <div class="gold-line" aria-hidden="true"></div>
-        <p class="hero-description">Von den Wegbereitern bis zu den modernen Klassikern: Ein sorgf&#228;ltig zusammengestellter Kanon jener Spiele, die die deutsche Brettspiellandschaft nachhaltig gepr&#228;gt haben.</p>
-        <div class="hero-actions">
-          <a class="button" href="kanon.html">Den Kanon entdecken</a>
-          <a class="text-link" href="#methodik">Unsere Methodik &#8594;</a>
-        </div>
-      </div>
-    </section>
+<a href="#projekt">Über das Projekt</a>
+</nav>
+</div>
+</header>
+<main>
+<section aria-labelledby="hero-title" class="hero">
+<div class="container hero-inner">
+<p class="eyebrow">Spiel · Geschichte · Kultur</p>
+<h1 id="hero-title">Die bedeutendsten Brettspiele der deutschen Spielekultur.</h1>
+<div aria-hidden="true" class="gold-line"></div>
+<p class="hero-description">Von den Wegbereitern bis zu den modernen Klassikern: Wir erforschen die Spiele, die die deutsche Brettspielkultur nachhaltig geprägt haben. Acht Einträge sind derzeit vorläufig ausgewählt.</p>
+<div class="hero-actions">
+<a class="button" href="kanon.html">Den Kanon entdecken</a>
+<a class="text-link" href="#methodik">Unsere Methodik →</a>
+</div>
+</div>
+</section>
+<section aria-labelledby="idee-title" id="idee">
+<div class="container section-grid">
+<div>
+<p class="eyebrow">01 / Die Idee</p>
+<h2 id="idee-title">Was macht ein Brettspiel bedeutend?</h2>
+</div>
+<div class="prose">
+<p>Einige Spiele sind für einen Abend unterhaltsam. Andere verändern, wie wir spielen: Sie führen neue Ideen ein, prägen Genres oder werden zum festen Bestandteil unserer Spielkultur.</p>
+<p>Der Brettspielkanon widmet sich den prägenden Werken des <strong>modernen Brettspiels in Deutschland</strong>. Er fragt nicht danach, welche Spiele gerade besonders beliebt sind, sondern welche über ihre Zeit hinaus Bedeutung erlangt haben – und weshalb.</p>
+</div>
+</div>
+</section>
+<div aria-hidden="true" class="container rule"></div>
+<section aria-labelledby="kanon-title" id="kanon"><div class="container"><div class="section-heading"><div><p class="eyebrow">02 / Der Kanon</p><h2 class="section-title" id="kanon-title">Acht Spiele. Acht vorläufige Einträge.</h2></div></div><div class="prose"><p>Von <em>Malefiz</em> bis <em>Pandemie</em>: Acht Spiele haben wir auf Grundlage unserer bisherigen Untersuchungen als vorläufige Kanoneinträge ausgewählt. Noch ist keine Aufnahme endgültig; die Auswahl wird fortlaufend überprüft und erweitert.</p></div><div class="cards" style="margin:30px 0"><article class="card"><span class="index">1960 / KULTUR</span><h3>Malefiz</h3><p>Ein dauerhafter Klassiker der deutschen Familien-Spielkultur.</p></article><article class="card"><span class="index">1995 / AUFBRUCH</span><h3>Die Siedler von Catan</h3><p>Handel, Siedlungsbau und neue Impulse für das moderne Autorenspiel.</p></article><article class="card"><span class="index">2008 / INNOVATION</span><h3>Dominion</h3><p>Ein Meilenstein des Deckbuildings während der Partie.</p></article></div><p><a class="button" href="kanon.html">Alle acht Spiele entdecken →</a></p></div></section>
+<section aria-labelledby="methodik-title" class="soft" id="methodik"><div class="container"><p class="eyebrow">03 / Die Methodik</p><h2 class="section-title" id="methodik-title">Wie entsteht der Brettspielkanon?</h2><div class="method-text">
+<h3>Was macht ein Brettspiel historisch bedeutend?</h3>
+<p>Ist es ein Spiel, das Millionen Menschen gespielt haben? Eines, das völlig neue Ideen eingeführt hat? Oder eines, das andere Spieleautoren maßgeblich beeinflusste? Der Brettspielkanon beschäftigt sich mit den Spielen, die die moderne Brettspielkultur in Deutschland nachhaltig geprägt haben. Dabei geht es ausdrücklich nicht um die besten oder beliebtesten Brettspiele aller Zeiten, sondern um ihre historische und kulturelle Bedeutung. Wir untersuchen vor allem Spiele seit 1945, berücksichtigen aber auch ältere Titel, wenn sie für die Entwicklung moderner Gesellschaftsspiele besonders wichtig waren. Entscheidend ist nicht, wo ein Spiel entwickelt wurde, sondern welchen nachweisbaren Beitrag es zur deutschen Spielekultur geleistet hat.</p>
+<h3>Nach welchen Kriterien bewerten wir die Spiele?</h3>
+<p>Unsere Untersuchungen beruhen auf fünf unterschiedlich gewichteten Kriterien: <strong>spielmechanische Innovation, Einfluss auf spätere Spiele, kulturelle und gesellschaftliche Bedeutung, Nachhaltigkeit sowie Markt- und Branchenwirkung</strong>. Wir fragen beispielsweise, ob ein Spiel neue Mechanismen eingeführt, bekannte Ideen auf besondere Weise kombiniert, spätere Spiele beeinflusst oder die Spielgewohnheiten in Deutschland verändert hat. Dabei unterscheiden wir zwischen tatsächlichen Innovationen, Weiterentwicklungen bestehender Ideen und bloßen Ähnlichkeiten. Auch ein Spiel, das keine grundlegenden Neuerungen hervorgebracht hat, kann historisch bedeutend sein, wenn es beispielsweise Generationen von Spielern geprägt hat.</p>
+<h3>Wie treffen wir unsere Entscheidungen?</h3>
+<p>Jeder Kandidat wird anhand historischer Quellen untersucht und mit wichtigen Vorläufern und Nachfolgern verglichen. Die fünf Kriterien bewerten wir jeweils mit null bis vier Punkten und dokumentieren zusätzlich, wie zuverlässig die zugrunde liegenden Erkenntnisse sind. Die gewichtete Gesamtbewertung ermöglicht einen systematischen Vergleich, entscheidet aber nicht allein über die Aufnahme. Ausschlaggebend bleibt ein begründetes historisches Gesamturteil. Besonders wichtig ist uns, die tatsächliche Wirkung eines Spiels nachzuvollziehen: Mehrere Fortsetzungen durch denselben Autor sind beispielsweise nicht automatisch ein Beweis für einen weitreichenden Einfluss auf die gesamte Brettspielentwicklung. Wo Quellen fehlen oder historische Zusammenhänge unsicher sind, machen wir diese Grenzen transparent.</p>
+<h3>Warum höchstens 50 Spiele?</h3>
+<p>Unser Ziel ist ein konzentrierter, historisch begründeter Kanon mit <strong>maximal 50 Spielen</strong>. Diese Zahl ist eine Obergrenze, keine Vorgabe. Wir nehmen keine Titel auf, nur um die Liste zu vervollständigen. Ebenso gibt es keine festen Plätze für bestimmte Autoren, Verlage, Genres oder Jahrzehnte. Jedes aufgenommene Spiel muss einen eigenständigen Beitrag zur Geschichte der Brettspielkultur nachweisen können. Dabei betrachten wir unterschiedliche Wege zur historischen Bedeutung als gleichberechtigt: Ein Spiel kann durch Innovationen, seine kulturelle Prägung oder seinen Einfluss auf spätere Entwicklungen kanonwürdig werden.</p>
+<h3>Ein Kanon, der sich weiterentwickelt</h3>
+<p>Die Zusammenstellung des Brettspielkanons ist ein fortlaufender Forschungsprozess. Wir untersuchen Kandidaten, vergleichen Entwicklungslinien, überprüfen historische Quellen und überarbeiten unsere Einschätzungen, wenn neue Erkenntnisse hinzukommen. Unsere Entscheidungen sollen transparent, nachvollziehbar und überprüfbar sein. Der Kanon versteht sich deshalb nicht als unumstößliches Urteil, sondern als wissenschaftlich orientierter Beitrag zur Kulturgeschichte des Spielens.</p>
+<p class="method-closing"><strong>Nicht welche Spiele wir am liebsten spielen, steht im Mittelpunkt. Sondern welche Spiele verändert haben, wie wir spielen.</strong></p>
+</div></div></section>
 
-    <section id="idee" aria-labelledby="idee-title">
-      <div class="container section-grid">
-        <div>
-          <p class="eyebrow">01 / Die Idee</p>
-          <h2 id="idee-title">Was macht ein Brettspiel bedeutend?</h2>
-        </div>
-        <div class="prose">
-          <p>Einige Spiele sind f&#252;r einen Abend unterhaltsam. Andere ver&#228;ndern, wie wir spielen: Sie f&#252;hren neue Ideen ein, pr&#228;gen Genres oder werden zum festen Bestandteil unserer Spielkultur.</p>
-          <p>Der Brettspielkanon widmet sich den pr&#228;genden Werken des <strong>modernen Brettspiels in Deutschland</strong>. Er fragt nicht danach, welche Spiele gerade besonders beliebt sind, sondern welche &#252;ber ihre Zeit hinaus Bedeutung erlangt haben &#8211; und weshalb.</p>
-        </div>
-      </div>
-    </section>
-
-    <div class="container rule" aria-hidden="true"></div>
-
-    <section id="kanon" aria-labelledby="kanon-title">
-      <div class="container">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">02 / Der Kanon</p>
-            <h2 class="section-title" id="kanon-title">Meilensteine der Brettspielkultur</h2>
-          </div>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <span class="index">01 / WEGBEREITER</span>
-            <h3>Die Anf&#228;nge</h3>
-            <p>Spiele, die den Weg f&#252;r die moderne Brettspielkultur in Deutschland ebneten.</p>
-          </article>
-          <article class="card">
-            <span class="index">02 / WENDEPUNKTE</span>
-            <h3>Pr&#228;gende Ideen</h3>
-            <p>Entwicklungen, die neue Formen des Spielens m&#246;glich machten oder verbreiteten.</p>
-          </article>
-          <article class="card">
-            <span class="index">03 / KLASSIKER</span>
-            <h3>Bleibender Einfluss</h3>
-            <p>Moderne Spiele, deren Bedeutung &#252;ber kurzfristige Trends hinausreicht.</p>
-          </article>
-        </div>
-        <p><a class="button" href="kanon.html">Zur Spiele&#252;bersicht &#8594;</a></p>
-        <p style="margin:24px 0 0;color:var(--muted)"><em>Der Kanon entsteht:</em> Konkrete Spielportr&#228;ts folgen nach einer nachvollziehbaren Auswahl und historischer Recherche. Die drei Bereiche sind Themenfelder, keine Rangfolge.</p>
-      </div>
-    </section>
-
-    <section id="methodik" class="soft" aria-labelledby="methodik-title">
-      <div class="container section-grid">
-        <div>
-          <p class="eyebrow">03 / Die Methodik</p>
-          <h2 id="methodik-title">Bedeutung statt Beliebtheit.</h2>
-        </div>
-        <div class="manifesto">
-          <blockquote>Kein Ranking. Keine vorab festgelegte Anzahl. Sondern eine begr&#252;ndete Auswahl.</blockquote>
-          <p>Der Kanon soll nach transparenten Kriterien entstehen. Dazu geh&#246;ren unter anderem der nachweisbare Einfluss eines Spiels, sein Beitrag zur spielerischen Entwicklung und seine Stellung in der deutschen Brettspielkultur. Die Kriterien und ihre Anwendung werden in einem eigenen Methodikteil ausf&#252;hrlich dokumentiert.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="geschichte" aria-labelledby="geschichte-title">
-      <div class="container history-row">
-        <div>
-          <p class="eyebrow">04 / Geschichte</p>
-          <h2 class="section-title" id="geschichte-title">Wie das moderne Brettspiel entstand.</h2>
-          <div class="prose">
-            <p>Spielkultur entwickelt sich nicht geradlinig. Verlage, Autorinnen und Autoren, neue Mechanismen und gesellschaftliche Ver&#228;nderungen tragen dazu bei, welche Spiele entstehen und welche sich durchsetzen.</p>
-            <p>Hier wird sp&#228;ter die Entwicklung der modernen Brettspiellandschaft in Deutschland beleuchtet &#8211; von ihren fr&#252;hen Wegbereitern bis zur Gegenwart.</p>
-          </div>
-        </div>
-        <div class="history-panel" aria-label="Leitmotiv Geschichte">
-          <span>Geschichte verstehen</span>
-          <strong>Vom Wegbereiter zum modernen Klassiker.</strong>
-          <span>Die Entwicklung des modernen Brettspiels</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="projekt" class="soft" aria-labelledby="projekt-title">
-      <div class="container section-grid">
-        <div>
-          <p class="eyebrow">05 / &#220;ber das Projekt</p>
-          <h2 id="projekt-title">Ein Kanon, der begr&#252;ndet.</h2>
-        </div>
-        <div class="prose">
-          <p>Der Brettspielkanon ist ein unabh&#228;ngiges Projekt, das moderne Brettspiele als Teil der Kulturgeschichte betrachtet. Sein Anspruch ist es, wichtige Spiele nicht blo&#223; aufzuz&#228;hlen, sondern ihre Bedeutung verst&#228;ndlich und quellenbasiert einzuordnen.</p>
-          <p>Diese Webseite befindet sich im Aufbau. Spielportr&#228;ts, Quellenverweise und ausf&#252;hrliche Auswahlkriterien werden schrittweise erg&#228;nzt.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div>
-        <a class="brand" href="#oben">DER BRETTSPIELKANON</a>
-        <p>Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p>
-        <p class="footer-note">Hinweis vor der &#246;ffentlichen Bekanntmachung: Impressum und Datenschutzinformationen sind noch zu erg&#228;nzen, soweit rechtlich erforderlich.</p>
-      </div>
-      <a class="back-top" href="#oben">Zur&#252;ck nach oben &#8593;</a>
-    </div>
-  </footer>
+<section aria-labelledby="projekt-title" class="soft" id="projekt">
+<div class="container section-grid">
+<div>
+<p class="eyebrow">04 / Über das Projekt</p>
+<h2 id="projekt-title">Ein Kanon, der begründet.</h2>
+</div>
+<div class="prose">
+<p>Der Brettspielkanon ist ein unabhängiges Projekt, das moderne Brettspiele als Teil der Kulturgeschichte betrachtet. Sein Anspruch ist es, wichtige Spiele nicht bloß aufzuzählen, sondern ihre Bedeutung verständlich und quellenbasiert einzuordnen.</p>
+<p>Diese Webseite befindet sich im Aufbau. Spielporträts, Quellenverweise und ausführliche Auswahlkriterien werden schrittweise ergänzt.</p>
+</div>
+</div>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container footer-inner">
+<div>
+<a class="brand" href="#oben">DER BRETTSPIELKANON</a>
+<p>Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p>
+<p class="footer-note">Hinweis vor der öffentlichen Bekanntmachung: Impressum und Datenschutzinformationen sind noch zu ergänzen, soweit rechtlich erforderlich.</p>
+</div>
+<a class="back-top" href="#oben">Zurück nach oben ↑</a>
+</div>
+</footer>
 </body>
 </html>
