@@ -28,7 +28,6 @@
 .site-header .site-nav .current{text-decoration:underline;text-underline-offset:6px}
 @media(max-width:900px){.site-header .header-inner{flex-direction:column;align-items:flex-start;padding-block:22px}}
 </style>
-
 <style>
 /* Einheitlicher Seitentitel nach dem Vorbild der Kanonseite. */
 .hero, main > .hero {min-height:342px;display:flex;align-items:center;}
@@ -53,10 +52,31 @@ main.container.content{max-width:1120px}
 .roadmap-step p{max-width:810px;margin:13px 0 0;line-height:1.75}.roadmap-end{max-width:800px;line-height:1.75;margin-top:30px}
 .roadmap-end a{color:var(--navy);font-weight:700}
 @media(max-width:610px){.roadmap-step{padding:19px 17px}}
-</style></head>
+</style><style>
+/* Zyklus 2: Seitenübergreifend identische Navigations- und Titelbereichsmaße. */
+.site-header .header-inner {min-height:86px;}
+.hero {height:380px !important; min-height:380px !important;display:flex !important;align-items:center !important;}
+.hero > .container, .hero > .hero-inner, .hero .container.hero-inner,
+main > .hero > .container {height:380px !important;flex:0 0 auto !important;min-height:380px !important;max-width:1120px !important;width:min(1120px,calc(100% - 44px)) !important;margin:0 auto !important;padding:20px 0 !important;display:flex !important;flex-direction:column !important;justify-content:center !important;box-sizing:border-box !important;}
+.hero h1 {font-size:clamp(2.5rem,3.9vw,3.75rem) !important;line-height:1.12 !important;margin:0 0 14px !important;max-width:1000px !important;}
+.hero .gold-line {margin:0 0 15px !important;flex-shrink:0;}
+.hero .hero-description,.hero p:last-child:not(.eyebrow) {font-size:0.99rem !important;line-height:1.5 !important;max-width:850px !important;margin:0 !important;}
+.hero .eyebrow {margin:0 0 12px !important;font-size:.73rem;line-height:1.5;letter-spacing:.16em;color:#ddbb83;}
+.hero .hero-actions {margin-top:17px !important;gap:12px 22px !important;}
+.hero .hero-actions .button {padding:10px 17px !important;}
+@media(max-width:900px) {
+ .hero {height:auto !important;min-height:380px !important;}
+ .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:380px !important;flex:0 0 auto !important;padding:42px 0 !important;}
+}
+@media(max-width:610px) {
+ .hero {min-height:0 !important;}
+ .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:0 !important;flex:0 0 auto !important;width:calc(100% - 32px) !important;padding:45px 0 !important;}
+ .hero h1 {font-size:clamp(2.25rem,8vw,3.2rem) !important;}
+}
+</style><style>.legal-links{display:flex;align-items:flex-start;gap:20px}.footer-imprint{color:#e8e9e9;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}.footer-imprint:hover{color:#e8c991}</style></head>
 <body>
-<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html">DER BRETTSPIELKANON</a><nav aria-label="Hauptnavigation" class="site-nav"><a class="" href="index.html#idee">Die Idee</a><a class="" href="kanon.html">Der Kanon</a><a class="" href="methodik.html">Die Methodik</a><a aria-current="page" class="current" href="projektplan.html">Projektplan</a></nav></div></header>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html">DER BRETTSPIELKANON</a><nav aria-label="Hauptnavigation" class="site-nav"><a class="" href="index.html">Startseite</a><a class="" href="kanon.html">Der Kanon</a><a class="" href="methodik.html">Die Methodik</a><a aria-current="page" class="current" href="projektplan.html">Projektplan</a></nav></div></header>
 <section aria-labelledby="page-title" class="hero"><div class="container"><h1 id="page-title">Der Projektplan</h1><div aria-hidden="true" class="gold-line"></div><p>Von der ersten Idee zu einem wissenschaftlich fundierten Brettspielkanon.</p></div></section>
 <main class="container content"><div class="roadmap-intro"><h2>Unser Weg zum Kanon</h2><p>Der Brettspielkanon entsteht schrittweise. Die Forschungsarbeit und die vorläufige Sammlung werden fortlaufend überprüft und weiterentwickelt.</p></div><ol class="roadmap"><li class="roadmap-step"><div class="roadmap-top"><h3>Phase 1 – Konzeption und Grundlagen</h3><span class="roadmap-status">Abgeschlossen</span></div><p>Aufstellung einer groben Struktur des Projekts und Entwicklung eines ersten Kriterienkatalogs zur Auswahl historisch bedeutender Brettspiele.</p></li><li class="roadmap-step"><div class="roadmap-top"><h3>Phase 2 – Erprobung der Methodik</h3><span class="roadmap-status">Abgeschlossen</span></div><p>Anwendungstest des Kriterienkatalogs an ausgewählten Spielen und Überarbeitung der ersten Untersuchungsergebnisse sowie des Bewertungsverfahrens.</p></li><li class="roadmap-step is-current"><div class="roadmap-top"><h3>Phase 3 – Aufbau der vorläufigen Sammlung</h3><span class="roadmap-status">Aktuelle Phase</span></div><p>Erstellen einer Sammlung vorläufig aufgenommener Brettspiele auf Grundlage der bisherigen Untersuchungen. Diese Sammlung bildet die Grundlage der nachfolgenden Einzelprüfungen.</p></li><li class="roadmap-step"><div class="roadmap-top"><h3>Phase 4 – Einzelprüfung und öffentlicher Diskurs</h3><span class="roadmap-status">Geplant</span></div><p>Die Spiele der vorläufigen Sammlung werden regelmäßig einzeln und ausführlich untersucht; angestrebt wird etwa ein Spiel pro Monat. Die Ergebnisse werden online veröffentlicht und sollen möglichst öffentlich diskutiert werden. Nach einer angemessenen Zeit werden die Erkenntnisse aus dem Diskurs berücksichtigt und eine begründete endgültige Entscheidung über die Aufnahme oder Nichtaufnahme getroffen. Diese längste Phase wiederholt sich, bis die vorläufige Sammlung abgearbeitet und der Kanon befüllt ist.</p></li><li class="roadmap-step"><div class="roadmap-top"><h3>Phase 5 – Gesamtprüfung und Fortschreibung</h3><span class="roadmap-status">Geplant</span></div><p>Nach Prüfung aller Spiele wird untersucht, ob der Kanon vollständig ist. Anschließend wird in größeren zeitlichen Abständen überprüft, ob weitere Spiele aufgrund ihrer inzwischen nachweisbaren historischen Bedeutung eine Aufnahme verdienen.</p></li></ol><p class="roadmap-end">Die vorläufige Aufnahme ist keine endgültige Entscheidung. Maßgeblich bleiben die Quellenlage, die vergleichende Prüfung und der historische Beitrag eines Spiels. <a href="kanon.html">Zur vorläufigen Sammlung →</a></p></main>
-<footer class="site-footer"><div class="container footer-inner"><div><a class="brand" href="index.html">DER BRETTSPIELKANON</a><p>Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p></div><p>Ein unabhängiges Projekt im Aufbau.</p></div></footer>
+<footer class="site-footer"><div class="container footer-inner"><div><a class="brand" href="index.html">DER BRETTSPIELKANON</a><p>Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p></div><p>Ein unabhängiges Projekt im Aufbau.</p><div class="legal-links"><a class="footer-imprint" href="impressum.html">Impressum</a></div></div></footer>
 </body></html>

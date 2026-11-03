@@ -88,20 +88,41 @@ main > .hero > .container {width:min(1120px,calc(100% - 44px));margin-inline:aut
 .hero .hero-actions {margin-top:18px;gap:12px 22px;}
 .hero .hero-actions .button {padding:11px 18px;}
 @media(max-width:610px){.hero,main > .hero{min-height:0}.hero > .container,.hero > .hero-inner,.hero .container.hero-inner,main > .hero > .container{min-height:0;width:calc(100% - 32px);padding:54px 0!important}.hero h1{font-size:clamp(2.25rem,8vw,3.2rem)}}
-</style></head>
+</style><style>
+/* Zyklus 2: Seitenübergreifend identische Navigations- und Titelbereichsmaße. */
+.site-header .header-inner {min-height:86px;}
+.hero {height:380px !important; min-height:380px !important;display:flex !important;align-items:center !important;}
+.hero > .container, .hero > .hero-inner, .hero .container.hero-inner,
+main > .hero > .container {height:380px !important;flex:0 0 auto !important;min-height:380px !important;max-width:1120px !important;width:min(1120px,calc(100% - 44px)) !important;margin:0 auto !important;padding:20px 0 !important;display:flex !important;flex-direction:column !important;justify-content:center !important;box-sizing:border-box !important;}
+.hero h1 {font-size:clamp(2.5rem,3.9vw,3.75rem) !important;line-height:1.12 !important;margin:0 0 14px !important;max-width:1000px !important;}
+.hero .gold-line {margin:0 0 15px !important;flex-shrink:0;}
+.hero .hero-description,.hero p:last-child:not(.eyebrow) {font-size:0.99rem !important;line-height:1.5 !important;max-width:850px !important;margin:0 !important;}
+.hero .eyebrow {margin:0 0 12px !important;font-size:.73rem;line-height:1.5;letter-spacing:.16em;color:#ddbb83;}
+.hero .hero-actions {margin-top:17px !important;gap:12px 22px !important;}
+.hero .hero-actions .button {padding:10px 17px !important;}
+@media(max-width:900px) {
+ .hero {height:auto !important;min-height:380px !important;}
+ .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:380px !important;flex:0 0 auto !important;padding:42px 0 !important;}
+}
+@media(max-width:610px) {
+ .hero {min-height:0 !important;}
+ .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:0 !important;flex:0 0 auto !important;width:calc(100% - 32px) !important;padding:45px 0 !important;}
+ .hero h1 {font-size:clamp(2.25rem,8vw,3.2rem) !important;}
+}
+</style><style>.legal-links{display:flex;align-items:flex-start;gap:20px}.footer-imprint{color:#e8e9e9;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}.footer-imprint:hover{color:#e8c991}</style></head>
 <body id="oben">
 <header class="site-header">
 <div class="container header-inner">
-<a aria-label="Der Brettspielkanon – zur Startseite" class="brand" href="#oben">DER BRETTSPIELKANON</a>
-<nav aria-label="Hauptnavigation" class="site-nav"><a aria-current="page" class="current" href="#idee">Die Idee</a><a href="kanon.html">Der Kanon</a><a href="methodik.html">Die Methodik</a><a href="projektplan.html">Projektplan</a></nav>
+<a aria-label="Der Brettspielkanon – zur Startseite" class="brand" href="index.html">DER BRETTSPIELKANON</a>
+<nav aria-label="Hauptnavigation" class="site-nav"><a aria-current="page" class="current" href="index.html">Startseite</a><a href="kanon.html">Der Kanon</a><a href="methodik.html">Die Methodik</a><a href="projektplan.html">Projektplan</a></nav>
 </div>
 </header>
 <main>
 <section aria-labelledby="hero-title" class="hero">
 <div class="container hero-inner">
-<h1 id="hero-title">Die bedeutendsten Brettspiele der deutschen Spielekultur.</h1>
+<p class="eyebrow">Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p><h1 id="hero-title">Die bedeutendsten Brettspiele der deutschen Spielekultur.</h1>
 <div aria-hidden="true" class="gold-line"></div>
-<p class="hero-description">Von den Wegbereitern bis zu den modernen Klassikern: Wir erforschen die Spiele, die die deutsche Brettspielkultur nachhaltig geprägt haben. Derzeit prüfen wir 25 vorläufig kanonwürdige Spiele; die Auswahl ist nicht abgeschlossen.</p>
+<p class="hero-description">Welche Brettspiele haben unsere Spielkultur nachhaltig geprägt – und warum? Der Brettspielkanon widmet sich den bedeutendsten Spielen der modernen deutschen Brettspielkultur. Anhand von nachvollziehbaren Kriterien untersuchen wir ihren Einfluss, ihre Innovationen und ihre kulturelle Bedeutung. So entsteht eine sorgfältig begründete Auswahl von Spielen, die Geschichte geschrieben haben.</p>
 <div class="hero-actions">
 <a class="button" href="kanon.html">Den Kanon entdecken</a>
 <a class="text-link" href="methodik.html">Unsere Methodik →</a>
@@ -120,7 +141,7 @@ main > .hero > .container {width:min(1120px,calc(100% - 44px));margin-inline:aut
 <p>Der Brettspielkanon ist ein unabhängiges, wissenschaftlich orientiertes Projekt zur Kulturgeschichte des Spielens und dokumentiert die Bedeutung ausgewählter Werke so verständlich und quellenbasiert wie uns möglich.</p><p>Das Projekt befindet sich im Aufbau; die Auswahl und die Spielporträts werden mit neuen Erkenntnissen weiterentwickelt.</p><p><a class="button" href="projektplan.html">Unser Projektplan →</a></p></div>
 </div>
 </section>
-<section aria-labelledby="kanon-title" class="soft" id="kanon"><div class="container"><div class="section-heading"><div><p class="eyebrow">02 / Der Kanon</p><h2 class="section-title" id="kanon-title">Spiele, die Geschichte geschrieben haben.</h2></div></div><div class="prose"><p>Der Kanon versammelt Spiele, die die Entwicklung der Brettspielkultur in Deutschland auf unterschiedliche Weise geprägt haben. Die derzeit 25 vorläufigen Kandidaten beruhen auf historischen Untersuchungen und bleiben überprüfbar: Mit neuen Quellen und Vergleichen kann die Auswahl wachsen oder sich verändern.</p></div><p><a class="button" href="kanon.html">Den Kanon entdecken →</a></p></div></section>
+<section aria-labelledby="kanon-title" class="soft" id="kanon"><div class="container"><div class="section-heading"><div><p class="eyebrow">02 / Der Kanon</p><h2 class="section-title" id="kanon-title">Spiele, die Geschichte geschrieben haben.</h2></div></div><div class="prose"><p>Der Kanon versammelt Spiele, die auf unterschiedliche Weise die Entwicklung der Brettspielkultur in Deutschland geprägt haben. Die Auswahl erfolgt schrittweise und ist zunächst vorläufig. Durch vertiefte Untersuchungen und den Austausch über die historische Bedeutung der einzelnen Spiele soll daraus ein fundierter Kanon entstehen, der auch für neue Erkenntnisse offenbleibt.</p></div><p><a class="button" href="kanon.html">Den Kanon entdecken →</a></p></div></section>
 <section aria-labelledby="methodik-title" id="methodik"><div class="container" style="max-width:1120px"><p class="eyebrow">03 / Die Methodik</p><h2 class="section-title" id="methodik-title">Wie wählen wir Spiele aus?</h2><p class="prose" style="max-width:780px">Der Brettspielkanon ist keine Bestenliste, bei der der individuelle Spielspaß im Vordergrund steht. Wir untersuchen, welche Spiele neue Ideen eingeführt, die deutsche Spielekultur geprägt oder spätere Entwicklungen beeinflusst haben. Dazu ziehen wir Quellen heran und vergleichen spielehistorische Vorläufer und Nachfolger. Hierzu wurde ein Kriterienkatalog aufgestellt, der systematisch auf die untersuchten Spiele angewendet wird. Dabei machen wir auch Unsicherheiten transparent. Entscheidend ist am Ende nicht die erreichte Punktzahl des jeweiligen Spiels, sondern ein nachweisbarer historischer Beitrag.</p><a class="button" href="methodik.html" style="margin-top:22px">Unsere Methodik im Detail →</a></div></section>
 </main>
 <footer class="site-footer">
@@ -128,10 +149,10 @@ main > .hero > .container {width:min(1120px,calc(100% - 44px));margin-inline:aut
 <div>
 <a class="brand" href="#oben">DER BRETTSPIELKANON</a>
 <p>Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p>
-<p class="footer-note">Hinweis vor der öffentlichen Bekanntmachung: Impressum und Datenschutzinformationen sind noch zu ergänzen, soweit rechtlich erforderlich.</p>
+<p class="footer-note">Hinweis: Eine Datenschutzerklärung ist noch zu ergänzen.</p>
 </div>
 <a class="back-top" href="#oben">Zurück nach oben ↑</a>
-</div>
+<div class="legal-links"><a class="footer-imprint" href="impressum.html">Impressum</a></div></div>
 </footer>
 </body>
 </html>

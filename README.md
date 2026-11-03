@@ -1,17 +1,19 @@
-# Brettspielkanon – Webseitenupdate (3. November 2026)
+# Der Brettspielkanon – GitHub-Dateien (Überarbeitungszyklus 2)
 
-GitHub-Pages-fertige Dateien. Alle Dateien ins Stammverzeichnis des GitHub-Pages-Repositories kopieren bzw. bestehende Dateien ersetzen.
+Stand: 3. November 2026
 
-## Inhalt
-- `index.html`: neue Texte in „Die Idee“ und „Die Methodik“, drei Beispielkacheln entfernt und Button zum Projektplan
-- `kanon.html`: Einleitung entfernt, Headertext reduziert, Hinweiskasten aktualisiert und Aufnahmestatus statt Entwicklungsphase
-- `kanon.js`: funktionierender Filter nach Aufnahmestatus; neutraler Ergebniszähler und dynamische Statusanzeige
-- `spiele.json`: 25 vorläufig aufgenommene Titel (keine endgültige Aufnahme)
-- `methodik.html`: einheitlicher Titelbereich ohne Eyebrow
-- `projektplan.html`: neue Unterseite mit fünf Projektphasen, Phase 3 aktuell
+## Änderungen
+1. Navigation: „Startseite“ verweist auf index.html.
+2. Einheitlicher Titelbereich mit 380 px Höhe auf Desktop; bei engen Displays inhaltsschonend flexibel.
+3. Neuer, freigegebener Headertext auf der Startseite.
+4. Neuer, freigegebener Text in „02 / Der Kanon“.
+5. Impressum ergänzt und im Footer aller fünf Seiten verlinkt.
+6. Goldene Eyebrow auf der Startseite ergänzt.
+7. Hinweisbox auf der Kanonseite entfernt; der freigegebene Text steht im Titelbereich.
+8. Abschnitt „Bedeutung statt Beliebtheit“ überarbeitet.
 
-## Layout
-Die dunkelblauen Titelbereiche nutzen auf Desktop auf allen vier Seiten dieselbe Mindesthöhe (342 px) und eine gemeinsame vertikale Ausrichtung. Auf schmalen Bildschirmen richtet sich die Höhe responsiv nach dem Inhalt. Die kleine Eyebrow oberhalb der Seitenüberschrift entfällt überall; nummerierte Abschnittsüberschriften im Seiteninhalt bleiben bestehen.
+Die „Über uns“-Seite ist **nicht** enthalten, wie vereinbart.
 
-## Hinweis
-Das ZIP enthält statische Dateien, aber keine automatische Veröffentlichung. GitHub Pages muss für das Repository aktiviert sein. Spieldaten werden über `fetch('spiele.json')` geladen; zum Testen bitte einen lokalen HTTP-Server oder GitHub Pages verwenden, nicht `file://`.
+**Hinweis:** Eine Datenschutzerklärung ist weiterhin zu erstellen. Vor Veröffentlichung auch prüfen, ob weitere rechtliche Pflichtangaben nötig sind.
+
+Alle HTML-, JS- und JSON-Dateien ins Stammverzeichnis des GitHub-Pages-Repositories hochladen.

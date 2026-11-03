@@ -88,15 +88,36 @@ main > .hero > .container {width:min(1120px,calc(100% - 44px));margin-inline:aut
 .hero .hero-actions {margin-top:18px;gap:12px 22px;}
 .hero .hero-actions .button {padding:11px 18px;}
 @media(max-width:610px){.hero,main > .hero{min-height:0}.hero > .container,.hero > .hero-inner,.hero .container.hero-inner,main > .hero > .container{min-height:0;width:calc(100% - 32px);padding:54px 0!important}.hero h1{font-size:clamp(2.25rem,8vw,3.2rem)}}
-</style></head>
+</style><style>
+/* Zyklus 2: Seitenübergreifend identische Navigations- und Titelbereichsmaße. */
+.site-header .header-inner {min-height:86px;}
+.hero {height:380px !important; min-height:380px !important;display:flex !important;align-items:center !important;}
+.hero > .container, .hero > .hero-inner, .hero .container.hero-inner,
+main > .hero > .container {height:380px !important;flex:0 0 auto !important;min-height:380px !important;max-width:1120px !important;width:min(1120px,calc(100% - 44px)) !important;margin:0 auto !important;padding:20px 0 !important;display:flex !important;flex-direction:column !important;justify-content:center !important;box-sizing:border-box !important;}
+.hero h1 {font-size:clamp(2.5rem,3.9vw,3.75rem) !important;line-height:1.12 !important;margin:0 0 14px !important;max-width:1000px !important;}
+.hero .gold-line {margin:0 0 15px !important;flex-shrink:0;}
+.hero .hero-description,.hero p:last-child:not(.eyebrow) {font-size:0.99rem !important;line-height:1.5 !important;max-width:850px !important;margin:0 !important;}
+.hero .eyebrow {margin:0 0 12px !important;font-size:.73rem;line-height:1.5;letter-spacing:.16em;color:#ddbb83;}
+.hero .hero-actions {margin-top:17px !important;gap:12px 22px !important;}
+.hero .hero-actions .button {padding:10px 17px !important;}
+@media(max-width:900px) {
+ .hero {height:auto !important;min-height:380px !important;}
+ .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:380px !important;flex:0 0 auto !important;padding:42px 0 !important;}
+}
+@media(max-width:610px) {
+ .hero {min-height:0 !important;}
+ .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:0 !important;flex:0 0 auto !important;width:calc(100% - 32px) !important;padding:45px 0 !important;}
+ .hero h1 {font-size:clamp(2.25rem,8vw,3.2rem) !important;}
+}
+</style><style>.legal-links{display:flex;align-items:flex-start;gap:20px}.footer-imprint{color:#e8e9e9;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}.footer-imprint:hover{color:#e8c991}</style></head>
 <body id="oben">
 <header class="site-header">
 <div class="container header-inner">
 <a aria-label="Der Brettspielkanon – zur Startseite" class="brand" href="index.html">DER BRETTSPIELKANON</a>
-<nav aria-label="Hauptnavigation" class="site-nav"><a href="index.html#idee">Die Idee</a><a href="kanon.html">Der Kanon</a><a aria-current="page" class="current" href="methodik.html">Die Methodik</a><a href="projektplan.html">Projektplan</a></nav>
+<nav aria-label="Hauptnavigation" class="site-nav"><a href="index.html">Startseite</a><a href="kanon.html">Der Kanon</a><a aria-current="page" class="current" href="methodik.html">Die Methodik</a><a href="projektplan.html">Projektplan</a></nav>
 </div>
 </header>
-<main><section aria-labelledby="method-page-title" class="hero"><div class="container" style="padding:75px 0 80px"><h1 id="method-page-title">Unsere Methodik</h1><p class="hero-description">Wie wählen wir historisch bedeutende Brettspiele aus? Unsere Kriterien, unsere Quellen und der Weg zu einem nachvollziehbaren Kanon.</p></div></section><section aria-labelledby="methodik-title" class="method-full" id="methodik"><div class="container"><p class="eyebrow">Die Methodik</p><h2 class="section-title" id="methodik-title">Wie entsteht der Brettspielkanon?</h2><div class="method-text">
+<main><section aria-labelledby="method-page-title" class="hero"><div class="container"><h1 id="method-page-title">Unsere Methodik</h1><div aria-hidden="true" class="gold-line"></div><p class="hero-description">Wie wählen wir historisch bedeutende Brettspiele aus? Unsere Kriterien, unsere Quellen und der Weg zu einem nachvollziehbaren Kanon.</p></div></section><section aria-labelledby="methodik-title" class="method-full" id="methodik"><div class="container"><p class="eyebrow">Die Methodik</p><h2 class="section-title" id="methodik-title">Wie entsteht der Brettspielkanon?</h2><div class="method-text">
 <h3>Was macht ein Brettspiel historisch bedeutend?</h3>
 <p>Ist es ein Spiel, das Millionen Menschen gespielt haben? Eines, das völlig neue Ideen eingeführt hat? Oder eines, das andere Spieleautoren maßgeblich beeinflusste? Der Brettspielkanon beschäftigt sich mit den Spielen, die die moderne Brettspielkultur in Deutschland nachhaltig geprägt haben. Dabei geht es ausdrücklich nicht um die besten oder beliebtesten Brettspiele aller Zeiten, sondern um ihre historische und kulturelle Bedeutung. Wir untersuchen vor allem Spiele seit 1945, berücksichtigen aber auch ältere Titel, wenn sie für die Entwicklung moderner Gesellschaftsspiele besonders wichtig waren. Entscheidend ist nicht, wo ein Spiel entwickelt wurde, sondern welchen nachweisbaren Beitrag es zur deutschen Spielekultur geleistet hat.</p>
 <h3>Nach welchen Kriterien bewerten wir die Spiele?</h3>
@@ -114,10 +135,10 @@ main > .hero > .container {width:min(1120px,calc(100% - 44px));margin-inline:aut
 <div>
 <a class="brand" href="index.html">DER BRETTSPIELKANON</a>
 <p>Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p>
-<p class="footer-note">Hinweis vor der öffentlichen Bekanntmachung: Impressum und Datenschutzinformationen sind noch zu ergänzen, soweit rechtlich erforderlich.</p>
+<p class="footer-note">Hinweis: Eine Datenschutzerklärung ist noch zu ergänzen.</p>
 </div>
 <a class="back-top" href="#oben">Zurück nach oben ↑</a>
-</div>
+<div class="legal-links"><a class="footer-imprint" href="impressum.html">Impressum</a></div></div>
 </footer>
 </body>
 </html>

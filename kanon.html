@@ -40,13 +40,34 @@ main > .hero > .container {width:min(1120px,calc(100% - 44px));margin-inline:aut
 .hero .hero-actions {margin-top:18px;gap:12px 22px;}
 .hero .hero-actions .button {padding:11px 18px;}
 @media(max-width:610px){.hero,main > .hero{min-height:0}.hero > .container,.hero > .hero-inner,.hero .container.hero-inner,main > .hero > .container{min-height:0;width:calc(100% - 32px);padding:54px 0!important}.hero h1{font-size:clamp(2.25rem,8vw,3.2rem)}}
-</style></head>
+</style><style>
+/* Zyklus 2: Seitenübergreifend identische Navigations- und Titelbereichsmaße. */
+.site-header .header-inner {min-height:86px;}
+.hero {height:380px !important; min-height:380px !important;display:flex !important;align-items:center !important;}
+.hero > .container, .hero > .hero-inner, .hero .container.hero-inner,
+main > .hero > .container {height:380px !important;flex:0 0 auto !important;min-height:380px !important;max-width:1120px !important;width:min(1120px,calc(100% - 44px)) !important;margin:0 auto !important;padding:20px 0 !important;display:flex !important;flex-direction:column !important;justify-content:center !important;box-sizing:border-box !important;}
+.hero h1 {font-size:clamp(2.5rem,3.9vw,3.75rem) !important;line-height:1.12 !important;margin:0 0 14px !important;max-width:1000px !important;}
+.hero .gold-line {margin:0 0 15px !important;flex-shrink:0;}
+.hero .hero-description,.hero p:last-child:not(.eyebrow) {font-size:0.99rem !important;line-height:1.5 !important;max-width:850px !important;margin:0 !important;}
+.hero .eyebrow {margin:0 0 12px !important;font-size:.73rem;line-height:1.5;letter-spacing:.16em;color:#ddbb83;}
+.hero .hero-actions {margin-top:17px !important;gap:12px 22px !important;}
+.hero .hero-actions .button {padding:10px 17px !important;}
+@media(max-width:900px) {
+ .hero {height:auto !important;min-height:380px !important;}
+ .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:380px !important;flex:0 0 auto !important;padding:42px 0 !important;}
+}
+@media(max-width:610px) {
+ .hero {min-height:0 !important;}
+ .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:0 !important;flex:0 0 auto !important;width:calc(100% - 32px) !important;padding:45px 0 !important;}
+ .hero h1 {font-size:clamp(2.25rem,8vw,3.2rem) !important;}
+}
+</style><style>.legal-links{display:flex;align-items:flex-start;gap:20px}.footer-imprint{color:#e8e9e9;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}.footer-imprint:hover{color:#e8c991}</style></head>
 <body>
-<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html">DER BRETTSPIELKANON</a><nav aria-label="Hauptnavigation" class="site-nav"><a href="index.html#idee">Die Idee</a><a aria-current="page" class="current" href="kanon.html">Der Kanon</a><a href="methodik.html">Die Methodik</a><a href="projektplan.html">Projektplan</a></nav></div></header>
-<section aria-labelledby="page-title" class="hero"><div class="container"><h1 id="page-title">Der Kanon</h1><div aria-hidden="true" class="gold-line"></div><p>Chronologisch sortierbar und durchsuchbar.</p></div></section>
-<main class="container content"><div class="notice"><strong>Vorläufiger Kanon:</strong> Die aktuellen Einträge dokumentieren den aktuellen Forschungsstand, es handelt sich nicht um eine abgeschlossene Liste. Ob ein Spiel vorläufig oder abschließend aufgenommen wurde, ist über die Markierung des jeweiligen Eintrages zu entnehmen.</div>
+<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html">DER BRETTSPIELKANON</a><nav aria-label="Hauptnavigation" class="site-nav"><a href="index.html">Startseite</a><a aria-current="page" class="current" href="kanon.html">Der Kanon</a><a href="methodik.html">Die Methodik</a><a href="projektplan.html">Projektplan</a></nav></div></header>
+<section aria-labelledby="page-title" class="hero"><div class="container"><h1 id="page-title">Der Kanon</h1><div aria-hidden="true" class="gold-line"></div><p>Hier findest du die aktuelle Auswahl an Brettspielen, die für eine Aufnahme in den Kanon infrage kommen. Die einzelnen Spiele durchlaufen einen mehrstufigen Untersuchungsprozess. Ihr jeweiliger Aufnahmestatus ist in der Übersicht gekennzeichnet. Die Sammlung wird fortlaufend überprüft und weiterentwickelt.</p></div></section>
+<main class="container content">
 <section aria-label="Spiele suchen und filtern" class="filters"><p class="filter-title">Sammlung durchsuchen</p><div class="filter-grid"><div class="field"><label for="suchfeld">Suche nach Titel, Autor oder Jahr</label><input autocomplete="off" id="suchfeld" placeholder="z. B. Catan, Teuber oder 1995" type="search"/></div><div class="field"><label for="aufnahme">Aufnahmestatus</label><select id="aufnahme"><option value="">Alle Spiele</option><option value="Vorläufig aufgenommen">Vorläufig aufgenommen</option><option value="Endgültig aufgenommen">Endgültig aufgenommen</option></select></div><div class="field"><label for="mechanik">Spielmechanik</label><select id="mechanik"><option value="">Alle Mechaniken</option></select></div></div></section>
 <div class="toolbar"><p aria-live="polite" id="anzahl" role="status">Spiele werden geladen …</p><div class="toolbar-controls"><label for="sortierung">Sortierung</label><select id="sortierung"><option value="alt">Älteste zuerst</option><option value="neu">Neueste zuerst</option><option value="az">Titel A bis Z</option></select><button class="reset" id="zuruecksetzen" type="button">Filter zurücksetzen</button></div></div>
-<div aria-label="Spieleübersicht" class="cards" id="karten"></div><div class="no-results" id="keine-treffer"><h3>Keine Spiele gefunden</h3><p>Versuche einen anderen Suchbegriff oder setze die Filter zurück.</p></div><section class="methods"><p class="eyebrow">Zur Einordnung</p><h2>Bedeutung statt Beliebtheit.</h2><p>Der Brettspielkanon ist keine Bestenliste. Eine Aufnahme soll durch historische Quellen, spielmechanische Innovationsleistungen und den belegbaren Einfluss auf die deutsche Brettspielkultur begründet werden. Die Obergrenze liegt bei 50 Spielen; sie ist keine Zielvorgabe.</p><p><a class="button" href="methodik.html">Zur ausführlichen Methodik →</a></p></section></main>
-<footer class="site-footer"><div class="container footer-inner"><div><a class="brand" href="index.html">DER BRETTSPIELKANON</a><p>Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p></div><p>Ein unabhängiges Projekt im Aufbau.</p></div></footer>
+<div aria-label="Spieleübersicht" class="cards" id="karten"></div><div class="no-results" id="keine-treffer"><h3>Keine Spiele gefunden</h3><p>Versuche einen anderen Suchbegriff oder setze die Filter zurück.</p></div><section class="methods"><p class="eyebrow">Zur Einordnung</p><h2>Bedeutung statt Beliebtheit.</h2><p>Nicht jedes erfolgreiche oder beliebte Brettspiel ist automatisch von historischer Bedeutung. Entscheidend ist, welchen eigenständigen Beitrag ein Spiel zur Entwicklung der Brettspielkultur geleistet hat. Dabei betrachten wir sowohl wegweisende Innovationen als auch den Einfluss auf spätere Spiele und die nachhaltige kulturelle Bedeutung in Deutschland. Der Kanon bleibt bewusst auf maximal 50 Spiele begrenzt, ohne diese Zahl ausschöpfen zu müssen.</p><p><a class="button" href="methodik.html">Zur ausführlichen Methodik →</a></p></section></main>
+<footer class="site-footer"><div class="container footer-inner"><div><a class="brand" href="index.html">DER BRETTSPIELKANON</a><p>Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p></div><p>Ein unabhängiges Projekt im Aufbau.</p><div class="legal-links"><a class="footer-imprint" href="impressum.html">Impressum</a></div></div></footer>
 </body></html>
