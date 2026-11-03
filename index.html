@@ -66,22 +66,32 @@
     @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
   
 .method-text{max-width:800px}.method-text h3{font-size:clamp(1.3rem,2.3vw,1.7rem);color:var(--navy);margin:40px 0 12px}.method-text p{font-size:1.03rem;line-height:1.85;margin:0}.method-text .method-closing{margin-top:34px;padding:23px 26px;border-left:3px solid var(--gold);background:var(--paper);font-family:Georgia,serif;font-size:1.3rem;line-height:1.6}.cards .card{min-height:unset}.cards .card .index{display:block}.cards .card h3{margin:12px 0}.cards .card p{margin:0}
+
+/* Einheitlicher Seitenheader, Referenz: kanon.html */
+.site-header{background:#182838;color:#fff;border-bottom:1px solid #415365}
+.site-header .header-inner{min-height:86px;display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:0}
+.site-header .brand{font-size:1.05rem;font-weight:750;letter-spacing:.08em;line-height:normal;text-decoration:none}
+.site-header .site-nav{display:flex;align-items:center;flex-wrap:wrap;gap:10px 25px}
+.site-header .site-nav a{font-size:.92rem;color:#f0eee9;text-decoration:none}
+.site-header .site-nav a:hover,.site-header .site-nav .current{color:#e8c991}
+.site-header .site-nav .current{text-decoration:underline;text-underline-offset:6px}
+@media(max-width:900px){.site-header .header-inner{flex-direction:column;align-items:flex-start;padding-block:22px}}
 </style>
 </head>
 <body id="oben">
 <header class="site-header">
 <div class="container header-inner">
 <a aria-label="Der Brettspielkanon – zur Startseite" class="brand" href="#oben">DER BRETTSPIELKANON</a>
-<nav aria-label="Hauptnavigation" class="site-nav"><a href="#idee">Die Idee</a><a href="kanon.html">Der Kanon</a><a href="#methodik">Die Methodik</a></nav>
+<nav aria-label="Hauptnavigation" class="site-nav"><a href="#idee" class="current" aria-current="page">Die Idee</a><a href="kanon.html">Der Kanon</a><a href="methodik.html">Die Methodik</a></nav>
 </div>
 </header>
 <main>
 <section aria-labelledby="hero-title" class="hero">
 <div class="container hero-inner">
-<p class="eyebrow">Spiel · Geschichte · Kultur</p>
+<p class="eyebrow">Brettspiele · Geschichte · Spielkultur</p>
 <h1 id="hero-title">Die bedeutendsten Brettspiele der deutschen Spielekultur.</h1>
 <div aria-hidden="true" class="gold-line"></div>
-<p class="hero-description">Von den Wegbereitern bis zu den modernen Klassikern: Wir erforschen die Spiele, die die deutsche Brettspielkultur nachhaltig geprägt haben. Die Auswahl wird fortlaufend untersucht und erweitert.</p>
+<p class="hero-description">Von den Wegbereitern bis zu den modernen Klassikern: Wir erforschen die Spiele, die die deutsche Brettspielkultur nachhaltig geprägt haben. Derzeit prüfen wir 25 vorläufig kanonwürdige Spiele; die Auswahl ist nicht abgeschlossen.</p>
 <div class="hero-actions">
 <a class="button" href="kanon.html">Den Kanon entdecken</a>
 <a class="text-link" href="methodik.html">Unsere Methodik →</a>
@@ -100,7 +110,7 @@
 <p>Der Brettspielkanon ist ein unabhängiges, wissenschaftlich orientiertes Projekt zur Kulturgeschichte des Spielens. Wir dokumentieren die Bedeutung ausgewählter Werke verständlich und quellenbasiert. Das Projekt befindet sich im Aufbau; die Auswahl und die Spielporträts werden mit neuen Erkenntnissen weiterentwickelt.</p></div>
 </div>
 </section>
-<section aria-labelledby="kanon-title" class="soft" id="kanon"><div class="container"><div class="section-heading"><div><p class="eyebrow">02 / Der Kanon</p><h2 class="section-title" id="kanon-title">Spiele, die Geschichte geschrieben haben.</h2></div></div><div class="prose"><p>Der Kanon versammelt Spiele, die die Entwicklung der Brettspielkultur in Deutschland auf unterschiedliche Weise geprägt haben. Die Einträge beruhen auf historischen Untersuchungen und bleiben zunächst vorläufig: Mit neuen Quellen und Vergleichen kann die Auswahl wachsen oder sich verändern.</p></div><div class="cards" style="margin:30px 0"><article class="card"><span class="index">1960 / KULTUR</span><h3>Malefiz</h3><p>Ein dauerhafter Klassiker der deutschen Familien-Spielkultur.</p></article><article class="card"><span class="index">1995 / AUFBRUCH</span><h3>Die Siedler von Catan</h3><p>Handel, Siedlungsbau und neue Impulse für das moderne Autorenspiel.</p></article><article class="card"><span class="index">2008 / INNOVATION</span><h3>Dominion</h3><p>Ein Meilenstein des Deckbuildings während der Partie.</p></article></div><p><a class="button" href="kanon.html">Den Kanon entdecken →</a></p></div></section>
+<section aria-labelledby="kanon-title" class="soft" id="kanon"><div class="container"><div class="section-heading"><div><p class="eyebrow">02 / Der Kanon</p><h2 class="section-title" id="kanon-title">Spiele, die Geschichte geschrieben haben.</h2></div></div><div class="prose"><p>Der Kanon versammelt Spiele, die die Entwicklung der Brettspielkultur in Deutschland auf unterschiedliche Weise geprägt haben. Die derzeit 25 vorläufigen Kandidaten beruhen auf historischen Untersuchungen und bleiben überprüfbar: Mit neuen Quellen und Vergleichen kann die Auswahl wachsen oder sich verändern.</p></div><div class="cards" style="margin:30px 0"><article class="card"><span class="index">1960 / KULTUR</span><h3>Malefiz</h3><p>Ein dauerhafter Klassiker der deutschen Familien-Spielkultur.</p></article><article class="card"><span class="index">1995 / AUFBRUCH</span><h3>Die Siedler von Catan</h3><p>Handel, Siedlungsbau und neue Impulse für das moderne Autorenspiel.</p></article><article class="card"><span class="index">2008 / INNOVATION</span><h3>Dominion</h3><p>Ein Meilenstein des Deckbuildings während der Partie.</p></article></div><p><a class="button" href="kanon.html">Den Kanon entdecken →</a></p></div></section>
 <section aria-labelledby="methodik-title" id="methodik"><div class="container" style="max-width:1120px"><p class="eyebrow">03 / Die Methodik</p><h2 class="section-title" id="methodik-title">Wie wählen wir Spiele aus?</h2><p class="prose" style="max-width:780px">Der Brettspielkanon ist keine Bestenliste. Wir untersuchen, welche Spiele neue Ideen eingeführt, die deutsche Spielekultur geprägt oder spätere Entwicklungen beeinflusst haben. Dazu vergleichen wir historische Quellen, Vorläufer und Nachfolger und machen Unsicherheiten transparent. Nicht die Punktzahl allein entscheidet, sondern der nachweisbare historische Beitrag eines Spiels.</p><a class="button" href="methodik.html" style="margin-top:22px">Unsere Methodik im Detail →</a></div></section>
 
 </main>

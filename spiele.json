@@ -1,5 +1,114 @@
 [
   {
+    "id": "mensch-aergere-dich-nicht",
+    "titel": "Mensch ärgere Dich nicht",
+    "jahr": 1914,
+    "autoren": [
+      "Josef Friedrich Schmidt"
+    ],
+    "mechaniken": [
+      "Würfel-Laufspiel"
+    ],
+    "phase": "Historische Ausnahmen",
+    "kurz": "Langjähriger Klassiker der deutschen Familien-Spielkultur.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Kulturprägendes Spiel"
+  },
+  {
+    "id": "deutschlandreise",
+    "titel": "Deutschlandreise",
+    "jahr": 1934,
+    "autoren": [],
+    "mechaniken": [
+      "Geografie",
+      "Wissensspiel"
+    ],
+    "phase": "Historische Ausnahmen",
+    "kurz": "Ein geografisches Lern- und Reisespiel mit eigenständiger deutscher Nachkriegsgeschichte.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Kulturprägendes Spiel"
+  },
+  {
+    "id": "monopoly",
+    "titel": "Monopoly",
+    "jahr": 1935,
+    "autoren": [
+      "Charles Darrow"
+    ],
+    "mechaniken": [
+      "Wirtschaft",
+      "Handel"
+    ],
+    "phase": "Historische Ausnahmen",
+    "kurz": "Ein weithin rezipiertes Wirtschaftsspiel mit außergewöhnlicher gesellschaftlicher Verbreitung nach 1945.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Kulturprägendes Spiel"
+  },
+  {
+    "id": "scrabble",
+    "titel": "Scrabble",
+    "jahr": 1948,
+    "autoren": [
+      "Alfred Mosher Butts"
+    ],
+    "mechaniken": [
+      "Wortspiel",
+      "Plättchenlegen"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Ein dauerhaft kulturprägendes Wortspiel.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Kulturprägendes Spiel"
+  },
+  {
+    "id": "cluedo",
+    "titel": "Cluedo",
+    "jahr": 1949,
+    "autoren": [
+      "Anthony E. Pratt"
+    ],
+    "mechaniken": [
+      "Deduktion",
+      "Kriminalspiel"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Eine wegweisende Form des deduktiven Kriminalspiels.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Historischer Entwicklungswegweiser"
+  },
+  {
+    "id": "risiko",
+    "titel": "Risiko",
+    "jahr": 1957,
+    "autoren": [
+      "Albert Lamorisse"
+    ],
+    "mechaniken": [
+      "Gebietskontrolle",
+      "Konflikt"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Ein international prägendes Gebietseroberungsspiel.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Kultur und Einfluss"
+  },
+  {
+    "id": "diplomacy",
+    "titel": "Diplomacy",
+    "jahr": 1959,
+    "autoren": [
+      "Allan B. Calhamer"
+    ],
+    "mechaniken": [
+      "Verhandlung",
+      "Konflikt"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Ein einflussreiches Verhandlungs- und Konfliktspiel, dessen Wirkungsnachweise weiter überprüft werden.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Innovation und Einfluss"
+  },
+  {
     "id": "malefiz",
     "titel": "Malefiz",
     "jahr": 1960,
@@ -12,6 +121,22 @@
     ],
     "phase": "Wegbereiter",
     "kurz": "Ein generationsübergreifender deutscher Familienklassiker, der bekannte Laufspielprinzipien mit beweglichen Sperrsteinen verbindet.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Kulturprägendes Spiel"
+  },
+  {
+    "id": "spiel-des-lebens",
+    "titel": "Spiel des Lebens",
+    "jahr": 1960,
+    "autoren": [
+      "Reuben Klamer"
+    ],
+    "mechaniken": [
+      "Würfel-Laufspiel",
+      "Lebenssimulation"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Spielerische Darstellung gesellschaftlicher Lebensentwürfe.",
     "aufnahme": "Vorläufig aufgenommen",
     "beitrag": "Kulturprägendes Spiel"
   },
@@ -31,6 +156,34 @@
     "kurz": "Ein richtungsweisendes Wirtschaftsspiel, das Unternehmensfusionen, Aktienmehrheiten und räumliches Wachstum strategisch verknüpft.",
     "aufnahme": "Vorläufig aufgenommen",
     "beitrag": "Historischer Entwicklungswegweiser"
+  },
+  {
+    "id": "sherlock-holmes-criminal-cabinet",
+    "titel": "Sherlock Holmes Criminal-Cabinet",
+    "jahr": 1981,
+    "autoren": [],
+    "mechaniken": [
+      "Deduktion",
+      "Kooperativ"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Ein Wegbereiter narrativer kooperativer Ermittlungs- und Falllösespiele.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Historischer Entwicklungswegweiser"
+  },
+  {
+    "id": "scotland-yard",
+    "titel": "Scotland Yard",
+    "jahr": 1983,
+    "autoren": [],
+    "mechaniken": [
+      "Verdeckte Bewegung",
+      "Deduktion"
+    ],
+    "phase": "Wegbereiter",
+    "kurz": "Ein prägendes Verfolgungsspiel mit asymmetrischen Rollen und verdeckter Bewegung.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Innovation und Kultur"
   },
   {
     "id": "wizard",
@@ -100,20 +253,68 @@
     "beitrag": "Kultur und Einfluss"
   },
   {
-    "id": "pandemie",
-    "titel": "Pandemie",
-    "jahr": 2008,
+    "id": "der-herr-der-ringe",
+    "titel": "Der Herr der Ringe",
+    "jahr": 2000,
     "autoren": [
-      "Matt Leacock"
+      "Reiner Knizia"
     ],
     "mechaniken": [
       "Kooperativ",
-      "Krisenmanagement"
+      "Abenteuer"
     ],
     "phase": "Moderne Klassiker",
-    "kurz": "Kooperatives Krisenmanagement gegen ein eskalierendes Infektionssystem; ein wichtiger Entwicklungsschritt moderner Teamspiele.",
+    "kurz": "Ein frühes einflussreiches kooperatives Abenteuer- und Autorenspiel.",
     "aufnahme": "Vorläufig aufgenommen",
-    "beitrag": "Innovationspionier"
+    "beitrag": "Historischer Entwicklungswegweiser"
+  },
+  {
+    "id": "caylus",
+    "titel": "Caylus",
+    "jahr": 2005,
+    "autoren": [
+      "William Attia"
+    ],
+    "mechaniken": [
+      "Worker Placement",
+      "Wirtschaft"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Ein entscheidender Entwicklungsschritt des Worker Placements mit nachgewiesener Wirkung auf spätere Spiele.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Historischer Entwicklungswegweiser"
+  },
+  {
+    "id": "agricola",
+    "titel": "Agricola",
+    "jahr": 2007,
+    "autoren": [
+      "Uwe Rosenberg"
+    ],
+    "mechaniken": [
+      "Worker Placement",
+      "Ressourcenmanagement"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Entwickelte Worker Placement unter anderem durch Familienwachstum, Versorgung und Kartenfähigkeiten weiter.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Historischer Entwicklungswegweiser"
+  },
+  {
+    "id": "brass",
+    "titel": "Brass",
+    "jahr": 2007,
+    "autoren": [
+      "Martin Wallace"
+    ],
+    "mechaniken": [
+      "Wirtschaft",
+      "Netzwerkbau"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Verknüpft Industrieentwicklung, Infrastruktur und wirtschaftliche Abhängigkeiten. Gemeint ist das Original von 2007.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Historischer Entwicklungswegweiser"
   },
   {
     "id": "dominion",
@@ -130,5 +331,69 @@
     "kurz": "Etablierte das gezielte Aufbauen und Optimieren eines eigenen Kartendecks als zentrales Spielprinzip.",
     "aufnahme": "Vorläufig aufgenommen",
     "beitrag": "Innovationspionier"
+  },
+  {
+    "id": "pandemie",
+    "titel": "Pandemie",
+    "jahr": 2008,
+    "autoren": [
+      "Matt Leacock"
+    ],
+    "mechaniken": [
+      "Kooperativ",
+      "Krisenmanagement"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Kooperatives Krisenmanagement gegen ein eskalierendes Infektionssystem; ein wichtiger Entwicklungsschritt moderner Teamspiele.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Innovationspionier"
+  },
+  {
+    "id": "stone-age",
+    "titel": "Stone Age",
+    "jahr": 2008,
+    "autoren": [
+      "Michael Tummelhofer"
+    ],
+    "mechaniken": [
+      "Worker Placement",
+      "Würfel"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Eine zugängliche Verbindung von Worker Placement und würfelbasierter Rohstoffgewinnung.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Kultur und Einfluss"
+  },
+  {
+    "id": "7-wonders",
+    "titel": "7 Wonders",
+    "jahr": 2010,
+    "autoren": [
+      "Antoine Bauza"
+    ],
+    "mechaniken": [
+      "Drafting",
+      "Zivilisationsspiel"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Simultanes Drafting als zugängliches System des Zivilisationsaufbaus.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Innovation und Einfluss"
+  },
+  {
+    "id": "micromacro-crime-city",
+    "titel": "MicroMacro: Crime City",
+    "jahr": 2020,
+    "autoren": [
+      "Johannes Sich"
+    ],
+    "mechaniken": [
+      "Deduktion",
+      "Visuelle Ermittlung"
+    ],
+    "phase": "Moderne Klassiker",
+    "kurz": "Eigenständige visuelle Ermittlungsmechanik mit räumlicher und zeitlicher Rekonstruktion.",
+    "aufnahme": "Vorläufig aufgenommen",
+    "beitrag": "Innovation und Einfluss"
   }
 ]
