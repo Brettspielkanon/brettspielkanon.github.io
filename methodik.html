@@ -1,232 +1,784 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="de">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="Die Methodik des Brettspielkanons: Kriterien, Gewichtung, Quellen, historische Einordnung und nachvollziehbare Auswahl analoger Gesellschaftsspiele." name="description"/>
-<meta content="#213448" name="theme-color"/>
-<title>Die Methodik | Der Brettspielkanon</title>
-<style>
-    :root { --navy:#213448; --navy-deep:#182838; --ivory:#f4f0e8; --paper:#fffdf9; --gold:#b08d57; --ink:#343434; --muted:#5d646c; --line:#dcd4c7; }
-    * { box-sizing:border-box; }
-    html { scroll-behavior:smooth; scroll-padding-top:88px; }
-    body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif; color:var(--ink); background:var(--ivory); line-height:1.7; }
-    a { color:inherit; }
-    a:focus-visible, summary:focus-visible { outline:3px solid var(--gold); outline-offset:4px; }
-    .container { width:min(1120px, calc(100% - 44px)); margin-inline:auto; }
-    .site-header { background:var(--navy-deep); color:#fff; border-bottom:1px solid #415365; }
-    .header-inner { min-height:86px; display:flex; justify-content:space-between; align-items:center; gap:24px; }
-    .brand { font-weight:750; font-size:1.05rem; text-decoration:none; letter-spacing:.08em; line-height:1.25; }
-    .site-nav { display:flex; flex-wrap:wrap; align-items:center; gap:10px 25px; }
-    .site-nav a { font-size:.92rem; text-decoration:none; color:#f0eee9; }
-    .site-nav a:hover { color:#e8c991; }
-    .hero { color:#fff; background:var(--navy); }
-    .hero-inner { padding:clamp(80px,12vw,155px) 0 clamp(85px,12vw,145px); max-width:1000px; }
-    .eyebrow { margin:0 0 22px; font-size:.77rem; font-weight:760; letter-spacing:.19em; text-transform:uppercase; color:var(--gold); }
-    .hero .eyebrow { color:#ddbb83; }
-    h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; font-weight:normal; line-height:1.16; letter-spacing:-.025em; }
-    h1 { font-size:clamp(2.7rem,6.5vw,5.35rem); margin:0 0 28px; max-width:1000px; }
-    .hero-description { max-width:720px; font-size:clamp(1.04rem,1.6vw,1.28rem); color:#e0e5e9; line-height:1.75; }
-    .gold-line { width:68px; height:3px; background:var(--gold); margin:0 0 27px; }
-    .hero-actions { display:flex; flex-wrap:wrap; align-items:center; gap:14px 30px; margin-top:36px; }
-    .button { padding:13px 23px; display:inline-block; text-decoration:none; background:var(--gold); color:#182838; font-weight:720; border:1px solid var(--gold); border-radius:3px; }
-    .button:hover { background:#dec08e; border-color:#dec08e; }
-    .text-link { text-decoration:none; font-weight:650; border-bottom:1px solid currentColor; padding-bottom:3px; }
-    .text-link:hover { color:var(--gold); }
-    main section { padding:clamp(65px,9vw,110px) 0; }
-    .section-grid { display:grid; grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr); gap:clamp(25px,6vw,100px); align-items:start; }
-    .section-grid h2, .section-title { font-size:clamp(2.05rem,3.8vw,3.25rem); color:var(--navy); margin:0 0 23px; }
-    .prose { max-width:690px; font-size:1.08rem; }
-    .prose p:first-child { margin-top:0; }
-    .prose p:last-child { margin-bottom:0; }
-    .rule { border-top:1px solid var(--line); }
-    .section-heading { display:flex; justify-content:space-between; align-items:end; gap:24px; margin-bottom:34px; }
-    .section-heading .section-title { margin-bottom:0; }
-    .cards { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:20px; }
-    .card { background:var(--paper); border:1px solid var(--line); padding:27px; min-height:245px; }
-    .card .index { color:#8d6d3e; font-size:.82rem; letter-spacing:.12em; font-weight:730; }
-    .card h3 { font-size:1.65rem; color:var(--navy); margin:22px 0 12px; }
-    .card p { color:var(--muted); margin:0; font-size:.97rem; }
-    .soft { background:#eae3d7; }
-    .manifesto { background:var(--paper); padding:clamp(30px,5vw,65px); border-left:4px solid var(--gold); }
-    .manifesto blockquote { font-family:Georgia,"Times New Roman",serif; font-size:clamp(1.45rem,3vw,2.2rem); line-height:1.42; color:var(--navy); margin:0 0 22px; }
-    .manifesto p { margin-bottom:0; }
-    .history-row { display:grid; grid-template-columns:1fr 1fr; gap:clamp(25px,5vw,70px); align-items:center; }
-    .history-panel { min-height:250px; padding:34px; background:var(--navy); color:#f7f4ed; display:flex; flex-direction:column; justify-content:space-between; }
-    .history-panel strong { font-family:Georgia,"Times New Roman",serif; font-size:clamp(2rem,4vw,3.2rem); font-weight:normal; line-height:1.2; }
-    .history-panel span { text-transform:uppercase; letter-spacing:.16em; color:#d8b883; font-size:.78rem; }
-    .site-footer { background:var(--navy-deep); color:#e8e9e9; padding:45px 0; }
-    .footer-inner { display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; align-items:start; }
-    .footer-inner p { margin:8px 0 0; color:#c0cbd3; font-size:.92rem; }
-    .footer-note { max-width:450px; font-size:.85rem; color:#c0cbd3; }
-    .back-top { color:#fff; font-size:.9rem; text-underline-offset:4px; }
-    @media(max-width:850px) { .header-inner { flex-direction:column; align-items:flex-start; padding-block:22px; } .site-nav { gap:8px 20px; } .section-grid,.history-row { grid-template-columns:1fr; } .cards { grid-template-columns:repeat(2,minmax(0,1fr)); } }
-    @media(max-width:590px) { .container { width:min(100% - 32px,1120px); } .cards { grid-template-columns:1fr; } .section-heading { align-items:start; flex-direction:column; } h1 { font-size:2.6rem; } .hero-inner { padding:70px 0 80px; } .card { min-height:auto; } }
-    @media(prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
-  
-.method-text{max-width:800px}.method-text h3{font-size:clamp(1.3rem,2.3vw,1.7rem);color:var(--navy);margin:40px 0 12px}.method-text p{font-size:1.03rem;line-height:1.85;margin:0}.method-text .method-closing{margin-top:34px;padding:23px 26px;border-left:3px solid var(--gold);background:var(--paper);font-family:Georgia,serif;font-size:1.3rem;line-height:1.6}.cards .card{min-height:unset}.cards .card .index{display:block}.cards .card h3{margin:12px 0}.cards .card p{margin:0}
-
-/* Einheitlicher Seitenheader, Referenz: kanon.html */
-.site-header{background:#182838;color:#fff;border-bottom:1px solid #415365}
-.site-header .header-inner{min-height:86px;display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:0}
-.site-header .brand{font-size:1.05rem;font-weight:750;letter-spacing:.08em;line-height:normal;text-decoration:none}
-.site-header .site-nav{display:flex;align-items:center;flex-wrap:wrap;gap:10px 25px}
-.site-header .site-nav a{font-size:.92rem;color:#f0eee9;text-decoration:none}
-.site-header .site-nav a:hover,.site-header .site-nav .current{color:#e8c991}
-.site-header .site-nav .current{text-decoration:underline;text-underline-offset:6px}
-@media(max-width:900px){.site-header .header-inner{flex-direction:column;align-items:flex-start;padding-block:22px}}
-
-/* Arbeitsdefinition und Literaturverzeichnis */
-.method-text .definition-note{font-size:.91rem;line-height:1.65;color:var(--muted);background:var(--paper);border-left:3px solid var(--gold);padding:12px 17px;margin-top:16px}
-.method-text .source-ref{font-size:.8em;font-weight:650;color:#735327;text-decoration:none;vertical-align:super;white-space:nowrap}
-.method-text .source-ref:hover{text-decoration:underline}
-.bibliography{margin-top:65px;padding-top:30px;border-top:1px solid var(--line);max-width:800px}
-.bibliography h2{font-family:Georgia,serif;color:var(--navy);font-size:clamp(1.65rem,3vw,2.2rem);margin:0 0 16px}
-.bibliography>p{font-size:1rem;line-height:1.7}
-.sources-list{padding-left:27px;margin:22px 0}
-.sources-list li{padding-left:7px;margin:0 0 18px;line-height:1.7;scroll-margin-top:24px;overflow-wrap:anywhere}
-.sources-list a{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
-.bibliography .sources-footnote{color:var(--muted);font-size:.87rem}
-
-/* Ergänzende Methodik: gegliederte Aufnahmewege und Ausnahmeprüfung */
-.method-text h4{color:var(--navy);font-size:1.13rem;margin:26px 0 8px;line-height:1.4;}
-.method-text h4 + p{margin-top:0;}
-.method-text p + p{margin-top:14px;}
-.method-text .exception-list{padding-left:24px;margin:18px 0 24px;}
-.method-text .exception-list li{padding-left:6px;margin-bottom:12px;line-height:1.8;font-size:1.02rem;}
-.method-text p .source-ref{margin-left:2px;}
-</style>
-<style>
-/* Einheitlicher Seitentitel nach dem Vorbild der Kanonseite. */
-.hero, main > .hero {min-height:342px;display:flex;align-items:center;}
-.hero > .container, .hero > .hero-inner, .hero .container.hero-inner,
-main > .hero > .container {width:min(1120px,calc(100% - 44px));margin-inline:auto;max-width:1120px;min-height:342px;display:flex;flex-direction:column;justify-content:center;padding:40px 0!important;box-sizing:border-box;}
-.hero h1 {font-size:clamp(2.55rem,4vw,3.85rem);line-height:1.13;margin:0 0 16px;max-width:1000px;}
-.hero .gold-line {margin:0 0 18px;}
-.hero .hero-description,.hero p:last-child {font-size:1rem;line-height:1.55;margin:0;max-width:750px;}
-.hero .hero-actions {margin-top:18px;gap:12px 22px;}
-.hero .hero-actions .button {padding:11px 18px;}
-@media(max-width:610px){.hero,main > .hero{min-height:0}.hero > .container,.hero > .hero-inner,.hero .container.hero-inner,main > .hero > .container{min-height:0;width:calc(100% - 32px);padding:54px 0!important}.hero h1{font-size:clamp(2.25rem,8vw,3.2rem)}}
-</style><style>
-/* Zyklus 2: Seitenübergreifend identische Navigations- und Titelbereichsmaße. */
-.site-header .header-inner {min-height:86px;}
-.hero {height:380px !important; min-height:380px !important;display:flex !important;align-items:center !important;}
-.hero > .container, .hero > .hero-inner, .hero .container.hero-inner,
-main > .hero > .container {height:380px !important;flex:0 0 auto !important;min-height:380px !important;max-width:1120px !important;width:min(1120px,calc(100% - 44px)) !important;margin:0 auto !important;padding:20px 0 !important;display:flex !important;flex-direction:column !important;justify-content:center !important;box-sizing:border-box !important;}
-.hero h1 {font-size:clamp(2.5rem,3.9vw,3.75rem) !important;line-height:1.12 !important;margin:0 0 14px !important;max-width:1000px !important;}
-.hero .gold-line {margin:0 0 15px !important;flex-shrink:0;}
-.hero .hero-description,.hero p:last-child:not(.eyebrow) {font-size:0.99rem !important;line-height:1.5 !important;max-width:850px !important;margin:0 !important;}
-.hero .eyebrow {margin:0 0 12px !important;font-size:.73rem;line-height:1.5;letter-spacing:.16em;color:#ddbb83;}
-.hero .hero-actions {margin-top:17px !important;gap:12px 22px !important;}
-.hero .hero-actions .button {padding:10px 17px !important;}
-@media(max-width:900px) {
- .hero {height:auto !important;min-height:380px !important;}
- .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:380px !important;flex:0 0 auto !important;padding:42px 0 !important;}
-}
-@media(max-width:610px) {
- .hero {min-height:0 !important;}
- .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:0 !important;flex:0 0 auto !important;width:calc(100% - 32px) !important;padding:45px 0 !important;}
- .hero h1 {font-size:clamp(2.25rem,8vw,3.2rem) !important;}
-}
-</style><style>.legal-links{display:flex;align-items:flex-start;gap:20px}.footer-imprint{color:#e8e9e9;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}.footer-imprint:hover{color:#e8c991}
-/* Kriterienstruktur und responsive Tabelle */
-.method-text h4{font-family:Georgia,"Times New Roman",serif;font-size:1.23rem;font-weight:normal;color:var(--navy);margin:25px 0 8px}
-.method-text h4+p{margin-top:0}
-.method-text p + p {margin-top:15px}
-.criteria-table-wrap{overflow-x:auto;margin:20px 0 26px}
-.criteria-table{border-collapse:collapse;width:100%;font-size:.98rem;background:var(--paper)}
-.criteria-table caption{text-align:left;font-size:.86rem;color:var(--muted);padding:0 0 7px}
-.criteria-table th,.criteria-table td{border-bottom:1px solid var(--line);padding:9px 14px;text-align:left}
-.criteria-table th{background:#eae3d7;color:var(--navy)}
-.criteria-table th:last-child,.criteria-table td:last-child{white-space:nowrap;text-align:right}
-</style></head>
-<body id="oben">
-<header class="site-header">
-<div class="container header-inner">
-<a aria-label="Der Brettspielkanon – zur Startseite" class="brand" href="index.html">DER BRETTSPIELKANON</a>
-<nav aria-label="Hauptnavigation" class="site-nav"><a href="index.html">Startseite</a><a href="kanon.html">Der Kanon</a><a aria-current="page" class="current" href="methodik.html">Die Methodik</a><a href="projektplan.html">Projektplan</a></nav>
-</div>
-</header>
-<main><section aria-labelledby="method-page-title" class="hero"><div class="container"><h1 id="method-page-title">Die Methodik</h1><div aria-hidden="true" class="gold-line"></div><p class="hero-description">Wie wählen wir historisch bedeutende Brettspiele aus? Unsere Kriterien, unsere Quellen und der Weg zu einem nachvollziehbaren Kanon.</p></div></section><section aria-labelledby="methodik-title" class="method-full" id="methodik"><div class="container"><p class="eyebrow">Die Methodik</p><h2 class="section-title" id="methodik-title">Wie entsteht der Brettspielkanon?</h2><div class="method-text">
-<h3>Was macht ein Brettspiel historisch bedeutend?</h3>
-<p>Ist es ein Spiel, das Millionen Menschen gespielt haben? Eines, das völlig neue Ideen eingeführt hat? Oder eines, das andere Spieleautoren maßgeblich beeinflusste? Der Brettspielkanon beschäftigt sich mit den Spielen, die die Brettspielkultur in Deutschland nachhaltig geprägt haben. Dabei geht es ausdrücklich nicht um die besten oder beliebtesten Brettspiele aller Zeiten, sondern um ihre historische und kulturelle Bedeutung. Wir untersuchen vor allem Spiele seit 1945, berücksichtigen aber auch ältere Titel, wenn sie für die Entwicklung Gesellschaftsspiele besonders wichtig waren. Entscheidend ist nicht, wo ein Spiel entwickelt wurde, sondern welchen nachweisbaren Beitrag es zur deutschen Spielekultur geleistet hat.</p>
-<h3 id="brettspielkultur">Was verstehen wir unter Brettspielkultur?</h3>
-<p>Brettspielkultur entsteht im Zusammenspiel von Gesellschaftsspielen und den Menschen, die sie entwickeln, verbreiten und spielen. Sie umfasst die Geschichte analoger Brett-, Karten- und Würfelspiele ebenso wie die Traditionen, Spielgewohnheiten und gesellschaftlichen Rahmenbedingungen, unter denen diese Spiele entstehen und ihre Bedeutung entfalten. <a aria-label="Quelle 1: Deutsche UNESCO-Kommission" class="source-ref" href="#quelle-1">[1]</a> <a aria-label="Quelle 3: Woods" class="source-ref" href="#quelle-3">[3]</a> <a aria-label="Quelle 4: Deutsches Spielearchiv" class="source-ref" href="#quelle-4">[4]</a></p>
-<p>Dabei ist Brettspielkultur kein unveränderliches Erbe, sondern entwickelt sich fortlaufend weiter. Einzelne Spiele können diese Entwicklung besonders nachhaltig beeinflussen, indem sie neue Spielprinzipien etablieren, bestehende Formen des Spielens verändern oder über Generationen hinweg kulturelle Bedeutung erlangen. <a aria-label="Quelle 1: Deutsche UNESCO-Kommission" class="source-ref" href="#quelle-1">[1]</a> <a aria-label="Quelle 2: Boch und Falke" class="source-ref" href="#quelle-2">[2]</a> <a aria-label="Quelle 3: Woods" class="source-ref" href="#quelle-3">[3]</a></p>
-<p class="definition-note">Dies ist eine für den Brettspielkanon entwickelte Arbeitsdefinition auf Grundlage der genannten Literatur, kein wörtlich übernommener Definitionssatz. Der Begriff umfasst im Rahmen dieses Projekts ausdrücklich analoge Gesellschaftsspiele einschließlich Brett-, Karten- und Würfelspielen.</p>
-<h3>Nach welchen Kriterien bewerten wir die Spiele?</h3>
-<p>Unsere Untersuchungen beruhen auf fünf unterschiedlich gewichteten Kriterien: <strong>spielmechanische Innovation, Einfluss auf spätere Spiele, kulturelle und gesellschaftliche Bedeutung, Nachhaltigkeit sowie Markt- und Branchenwirkung</strong>. Wir fragen beispielsweise, ob ein Spiel neue Mechanismen eingeführt, bekannte Ideen auf besondere Weise kombiniert, spätere Spiele beeinflusst oder die Spielgewohnheiten in Deutschland verändert hat. Dabei unterscheiden wir zwischen tatsächlichen Innovationen, Weiterentwicklungen bestehender Ideen und bloßen Ähnlichkeiten. Auch ein Spiel, das keine grundlegenden Neuerungen hervorgebracht hat, kann historisch bedeutend sein, wenn es beispielsweise Generationen von Spielern geprägt hat.</p>
-<h3>Wie treffen wir unsere Entscheidungen?</h3>
-<p>Jeder Kandidat wird anhand historischer Quellen untersucht und mit wichtigen Vorläufern und Nachfolgern verglichen. Die fünf Kriterien bewerten wir jeweils mit null bis vier Punkten und dokumentieren zusätzlich, wie zuverlässig die zugrunde liegenden Erkenntnisse sind. Die gewichtete Gesamtbewertung ermöglicht einen systematischen Vergleich, entscheidet aber nicht allein über die Aufnahme. Ausschlaggebend bleibt ein begründetes historisches Gesamturteil. Besonders wichtig ist uns, die tatsächliche Wirkung eines Spiels nachzuvollziehen: Mehrere Fortsetzungen durch denselben Autor sind beispielsweise nicht automatisch ein Beweis für einen weitreichenden Einfluss auf die gesamte Brettspielentwicklung. Wo Quellen fehlen oder historische Zusammenhänge unsicher sind, machen wir diese Grenzen transparent.</p>
-<h3>Unsere fünf Kriterien und ihre Gewichtung</h3>
-<p>Die historische Bedeutung eines Gesellschaftsspiels lässt sich nicht auf eine einzelne Eigenschaft reduzieren. Ein Spiel kann eine neue Spielidee hervorbringen, spätere Werke beeinflussen oder über Generationen hinweg Teil der Gesellschaftsspielkultur werden. Der Untersuchungskatalog 2.3 betrachtet diese Leistungen getrennt und führt sie zu einer nachvollziehbaren Gesamtbeurteilung zusammen. Deutschsprachige Arbeiten zur Brettspielgeschichte, zur kulturellen Einbettung von Spielen und zur systematischen Bewertung bilden hierfür methodische Orientierungspunkte. <a class="source-ref" href="#quelle-2">[2]</a> <a class="source-ref" href="#quelle-5">[5]</a> <a class="source-ref" href="#quelle-7">[7]</a></p>
-<div class="criteria-table-wrap"><table class="criteria-table"><caption>Die fünf Bewertungskriterien des Untersuchungskatalogs 2.3</caption><thead><tr><th scope="col">Kriterium</th><th scope="col">Gewicht</th></tr></thead><tbody><tr><td>Innovation</td><td>25 %</td></tr><tr><td>Einfluss auf spätere Spiele</td><td>30 %</td></tr><tr><td>Kulturelle Bedeutung in Deutschland</td><td>25 %</td></tr><tr><td>Nachhaltigkeit</td><td>15 %</td></tr><tr><td>Deutsche Branchenwirkung</td><td>5 %</td></tr></tbody></table></div>
-<h4>1. Innovation (25 %)</h4>
-<p>Wir untersuchen eigenständige spielmechanische, gestalterische oder konzeptionelle Neuerungen. Dabei unterscheiden wir die erstmalige Erfindung eines Prinzips von seiner bedeutsamen Weiterentwicklung und seiner Popularisierung. Eine neue Kombination vorhandener Elemente kann historisch ebenso relevant sein wie eine erstmals eingesetzte Mechanik. Forschung zur Spieleentwicklung bietet hierfür wichtige Anknüpfungspunkte. <a class="source-ref" href="#quelle-6">[6]</a></p>
-<h4>2. Einfluss auf spätere Spiele (30 %)</h4>
-<p>Dieses Kriterium fragt nach der nachweisbaren Wirkung eines Spiels auf unabhängig entstandene spätere Werke. Ähnliche Mechaniken sind allein noch kein Beleg für eine direkte Einflusslinie. Wir suchen deshalb nach möglichst zeitnahen Quellen, Entwicklungsberichten oder Aussagen von Spieleautorinnen und -autoren. Die besondere Gewichtung ist eine Entscheidung unseres Projekts: Der Kanon soll historische Entwicklungslinien sichtbar machen. Unsere bisherigen Vergleiche von <em>Caylus</em> und <em>Agricola</em> sowie von <em>Brass</em> und <em>Brass: Birmingham</em> haben gezeigt, wie wichtig es ist, unmittelbaren Einfluss, eigenständige Weiterentwicklung und spätere Neuauflagen nicht gleichzusetzen.</p>
-<h4>3. Kulturelle Bedeutung in Deutschland (25 %)</h4>
-<p>Hier betrachten wir, ob und wie ein Spiel die deutsche Gesellschaftsspielkultur geprägt hat – etwa durch veränderte Spielgewohnheiten, die Erschließung neuer Zielgruppen, die öffentliche Wahrnehmung oder seine Verankerung in gemeinsamen Spieltraditionen. Auch international entwickelte Spiele können diesen Beitrag leisten. Wissenschaftliche Brettspielforschung und die Darstellung der Brettspielkultur als immaterielles Kulturerbe machen deutlich, dass kulturelle Wirkung über rein mechanische Neuheiten hinausgeht. <a class="source-ref" href="#quelle-1">[1]</a> <a class="source-ref" href="#quelle-2">[2]</a> <a class="source-ref" href="#quelle-5">[5]</a></p>
-<h4>4. Nachhaltigkeit (15 %)</h4>
-<p>Wir prüfen, ob ein Spiel langfristig gespielt, rezipiert, weiterentwickelt oder als historischer Bezugspunkt bedeutsam geblieben ist. Eine lange Verfügbarkeit oder hohe Verkaufszahlen sind dabei Hinweise, aber kein Ersatz für eine Untersuchung seiner Wirkung. Ebenso kann ein Spiel trotz kurzer Marktpräsenz dauerhaft Einfluss ausgeübt haben. Die Betrachtung lebendiger, generationsübergreifender Spieltraditionen bietet einen kulturhistorischen Bezugspunkt. <a class="source-ref" href="#quelle-1">[1]</a></p>
-<h4>5. Deutsche Branchenwirkung (5 %)</h4>
-<p>Untersucht werden nachweisbare Auswirkungen auf die Gesellschaftsspielbranche in Deutschland, beispielsweise auf Verlagsprogramme, Entwicklung, Produktion, Vertrieb oder neue Marktsegmente. Das deutschsprachige <em>Handbuch Brettspiele</em> beschreibt die beteiligten Akteure und Wertschöpfungszusammenhänge. <a class="source-ref" href="#quelle-6">[6]</a> Die geringe Gewichtung soll verhindern, dass kommerzieller Erfolg die kulturhistorische Beurteilung dominiert.</p>
-<h4>Bewertung, Quellenlage und Gesamturteil</h4>
-<p>Jedes Kriterium erhält <strong>0 bis 4 Punkte</strong>: von keinem nachgewiesenen relevanten Beitrag (0) bis zu einer außergewöhnlichen, historisch prägenden Leistung (4). Fehlen ausreichend tragfähige Belege, vergeben wir <strong>NB (nicht bewertbar)</strong> statt einer künstlichen Nullwertung. Die <strong>Belegsicherheit</strong> wird zusätzlich mit <strong>A</strong> (hoch), <strong>B</strong> (begrenzt, aber nachvollziehbar) oder <strong>C</strong> (vorläufig beziehungsweise indirekt) dokumentiert. Anforderungen an Quellennachweis, transparente Kriterien und die Beschreibung von Unsicherheit lassen sich aus den deutschsprachigen Evaluationsstandards ableiten; die konkreten Kürzel und Stufen sind eigene Festlegungen des Projekts. <a class="source-ref" href="#quelle-8">[8]</a></p>
-<p>Die Punktwerte werden gewichtet zusammengeführt, um Bewertungen vergleichbar zu machen. Der Ansatz orientiert sich an der Nutzwertanalyse; Sensitivitätsanalysen helfen, den Einfluss anderer Gewichtungen zu überprüfen. <a class="source-ref" href="#quelle-7">[7]</a> <strong>Die Gewichte 25/30/25/15/5 sind jedoch weder wissenschaftlich vorgegeben noch empirisch validiert.</strong> Sie drücken die Schwerpunkte des Brettspielkanons aus. Um Doppelbewertungen zu vermeiden, müssen beispielsweise Innovation und Einfluss sowie kulturelle Bedeutung und Branchenwirkung in jeder Untersuchung getrennt begründet werden.</p>
-<p>Ein hoher Gesamtwert führt nicht automatisch zur Aufnahme. Entscheidend bleibt ein historisches Gesamturteil mit nachvollziehbaren Quellen, einem Vergleich relevanter Vorläufer und Nachfolger und der Prüfung möglicher Gegenargumente. Die Untersuchungen zu <em>Stone Age</em> und <em>Die Säulen der Erde</em> zeigen beispielsweise, warum ähnlich gelagerte Kandidaten nicht allein anhand ihrer Punktzahlen bewertet werden können. Die drei gleichberechtigten Aufnahmewege werden im folgenden Abschnitt erläutert.</p>
-<h3>Drei Wege zur Kanonwürdigkeit</h3>
-<p>Historische Bedeutung kann auf unterschiedliche Weise entstehen. Manche Gesellschaftsspiele führen wegweisende Neuerungen ein, andere prägen über Generationen hinweg die Spielkultur oder entwickeln bestehende Spielprinzipien entscheidend weiter. Der Brettspielkanon unterscheidet deshalb drei <strong>gleichberechtigte Aufnahmewege</strong>. Diese Einteilung wurde im Rahmen unseres Untersuchungskatalogs 2.3 entwickelt. Sie ist keine aus der Literatur übernommene Klassifikation.</p>
-<h4>Weg A – Innovationspionier</h4>
-<p>Ein Spiel begründet einen eigenständigen historischen Beitrag durch die Einführung oder wegweisende Ausgestaltung spielmechanischer, gestalterischer oder konzeptioneller Prinzipien. Eine Mechanik muss dafür nicht vollständig neu erfunden worden sein: Auch die innovative Verbindung bekannter Spielprinzipien kann einen bedeutenden Entwicklungsschritt darstellen. Entscheidend ist der Vergleich mit historischen Vorläufern.</p>
-<p><strong><em>Dominion</em> (2008)</strong> machte den Aufbau und die fortlaufende Veränderung des eigenen Kartenstapels zum zentralen Spielprinzip. Die Jury des Spiel des Jahres hob diesen Kartenmechanismus bei der Auszeichnung 2009 ausdrücklich als spielerische Innovation hervor. <a aria-label="Quelle 9" class="source-ref" href="#quelle-9">[9]</a></p>
-<p><strong><em>Die Crew – Reist gemeinsam zum 9. Planeten</em> (2019)</strong> verbindet traditionelle Stichspielmechanismen mit kooperativen Zielen und eingeschränkter Kommunikation. Die Jury des Kennerspiels des Jahres würdigte bei der Auszeichnung 2020 gerade die besondere Verbindung von Kooperation und Stichspiel. <a aria-label="Quelle 10" class="source-ref" href="#quelle-10">[10]</a> Die langfristige historische Wirkung dieses Spiels ist damit noch nicht abschließend geklärt.</p>
-<h4>Weg B – Kulturprägendes Werk</h4>
-<p>Ein Spiel kann kanonwürdig sein, weil es die deutsche Gesellschaftsspielkultur nachhaltig geprägt hat, auch ohne außergewöhnliche mechanische Neuerungen hervorgebracht zu haben. Wir betrachten insbesondere seine langfristige Verankerung in Spielgewohnheiten, seine Rezeption und seinen Stellenwert im gesellschaftlichen Alltag. <a aria-label="Quelle 1" class="source-ref" href="#quelle-1">[1]</a> <a aria-label="Quelle 3" class="source-ref" href="#quelle-3">[3]</a></p>
-<p><strong><em>Monopoly</em> (1935)</strong> veranschaulicht diesen Weg. Die Stiftung Bundeskanzler-Adenauer-Haus dokumentiert unter anderem die 1953 angepasste deutsche Ausgabe und Beispiele für die Rezeption des Spiels in der Bundesrepublik. <a aria-label="Quelle 11" class="source-ref" href="#quelle-11">[11]</a> Diese Befunde sind historische Anhaltspunkte; die endgültige Kanonentscheidung erfordert eine umfassendere Betrachtung seiner kulturellen Wirkung.</p>
-<h4>Weg C – Historischer Entwicklungswegweiser</h4>
-<p>Ein Spiel kann kanonwürdig sein, wenn es bestehende Spielprinzipien auf historisch bedeutsame Weise weiterentwickelt und spätere Werke nachweislich beeinflusst. Eine bloße mechanische Ähnlichkeit reicht als Einflussbeleg nicht aus. Besonders wertvoll sind deshalb Aussagen der beteiligten Spieleautoren und zeitnahe Entwicklungsberichte.</p>
-<p><strong><em>Caylus</em> (2005)</strong> ist ein Beispiel für diesen Weg. Uwe Rosenberg erklärte in einem deutschsprachigen Interview ausdrücklich, wie sein Spiel <em>Agricola</em> unter anderem aus der Auseinandersetzung mit <em>Caylus</em> hervorging. Er nennt zudem weitere Vorbilder. <a aria-label="Quelle 12" class="source-ref" href="#quelle-12">[12]</a> Dadurch lässt sich eine konkrete Einflusslinie belegen, ohne Caylus pauschal sämtliche späteren Entwicklungen des Worker Placements zuzuschreiben.</p>
-<h4>Wie die Aufnahmewege zusammenwirken</h4>
-<p>Keiner der drei Wege ist grundsätzlich höherwertig. Sie schließen sich auch nicht gegenseitig aus: Ein Spiel kann innovativ, kulturprägend und für Nachfolger einflussreich sein. Die fünf gewichteten Kriterien unterstützen die Untersuchung; die Aufnahmewege beschreiben dagegen, <strong>worin die eigenständige historische Bedeutung liegt</strong>. Die Entscheidung muss begründet werden und lässt sich nicht aus einem Punktwert allein ableiten.</p><h3>Warum betrachten wir hauptsächlich Spiele ab 1945?</h3>
-<p>Die Geschichte analoger Gesellschaftsspiele reicht weit über die Mitte des 20. Jahrhunderts hinaus. Der Brettspielkanon konzentriert sich jedoch bewusst auf die <strong>Entwicklung der deutschen Gesellschaftsspielkultur seit 1945</strong>. In den folgenden Jahrzehnten wandelten sich Spielkonzepte, Verlagsstrukturen und Institutionen. Die Forschung zur Spieleproduktion in Ost- und Westdeutschland zeigt, wie vielfältig diese Entwicklungen und ihre gesellschaftlichen Rahmenbedingungen waren. <a aria-label="Quelle 2" class="source-ref" href="#quelle-2">[2]</a> <a aria-label="Quelle 3" class="source-ref" href="#quelle-3">[3]</a></p>
-<p>Das Jahr 1945 ist <strong>keine allgemeingültige Grenze zwischen traditionellen und neueren Gesellschaftsspielen</strong> und keine Aussage darüber, wann bestimmte Spielmechanismen entstanden sind. Es ist eine projektspezifische zeitliche Eingrenzung. Auch das Deutsche Spielearchiv Nürnberg verwendet für seine Sammlung einen Schwerpunkt ab den späten 1940er-Jahren. <a aria-label="Quelle 13" class="source-ref" href="#quelle-13">[13]</a></p>
-<h4>Wann können ältere Spiele aufgenommen werden?</h4>
-<p>Für Spiele, die vor 1945 erschienen sind, sieht unser Untersuchungskatalog 2.3 eine strenge Ausnahmeprüfung vor. <strong>Alle drei Voraussetzungen müssen überzeugend erfüllt sein:</strong></p>
-<ol class="exception-list"><li><strong>Außergewöhnliche Wirkung seit 1945:</strong> Das Spiel muss seit 1945 eine eigenständige, nachweisbare und außergewöhnliche Bedeutung für die deutsche Gesellschaftsspielkultur entfaltet haben. Bloße weitere Verfügbarkeit oder Bekanntheit genügen nicht.</li>
-<li><strong>Historische Unverzichtbarkeit:</strong> Ohne das Spiel ließe sich ein wesentlicher Entwicklungsschritt der deutschen Gesellschaftsspielkultur seit 1945 nicht angemessen erklären. Der konkrete historische Zusammenhang muss benannt und belegt werden.</li>
-<li><strong>Eigenständiger historischer Beitrag:</strong> Die Bedeutung darf nicht bereits durch ein anderes, jüngeres Kanonspiel ausreichend repräsentiert werden.</li></ol>
-<p>Bei unzureichender Quellenlage bleibt die Entscheidung offen; sie wird nicht allein deshalb negativ getroffen. Ein Beispiel für eine <strong>vorläufig positiv bewertete Ausnahme</strong> ist <em>Monopoly</em> (1935). Seine eigenständige Rezeptionsgeschichte nach 1945 ist unter anderem durch historische Objekte und Dokumente belegt. <a aria-label="Quelle 11" class="source-ref" href="#quelle-11">[11]</a></p>
-<p><em>Fang den Hut</em> (1927) wurde dagegen bisher zurückgestellt: Seine historische Relevanz ist nicht bestritten, doch eine für den Untersuchungsgegenstand unverzichtbare eigenständige Wirkung seit 1945 ist bislang nicht hinreichend belegt. Diese Unterscheidung ist ein Ergebnis unserer vorläufigen Einzeluntersuchungen, keine abschließende Bewertung durch die angeführten externen Quellen.</p><h3>Forschungsstand und vorläufige Entscheidungen</h3><p>Wir unterscheiden vier Forschungsstufen von F0 (identifiziert) über F1 (erste Quellenprüfung) und F2 (vertiefte vergleichende Untersuchung) bis F3 (umfassend abgesichert und entscheidungsreif). Gegenwärtig führen wir 25 vorläufig positive Kandidaten. Ein vollständig abgeschlossener F3-Bestand liegt noch nicht vor. Deshalb dürfen vorläufige Einträge nicht als endgültig beschlossene Kanonliste verstanden werden.</p><h3>Warum höchstens 50 Spiele?</h3>
-<p>Unser Ziel ist ein konzentrierter, historisch begründeter Kanon mit <strong>maximal 50 Spielen</strong>. Diese Zahl ist eine Obergrenze, keine Vorgabe. Wir nehmen keine Titel auf, nur um die Liste zu vervollständigen. Ebenso gibt es keine festen Plätze für bestimmte Autoren, Verlage, Genres oder Jahrzehnte. Jedes aufgenommene Spiel muss einen eigenständigen Beitrag zur Geschichte der Brettspielkultur nachweisen können. Dabei betrachten wir unterschiedliche Wege zur historischen Bedeutung als gleichberechtigt: Ein Spiel kann durch Innovationen, seine kulturelle Prägung oder seinen Einfluss auf spätere Entwicklungen kanonwürdig werden.</p>
-<h3>Ein Kanon, der sich weiterentwickelt</h3>
-<p>Die Zusammenstellung des Brettspielkanons ist ein fortlaufender Forschungsprozess. Wir untersuchen Kandidaten, vergleichen Entwicklungslinien, überprüfen historische Quellen und überarbeiten unsere Einschätzungen, wenn neue Erkenntnisse hinzukommen. Unsere Entscheidungen sollen transparent, nachvollziehbar und überprüfbar sein. Der Kanon versteht sich deshalb nicht als unumstößliches Urteil, sondern als wissenschaftlich orientierter Beitrag zur Kulturgeschichte des Spielens.</p>
-<p class="method-closing"><strong>Nicht welche Spiele wir am liebsten spielen, steht im Mittelpunkt. Sondern welche Spiele verändert haben, wie wir spielen.</strong></p>
-<p style="margin-top:34px"><a class="button" href="kanon.html">Zum vorläufigen Kanon →</a></p></div>
-<section aria-labelledby="quellen-title" class="bibliography" id="quellen"><h2 id="quellen-title">Quellen und weiterführende Literatur</h2>
-<p>Deutschsprachige wissenschaftliche, institutionelle und zeitgenössische Quellen zur Arbeitsdefinition, zu den fünf Kriterien, den drei Aufnahmewegen und zur zeitlichen Eingrenzung. Die Nummern im Text verweisen auf die Literaturangaben. Der Katalog und seine Gewichte sind projektspezifische Festlegungen.</p>
-<ol class="sources-list">
-<li id="quelle-1"><strong>Deutsche UNESCO-Kommission (2025):</strong> <em>Brettspiele spielen – Brettspielkultur in Deutschland.</em> Bundesweites Verzeichnis des Immateriellen Kulturerbes. <a href="https://www.unesco.de/staette/brettspiele-spielen-brettspielkultur-in-deutschland/" rel="noopener noreferrer" target="_blank">Zur Quelle</a>.</li>
-<li id="quelle-2"><strong>Boch, Lukas / Falke, Anna Klara (2024):</strong> Brettspielforschung made in Germany – aktueller Stand und Perspektiven. In: Karla, Jürgen / Post, Christoph (Hrsg.): <em>Handbuch Brettspiele.</em> Springer, S. 729–741. DOI: <a href="https://doi.org/10.1007/978-3-662-68339-2_72" rel="noopener noreferrer" target="_blank">10.1007/978-3-662-68339-2_72</a>.</li>
-<li id="quelle-3"><strong>Lumme, Christin (2021):</strong> Deutsch-deutsche Spieleproduktion und -archivierung. In: <em>Jahrbuch für Historische Kommunismusforschung</em>, S. 215–225. <a href="https://www.kommunismusgeschichte.de/jhk/article/detail/deutsch-deutsche-spieleproduktion-und-archivierung" rel="noopener noreferrer" target="_blank">Volltext (deutsch)</a>.</li>
-<li id="quelle-4"><strong>Deutsches Spielearchiv Nürnberg (o. J.):</strong> <em>Die Sammlung Mensenkamp.</em> Museen der Stadt Nürnberg. <a href="https://museen.nuernberg.de/spielearchiv/sondersammlungen/sammlung-mensenkamp" rel="noopener noreferrer" target="_blank">Zur Quelle</a>.</li>
-<li id="quelle-5"><strong>Sterzenbach, Barbara / Waburg, Wiebke (2021):</strong> Zur historischen Einbettung von Brettspielen. Eine explorative Untersuchung. In: Kühberger, Christoph (Hrsg.): <em>Mit Geschichte spielen</em>, S. 387–406. transcript Verlag. <a href="https://doi.org/10.14361/9783839453582-019" rel="noopener noreferrer" target="_blank">Open-Access-Veröffentlichung</a>.</li>
-<li id="quelle-6"><strong>Karla, Jürgen / Post, Christoph (Hrsg.) (2024):</strong> <em>Handbuch Brettspiele. Tätigkeiten und Akteure in der Brettspielbranche.</em> Springer. <a href="https://doi.org/10.1007/978-3-662-68339-2" rel="noopener noreferrer" target="_blank">Inhaltsverzeichnis und Verlagsangaben</a> (überwiegend kostenpflichtiger Volltext).</li>
-<li id="quelle-7"><strong>Hüsselmann, Claus / Litzenberger, Rolf / Schick, Nikolas / Spannenberger, Lukas M. (2019):</strong> <em>Sensitivitätsanalyse von Nutzwerten – Systematische Betrachtungen zur Nutzwertanalyse.</em> Technische Hochschule Mittelhessen. <a href="https://doi.org/10.25716/thm-95" rel="noopener noreferrer" target="_blank">Kostenfreie Veröffentlichung</a>.</li>
-<li id="quelle-8"><strong>DeGEval – Gesellschaft für Evaluation (2016):</strong> <em>Standards für Evaluation.</em> Revidierte Fassung, verabschiedet am 21. September 2016. <a href="https://www.degeval.org/degeval-standards/" rel="noopener noreferrer" target="_blank">Standards und kostenfreie Dokumente</a>.</li>
-<li id="quelle-9"><strong>Spiel des Jahres e. V. (2009):</strong> <em>Dominion. Spielbeschreibung und Jurybegründung.</em> <a href="https://www.spiel-des-jahres.de/spiele/dominion/" rel="noopener noreferrer" target="_blank">Zur frei zugänglichen Quelle</a>.</li><li id="quelle-10"><strong>Spiel des Jahres e. V. (2020):</strong> <em>Die Crew. Spielbeschreibung und Jurybegründung zum Kennerspiel des Jahres.</em> <a href="https://www.spiel-des-jahres.de/spiele/die-crew/" rel="noopener noreferrer" target="_blank">Zur frei zugänglichen Quelle</a>.</li><li id="quelle-11"><strong>Stiftung Bundeskanzler-Adenauer-Haus (o. J.):</strong> <em>Monopoly. Historische Objekte und Rezeption in der Bundesrepublik.</em> <a href="https://adenauerhaus.de/digital/unsere-originale/monopoly" rel="noopener noreferrer" target="_blank">Zur frei zugänglichen Quelle</a>.</li><li id="quelle-12"><strong>Weber, Michael (2016):</strong> <em>Uwe Rosenberg über spielerischen Ideenreichtum. Interview, Reich der Spiele, 9. Oktober 2016.</em> <a href="https://www.reich-der-spiele.de/specials/uwe-rosenberg-ideenreichtum-0000275" rel="noopener noreferrer" target="_blank">Zur frei zugänglichen Quelle</a>.</li><li id="quelle-13"><strong>Deutsches Spielearchiv Nürnberg (o. J.):</strong> <em>Spielesammlung – Das wachsende Archiv: 1945 – …</em> <a href="https://museen.nuernberg.de/spielearchiv/das-deutsche-spielearchiv/spielesammlung" rel="noopener noreferrer" target="_blank">Zur frei zugänglichen Quelle</a>.</li></ol>
-<p class="sources-footnote">Quellenstand: 4. November 2026. Die Quellen stützen theoretische Grundlagen und ausgewählte historische Beispiele. Die jeweilige Kanonwürdigkeit wird in gesonderten Einzeluntersuchungen geprüft.</p>
-</section></div></section></main>
-<footer class="site-footer">
-<div class="container footer-inner">
-<div>
-<a class="brand" href="index.html">DER BRETTSPIELKANON</a>
-<p> Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p>
-<p class="footer-note">Hinweis: Eine Datenschutzerklärung ist noch zu ergänzen.</p>
-</div>
-<a class="back-top" href="#oben">Zurück nach oben ↑</a>
-<div class="legal-links"><a class="footer-imprint" href="impressum.html">Impressum</a></div></div>
-</footer>
-</body>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="Die Methodik des Brettspielkanons: Kriterien, Gewichtung, Quellen, historische Einordnung und nachvollziehbare Auswahl analoger Gesellschaftsspiele." name="description"/>
+  <meta content="#213448" name="theme-color"/>
+  <title>
+   Die Methodik | Der Brettspielkanon
+  </title>
+  <link href="css/styles.css" rel="stylesheet"/>
+  <link href="css/methodik.css" rel="stylesheet"/>
+ </head>
+ <body class="page-methodik" id="oben">
+  <header class="site-header">
+   <div class="container header-inner">
+    <a aria-label="Der Brettspielkanon &ndash; zur Startseite" class="brand" href="index.html">
+     DER BRETTSPIELKANON
+    </a>
+    <nav aria-label="Hauptnavigation" class="site-nav">
+     <a href="index.html">
+      Startseite
+     </a>
+     <a href="kanon.html">
+      Der Kanon
+     </a>
+     <a aria-current="page" class="current" href="methodik.html">
+      Die Methodik
+     </a>
+     <a href="projektplan.html">
+      Projektplan
+     </a>
+    </nav>
+   </div>
+  </header>
+  <main>
+   <section aria-labelledby="method-page-title" class="hero">
+    <div class="container">
+     <h1 id="method-page-title">
+      Die Methodik
+     </h1>
+     <div aria-hidden="true" class="gold-line">
+     </div>
+     <p class="hero-description">
+      Wie w&auml;hlen wir historisch bedeutende Brettspiele aus? Unsere Kriterien, unsere Quellen und der Weg zu einem nachvollziehbaren Kanon.
+     </p>
+    </div>
+   </section>
+   <section aria-labelledby="grundlagen-title" class="method-band method-band-ivory" id="grundlagen">
+    <div class="container">
+     <p aria-hidden="true" class="eyebrow">
+      01 / GRUNDLAGEN
+     </p>
+     <h2 class="section-title" id="grundlagen-title">
+      Was verstehen wir unter Brettspielkultur?
+     </h2>
+     <p class="method-intro">
+      Wie entsteht der Brettspielkanon?
+     </p>
+     <div class="method-text">
+      <h3>
+       Was macht ein Brettspiel historisch bedeutend?
+      </h3>
+      <p>
+       Ist es ein Spiel, das Millionen Menschen gespielt haben? Eines, das v&ouml;llig neue Ideen eingef&uuml;hrt hat? Oder eines, das andere Spieleautoren ma&szlig;geblich beeinflusste? Der Brettspielkanon besch&auml;ftigt sich mit den Spielen, die die Brettspielkultur in Deutschland nachhaltig gepr&auml;gt haben. Dabei geht es ausdr&uuml;cklich nicht um die besten oder beliebtesten Brettspiele aller Zeiten, sondern um ihre historische und kulturelle Bedeutung. Wir untersuchen vor allem Spiele seit 1945, ber&uuml;cksichtigen aber auch &auml;ltere Titel, wenn sie f&uuml;r die Entwicklung Gesellschaftsspiele besonders wichtig waren. Entscheidend ist nicht, wo ein Spiel entwickelt wurde, sondern welchen nachweisbaren Beitrag es zur deutschen Spielekultur geleistet hat.
+      </p>
+      <h3 id="brettspielkultur">
+       Was verstehen wir unter Brettspielkultur?
+      </h3>
+      <p>
+       Brettspielkultur entsteht im Zusammenspiel von Gesellschaftsspielen und den Menschen, die sie entwickeln, verbreiten und spielen. Sie umfasst die Geschichte analoger Brett-, Karten- und W&uuml;rfelspiele ebenso wie die Traditionen, Spielgewohnheiten und gesellschaftlichen Rahmenbedingungen, unter denen diese Spiele entstehen und ihre Bedeutung entfalten.
+       <a aria-label="Quelle 1: Deutsche UNESCO-Kommission" class="source-ref" href="#quelle-1">
+        [1]
+       </a>
+       <a aria-label="Quelle 3: Woods" class="source-ref" href="#quelle-3">
+        [3]
+       </a>
+       <a aria-label="Quelle 4: Deutsches Spielearchiv" class="source-ref" href="#quelle-4">
+        [4]
+       </a>
+      </p>
+      <p>
+       Dabei ist Brettspielkultur kein unver&auml;nderliches Erbe, sondern entwickelt sich fortlaufend weiter. Einzelne Spiele k&ouml;nnen diese Entwicklung besonders nachhaltig beeinflussen, indem sie neue Spielprinzipien etablieren, bestehende Formen des Spielens ver&auml;ndern oder &uuml;ber Generationen hinweg kulturelle Bedeutung erlangen.
+       <a aria-label="Quelle 1: Deutsche UNESCO-Kommission" class="source-ref" href="#quelle-1">
+        [1]
+       </a>
+       <a aria-label="Quelle 2: Boch und Falke" class="source-ref" href="#quelle-2">
+        [2]
+       </a>
+       <a aria-label="Quelle 3: Woods" class="source-ref" href="#quelle-3">
+        [3]
+       </a>
+      </p>
+      <p class="definition-note">
+       Dies ist eine f&uuml;r den Brettspielkanon entwickelte Arbeitsdefinition auf Grundlage der genannten Literatur, kein w&ouml;rtlich &uuml;bernommener Definitionssatz. Der Begriff umfasst im Rahmen dieses Projekts ausdr&uuml;cklich analoge Gesellschaftsspiele einschlie&szlig;lich Brett-, Karten- und W&uuml;rfelspielen.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="bewertung-title" class="method-band method-band-paper" id="bewertung">
+    <div class="container">
+     <p aria-hidden="true" class="eyebrow">
+      02 / BEWERTUNG
+     </p>
+     <h2 class="section-title" id="bewertung-title">
+      Unsere f&uuml;nf Kriterien und ihre Gewichtung
+     </h2>
+     <div class="method-text">
+      <h3>
+       Nach welchen Kriterien bewerten wir die Spiele?
+      </h3>
+      <p>
+       Unsere Untersuchungen beruhen auf f&uuml;nf unterschiedlich gewichteten Kriterien:
+       <strong>
+        spielmechanische Innovation, Einfluss auf sp&auml;tere Spiele, kulturelle und gesellschaftliche Bedeutung, Nachhaltigkeit sowie Markt- und Branchenwirkung
+       </strong>
+       . Wir fragen beispielsweise, ob ein Spiel neue Mechanismen eingef&uuml;hrt, bekannte Ideen auf besondere Weise kombiniert, sp&auml;tere Spiele beeinflusst oder die Spielgewohnheiten in Deutschland ver&auml;ndert hat. Dabei unterscheiden wir zwischen tats&auml;chlichen Innovationen, Weiterentwicklungen bestehender Ideen und blo&szlig;en &Auml;hnlichkeiten. Auch ein Spiel, das keine grundlegenden Neuerungen hervorgebracht hat, kann historisch bedeutend sein, wenn es beispielsweise Generationen von Spielern gepr&auml;gt hat.
+      </p>
+      <h3>
+       Wie treffen wir unsere Entscheidungen?
+      </h3>
+      <p>
+       Jeder Kandidat wird anhand historischer Quellen untersucht und mit wichtigen Vorl&auml;ufern und Nachfolgern verglichen. Die f&uuml;nf Kriterien bewerten wir jeweils mit null bis vier Punkten und dokumentieren zus&auml;tzlich, wie zuverl&auml;ssig die zugrunde liegenden Erkenntnisse sind. Die gewichtete Gesamtbewertung erm&ouml;glicht einen systematischen Vergleich, entscheidet aber nicht allein &uuml;ber die Aufnahme. Ausschlaggebend bleibt ein begr&uuml;ndetes historisches Gesamturteil. Besonders wichtig ist uns, die tats&auml;chliche Wirkung eines Spiels nachzuvollziehen: Mehrere Fortsetzungen durch denselben Autor sind beispielsweise nicht automatisch ein Beweis f&uuml;r einen weitreichenden Einfluss auf die gesamte Brettspielentwicklung. Wo Quellen fehlen oder historische Zusammenh&auml;nge unsicher sind, machen wir diese Grenzen transparent.
+      </p>
+      <h3>
+       Unsere f&uuml;nf Kriterien und ihre Gewichtung
+      </h3>
+      <p>
+       Die historische Bedeutung eines Gesellschaftsspiels l&auml;sst sich nicht auf eine einzelne Eigenschaft reduzieren. Ein Spiel kann eine neue Spielidee hervorbringen, sp&auml;tere Werke beeinflussen oder &uuml;ber Generationen hinweg Teil der Gesellschaftsspielkultur werden. Der Untersuchungskatalog 2.3 betrachtet diese Leistungen getrennt und f&uuml;hrt sie zu einer nachvollziehbaren Gesamtbeurteilung zusammen. Deutschsprachige Arbeiten zur Brettspielgeschichte, zur kulturellen Einbettung von Spielen und zur systematischen Bewertung bilden hierf&uuml;r methodische Orientierungspunkte.
+       <a class="source-ref" href="#quelle-2">
+        [2]
+       </a>
+       <a class="source-ref" href="#quelle-5">
+        [5]
+       </a>
+       <a class="source-ref" href="#quelle-7">
+        [7]
+       </a>
+      </p>
+      <div class="criteria-table-wrap">
+       <table class="criteria-table">
+        <caption>
+         Die f&uuml;nf Bewertungskriterien des Untersuchungskatalogs 2.3
+        </caption>
+        <thead>
+         <tr>
+          <th scope="col">
+           Kriterium
+          </th>
+          <th scope="col">
+           Gewicht
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td>
+           Innovation
+          </td>
+          <td>
+           25 %
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Einfluss auf sp&auml;tere Spiele
+          </td>
+          <td>
+           30 %
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Kulturelle Bedeutung in Deutschland
+          </td>
+          <td>
+           25 %
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Nachhaltigkeit
+          </td>
+          <td>
+           15 %
+          </td>
+         </tr>
+         <tr>
+          <td>
+           Deutsche Branchenwirkung
+          </td>
+          <td>
+           5 %
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
+      <h4>
+       1. Innovation (25 %)
+      </h4>
+      <p>
+       Wir untersuchen eigenst&auml;ndige spielmechanische, gestalterische oder konzeptionelle Neuerungen. Dabei unterscheiden wir die erstmalige Erfindung eines Prinzips von seiner bedeutsamen Weiterentwicklung und seiner Popularisierung. Eine neue Kombination vorhandener Elemente kann historisch ebenso relevant sein wie eine erstmals eingesetzte Mechanik. Forschung zur Spieleentwicklung bietet hierf&uuml;r wichtige Ankn&uuml;pfungspunkte.
+       <a class="source-ref" href="#quelle-6">
+        [6]
+       </a>
+      </p>
+      <h4>
+       2. Einfluss auf sp&auml;tere Spiele (30 %)
+      </h4>
+      <p>
+       Dieses Kriterium fragt nach der nachweisbaren Wirkung eines Spiels auf unabh&auml;ngig entstandene sp&auml;tere Werke. &Auml;hnliche Mechaniken sind allein noch kein Beleg f&uuml;r eine direkte Einflusslinie. Wir suchen deshalb nach m&ouml;glichst zeitnahen Quellen, Entwicklungsberichten oder Aussagen von Spieleautorinnen und -autoren. Die besondere Gewichtung ist eine Entscheidung unseres Projekts: Der Kanon soll historische Entwicklungslinien sichtbar machen. Unsere bisherigen Vergleiche von
+       <em>
+        Caylus
+       </em>
+       und
+       <em>
+        Agricola
+       </em>
+       sowie von
+       <em>
+        Brass
+       </em>
+       und
+       <em>
+        Brass: Birmingham
+       </em>
+       haben gezeigt, wie wichtig es ist, unmittelbaren Einfluss, eigenst&auml;ndige Weiterentwicklung und sp&auml;tere Neuauflagen nicht gleichzusetzen.
+      </p>
+      <h4>
+       3. Kulturelle Bedeutung in Deutschland (25 %)
+      </h4>
+      <p>
+       Hier betrachten wir, ob und wie ein Spiel die deutsche Gesellschaftsspielkultur gepr&auml;gt hat &ndash; etwa durch ver&auml;nderte Spielgewohnheiten, die Erschlie&szlig;ung neuer Zielgruppen, die &ouml;ffentliche Wahrnehmung oder seine Verankerung in gemeinsamen Spieltraditionen. Auch international entwickelte Spiele k&ouml;nnen diesen Beitrag leisten. Wissenschaftliche Brettspielforschung und die Darstellung der Brettspielkultur als immaterielles Kulturerbe machen deutlich, dass kulturelle Wirkung &uuml;ber rein mechanische Neuheiten hinausgeht.
+       <a class="source-ref" href="#quelle-1">
+        [1]
+       </a>
+       <a class="source-ref" href="#quelle-2">
+        [2]
+       </a>
+       <a class="source-ref" href="#quelle-5">
+        [5]
+       </a>
+      </p>
+      <h4>
+       4. Nachhaltigkeit (15 %)
+      </h4>
+      <p>
+       Wir pr&uuml;fen, ob ein Spiel langfristig gespielt, rezipiert, weiterentwickelt oder als historischer Bezugspunkt bedeutsam geblieben ist. Eine lange Verf&uuml;gbarkeit oder hohe Verkaufszahlen sind dabei Hinweise, aber kein Ersatz f&uuml;r eine Untersuchung seiner Wirkung. Ebenso kann ein Spiel trotz kurzer Marktpr&auml;senz dauerhaft Einfluss ausge&uuml;bt haben. Die Betrachtung lebendiger, generations&uuml;bergreifender Spieltraditionen bietet einen kulturhistorischen Bezugspunkt.
+       <a class="source-ref" href="#quelle-1">
+        [1]
+       </a>
+      </p>
+      <h4>
+       5. Deutsche Branchenwirkung (5 %)
+      </h4>
+      <p>
+       Untersucht werden nachweisbare Auswirkungen auf die Gesellschaftsspielbranche in Deutschland, beispielsweise auf Verlagsprogramme, Entwicklung, Produktion, Vertrieb oder neue Marktsegmente. Das deutschsprachige
+       <em>
+        Handbuch Brettspiele
+       </em>
+       beschreibt die beteiligten Akteure und Wertsch&ouml;pfungszusammenh&auml;nge.
+       <a class="source-ref" href="#quelle-6">
+        [6]
+       </a>
+       Die geringe Gewichtung soll verhindern, dass kommerzieller Erfolg die kulturhistorische Beurteilung dominiert.
+      </p>
+      <h4>
+       Bewertung, Quellenlage und Gesamturteil
+      </h4>
+      <p>
+       Jedes Kriterium erh&auml;lt
+       <strong>
+        0 bis 4 Punkte
+       </strong>
+       : von keinem nachgewiesenen relevanten Beitrag (0) bis zu einer au&szlig;ergew&ouml;hnlichen, historisch pr&auml;genden Leistung (4). Fehlen ausreichend tragf&auml;hige Belege, vergeben wir
+       <strong>
+        NB (nicht bewertbar)
+       </strong>
+       statt einer k&uuml;nstlichen Nullwertung. Die
+       <strong>
+        Belegsicherheit
+       </strong>
+       wird zus&auml;tzlich mit
+       <strong>
+        A
+       </strong>
+       (hoch),
+       <strong>
+        B
+       </strong>
+       (begrenzt, aber nachvollziehbar) oder
+       <strong>
+        C
+       </strong>
+       (vorl&auml;ufig beziehungsweise indirekt) dokumentiert. Anforderungen an Quellennachweis, transparente Kriterien und die Beschreibung von Unsicherheit lassen sich aus den deutschsprachigen Evaluationsstandards ableiten; die konkreten K&uuml;rzel und Stufen sind eigene Festlegungen des Projekts.
+       <a class="source-ref" href="#quelle-8">
+        [8]
+       </a>
+      </p>
+      <p>
+       Die Punktwerte werden gewichtet zusammengef&uuml;hrt, um Bewertungen vergleichbar zu machen. Der Ansatz orientiert sich an der Nutzwertanalyse; Sensitivit&auml;tsanalysen helfen, den Einfluss anderer Gewichtungen zu &uuml;berpr&uuml;fen.
+       <a class="source-ref" href="#quelle-7">
+        [7]
+       </a>
+       <strong>
+        Die Gewichte 25/30/25/15/5 sind jedoch weder wissenschaftlich vorgegeben noch empirisch validiert.
+       </strong>
+       Sie dr&uuml;cken die Schwerpunkte des Brettspielkanons aus. Um Doppelbewertungen zu vermeiden, m&uuml;ssen beispielsweise Innovation und Einfluss sowie kulturelle Bedeutung und Branchenwirkung in jeder Untersuchung getrennt begr&uuml;ndet werden.
+      </p>
+      <p>
+       Ein hoher Gesamtwert f&uuml;hrt nicht automatisch zur Aufnahme. Entscheidend bleibt ein historisches Gesamturteil mit nachvollziehbaren Quellen, einem Vergleich relevanter Vorl&auml;ufer und Nachfolger und der Pr&uuml;fung m&ouml;glicher Gegenargumente. Die Untersuchungen zu
+       <em>
+        Stone Age
+       </em>
+       und
+       <em>
+        Die S&auml;ulen der Erde
+       </em>
+       zeigen beispielsweise, warum &auml;hnlich gelagerte Kandidaten nicht allein anhand ihrer Punktzahlen bewertet werden k&ouml;nnen. Die drei gleichberechtigten Aufnahmewege werden im folgenden Abschnitt erl&auml;utert.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="aufnahmewege-title" class="method-band method-band-ivory" id="aufnahmewege">
+    <div class="container">
+     <p aria-hidden="true" class="eyebrow">
+      03 / KANONW&Uuml;RDIGKEIT
+     </p>
+     <h2 class="section-title" id="aufnahmewege-title">
+      Drei Wege in den Kanon
+     </h2>
+     <div class="method-text">
+      <h3>
+       Drei Wege zur Kanonw&uuml;rdigkeit
+      </h3>
+      <p>
+       Historische Bedeutung kann auf unterschiedliche Weise entstehen. Manche Gesellschaftsspiele f&uuml;hren wegweisende Neuerungen ein, andere pr&auml;gen &uuml;ber Generationen hinweg die Spielkultur oder entwickeln bestehende Spielprinzipien entscheidend weiter. Der Brettspielkanon unterscheidet deshalb drei
+       <strong>
+        gleichberechtigte Aufnahmewege
+       </strong>
+       . Diese Einteilung wurde im Rahmen unseres Untersuchungskatalogs 2.3 entwickelt. Sie ist keine aus der Literatur &uuml;bernommene Klassifikation.
+      </p>
+      <h4>
+       Weg A &ndash; Innovationspionier
+      </h4>
+      <p>
+       Ein Spiel begr&uuml;ndet einen eigenst&auml;ndigen historischen Beitrag durch die Einf&uuml;hrung oder wegweisende Ausgestaltung spielmechanischer, gestalterischer oder konzeptioneller Prinzipien. Eine Mechanik muss daf&uuml;r nicht vollst&auml;ndig neu erfunden worden sein: Auch die innovative Verbindung bekannter Spielprinzipien kann einen bedeutenden Entwicklungsschritt darstellen. Entscheidend ist der Vergleich mit historischen Vorl&auml;ufern.
+      </p>
+      <p>
+       <strong>
+        <em>
+         Dominion
+        </em>
+        (2008)
+       </strong>
+       machte den Aufbau und die fortlaufende Ver&auml;nderung des eigenen Kartenstapels zum zentralen Spielprinzip. Die Jury des Spiel des Jahres hob diesen Kartenmechanismus bei der Auszeichnung 2009 ausdr&uuml;cklich als spielerische Innovation hervor.
+       <a aria-label="Quelle 9" class="source-ref" href="#quelle-9">
+        [9]
+       </a>
+      </p>
+      <p>
+       <strong>
+        <em>
+         Die Crew &ndash; Reist gemeinsam zum 9. Planeten
+        </em>
+        (2019)
+       </strong>
+       verbindet traditionelle Stichspielmechanismen mit kooperativen Zielen und eingeschr&auml;nkter Kommunikation. Die Jury des Kennerspiels des Jahres w&uuml;rdigte bei der Auszeichnung 2020 gerade die besondere Verbindung von Kooperation und Stichspiel.
+       <a aria-label="Quelle 10" class="source-ref" href="#quelle-10">
+        [10]
+       </a>
+       Die langfristige historische Wirkung dieses Spiels ist damit noch nicht abschlie&szlig;end gekl&auml;rt.
+      </p>
+      <h4>
+       Weg B &ndash; Kulturpr&auml;gendes Werk
+      </h4>
+      <p>
+       Ein Spiel kann kanonw&uuml;rdig sein, weil es die deutsche Gesellschaftsspielkultur nachhaltig gepr&auml;gt hat, auch ohne au&szlig;ergew&ouml;hnliche mechanische Neuerungen hervorgebracht zu haben. Wir betrachten insbesondere seine langfristige Verankerung in Spielgewohnheiten, seine Rezeption und seinen Stellenwert im gesellschaftlichen Alltag.
+       <a aria-label="Quelle 1" class="source-ref" href="#quelle-1">
+        [1]
+       </a>
+       <a aria-label="Quelle 3" class="source-ref" href="#quelle-3">
+        [3]
+       </a>
+      </p>
+      <p>
+       <strong>
+        <em>
+         Monopoly
+        </em>
+        (1935)
+       </strong>
+       veranschaulicht diesen Weg. Die Stiftung Bundeskanzler-Adenauer-Haus dokumentiert unter anderem die 1953 angepasste deutsche Ausgabe und Beispiele f&uuml;r die Rezeption des Spiels in der Bundesrepublik.
+       <a aria-label="Quelle 11" class="source-ref" href="#quelle-11">
+        [11]
+       </a>
+       Diese Befunde sind historische Anhaltspunkte; die endg&uuml;ltige Kanonentscheidung erfordert eine umfassendere Betrachtung seiner kulturellen Wirkung.
+      </p>
+      <h4>
+       Weg C &ndash; Historischer Entwicklungswegweiser
+      </h4>
+      <p>
+       Ein Spiel kann kanonw&uuml;rdig sein, wenn es bestehende Spielprinzipien auf historisch bedeutsame Weise weiterentwickelt und sp&auml;tere Werke nachweislich beeinflusst. Eine blo&szlig;e mechanische &Auml;hnlichkeit reicht als Einflussbeleg nicht aus. Besonders wertvoll sind deshalb Aussagen der beteiligten Spieleautoren und zeitnahe Entwicklungsberichte.
+      </p>
+      <p>
+       <strong>
+        <em>
+         Caylus
+        </em>
+        (2005)
+       </strong>
+       ist ein Beispiel f&uuml;r diesen Weg. Uwe Rosenberg erkl&auml;rte in einem deutschsprachigen Interview ausdr&uuml;cklich, wie sein Spiel
+       <em>
+        Agricola
+       </em>
+       unter anderem aus der Auseinandersetzung mit
+       <em>
+        Caylus
+       </em>
+       hervorging. Er nennt zudem weitere Vorbilder.
+       <a aria-label="Quelle 12" class="source-ref" href="#quelle-12">
+        [12]
+       </a>
+       Dadurch l&auml;sst sich eine konkrete Einflusslinie belegen, ohne Caylus pauschal s&auml;mtliche sp&auml;teren Entwicklungen des Worker Placements zuzuschreiben.
+      </p>
+      <h4>
+       Wie die Aufnahmewege zusammenwirken
+      </h4>
+      <p>
+       Keiner der drei Wege ist grunds&auml;tzlich h&ouml;herwertig. Sie schlie&szlig;en sich auch nicht gegenseitig aus: Ein Spiel kann innovativ, kulturpr&auml;gend und f&uuml;r Nachfolger einflussreich sein. Die f&uuml;nf gewichteten Kriterien unterst&uuml;tzen die Untersuchung; die Aufnahmewege beschreiben dagegen,
+       <strong>
+        worin die eigenst&auml;ndige historische Bedeutung liegt
+       </strong>
+       . Die Entscheidung muss begr&uuml;ndet werden und l&auml;sst sich nicht aus einem Punktwert allein ableiten.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="zeitraum-title" class="method-band method-band-paper" id="zeitraum">
+    <div class="container">
+     <p aria-hidden="true" class="eyebrow">
+      04 / ZEITLICHE ABGRENZUNG
+     </p>
+     <h2 class="section-title" id="zeitraum-title">
+      Warum betrachten wir Spiele ab 1945?
+     </h2>
+     <div class="method-text">
+      <h3>
+       Warum betrachten wir haupts&auml;chlich Spiele ab 1945?
+      </h3>
+      <p>
+       Die Geschichte analoger Gesellschaftsspiele reicht weit &uuml;ber die Mitte des 20. Jahrhunderts hinaus. Der Brettspielkanon konzentriert sich jedoch bewusst auf die
+       <strong>
+        Entwicklung der deutschen Gesellschaftsspielkultur seit 1945
+       </strong>
+       . In den folgenden Jahrzehnten wandelten sich Spielkonzepte, Verlagsstrukturen und Institutionen. Die Forschung zur Spieleproduktion in Ost- und Westdeutschland zeigt, wie vielf&auml;ltig diese Entwicklungen und ihre gesellschaftlichen Rahmenbedingungen waren.
+       <a aria-label="Quelle 2" class="source-ref" href="#quelle-2">
+        [2]
+       </a>
+       <a aria-label="Quelle 3" class="source-ref" href="#quelle-3">
+        [3]
+       </a>
+      </p>
+      <p>
+       Das Jahr 1945 ist
+       <strong>
+        keine allgemeing&uuml;ltige Grenze zwischen traditionellen und neueren Gesellschaftsspielen
+       </strong>
+       und keine Aussage dar&uuml;ber, wann bestimmte Spielmechanismen entstanden sind. Es ist eine projektspezifische zeitliche Eingrenzung. Auch das Deutsche Spielearchiv N&uuml;rnberg verwendet f&uuml;r seine Sammlung einen Schwerpunkt ab den sp&auml;ten 1940er-Jahren.
+       <a aria-label="Quelle 13" class="source-ref" href="#quelle-13">
+        [13]
+       </a>
+      </p>
+      <h4>
+       Wann k&ouml;nnen &auml;ltere Spiele aufgenommen werden?
+      </h4>
+      <p>
+       F&uuml;r Spiele, die vor 1945 erschienen sind, sieht unser Untersuchungskatalog 2.3 eine strenge Ausnahmepr&uuml;fung vor.
+       <strong>
+        Alle drei Voraussetzungen m&uuml;ssen &uuml;berzeugend erf&uuml;llt sein:
+       </strong>
+      </p>
+      <ol class="exception-list">
+       <li>
+        <strong>
+         Au&szlig;ergew&ouml;hnliche Wirkung seit 1945:
+        </strong>
+        Das Spiel muss seit 1945 eine eigenst&auml;ndige, nachweisbare und au&szlig;ergew&ouml;hnliche Bedeutung f&uuml;r die deutsche Gesellschaftsspielkultur entfaltet haben. Blo&szlig;e weitere Verf&uuml;gbarkeit oder Bekanntheit gen&uuml;gen nicht.
+       </li>
+       <li>
+        <strong>
+         Historische Unverzichtbarkeit:
+        </strong>
+        Ohne das Spiel lie&szlig;e sich ein wesentlicher Entwicklungsschritt der deutschen Gesellschaftsspielkultur seit 1945 nicht angemessen erkl&auml;ren. Der konkrete historische Zusammenhang muss benannt und belegt werden.
+       </li>
+       <li>
+        <strong>
+         Eigenst&auml;ndiger historischer Beitrag:
+        </strong>
+        Die Bedeutung darf nicht bereits durch ein anderes, j&uuml;ngeres Kanonspiel ausreichend repr&auml;sentiert werden.
+       </li>
+      </ol>
+      <p>
+       Bei unzureichender Quellenlage bleibt die Entscheidung offen; sie wird nicht allein deshalb negativ getroffen. Ein Beispiel f&uuml;r eine
+       <strong>
+        vorl&auml;ufig positiv bewertete Ausnahme
+       </strong>
+       ist
+       <em>
+        Monopoly
+       </em>
+       (1935). Seine eigenst&auml;ndige Rezeptionsgeschichte nach 1945 ist unter anderem durch historische Objekte und Dokumente belegt.
+       <a aria-label="Quelle 11" class="source-ref" href="#quelle-11">
+        [11]
+       </a>
+      </p>
+      <p>
+       <em>
+        Fang den Hut
+       </em>
+       (1927) wurde dagegen bisher zur&uuml;ckgestellt: Seine historische Relevanz ist nicht bestritten, doch eine f&uuml;r den Untersuchungsgegenstand unverzichtbare eigenst&auml;ndige Wirkung seit 1945 ist bislang nicht hinreichend belegt. Diese Unterscheidung ist ein Ergebnis unserer vorl&auml;ufigen Einzeluntersuchungen, keine abschlie&szlig;ende Bewertung durch die angef&uuml;hrten externen Quellen.
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="forschungsprozess-title" class="method-band method-band-ivory" id="forschungsprozess">
+    <div class="container">
+     <p aria-hidden="true" class="eyebrow">
+      05 / FORSCHUNGSPROZESS
+     </p>
+     <h2 class="section-title" id="forschungsprozess-title">
+      Von der Untersuchung zur Entscheidung
+     </h2>
+     <div class="method-text">
+      <h3>
+       Forschungsstand und vorl&auml;ufige Entscheidungen
+      </h3>
+      <p>
+       Wir unterscheiden vier Forschungsstufen von F0 (identifiziert) &uuml;ber F1 (erste Quellenpr&uuml;fung) und F2 (vertiefte vergleichende Untersuchung) bis F3 (umfassend abgesichert und entscheidungsreif). Gegenw&auml;rtig f&uuml;hren wir 25 vorl&auml;ufig positive Kandidaten. Ein vollst&auml;ndig abgeschlossener F3-Bestand liegt noch nicht vor. Deshalb d&uuml;rfen vorl&auml;ufige Eintr&auml;ge nicht als endg&uuml;ltig beschlossene Kanonliste verstanden werden.
+      </p>
+      <h3>
+       Warum h&ouml;chstens 50 Spiele?
+      </h3>
+      <p>
+       Unser Ziel ist ein konzentrierter, historisch begr&uuml;ndeter Kanon mit
+       <strong>
+        maximal 50 Spielen
+       </strong>
+       . Diese Zahl ist eine Obergrenze, keine Vorgabe. Wir nehmen keine Titel auf, nur um die Liste zu vervollst&auml;ndigen. Ebenso gibt es keine festen Pl&auml;tze f&uuml;r bestimmte Autoren, Verlage, Genres oder Jahrzehnte. Jedes aufgenommene Spiel muss einen eigenst&auml;ndigen Beitrag zur Geschichte der Brettspielkultur nachweisen k&ouml;nnen. Dabei betrachten wir unterschiedliche Wege zur historischen Bedeutung als gleichberechtigt: Ein Spiel kann durch Innovationen, seine kulturelle Pr&auml;gung oder seinen Einfluss auf sp&auml;tere Entwicklungen kanonw&uuml;rdig werden.
+      </p>
+      <h3>
+       Ein Kanon, der sich weiterentwickelt
+      </h3>
+      <p>
+       Die Zusammenstellung des Brettspielkanons ist ein fortlaufender Forschungsprozess. Wir untersuchen Kandidaten, vergleichen Entwicklungslinien, &uuml;berpr&uuml;fen historische Quellen und &uuml;berarbeiten unsere Einsch&auml;tzungen, wenn neue Erkenntnisse hinzukommen. Unsere Entscheidungen sollen transparent, nachvollziehbar und &uuml;berpr&uuml;fbar sein. Der Kanon versteht sich deshalb nicht als unumst&ouml;&szlig;liches Urteil, sondern als wissenschaftlich orientierter Beitrag zur Kulturgeschichte des Spielens.
+      </p>
+      <p class="method-closing">
+       <strong>
+        Nicht welche Spiele wir am liebsten spielen, steht im Mittelpunkt. Sondern welche Spiele ver&auml;ndert haben, wie wir spielen.
+       </strong>
+      </p>
+      <p style="margin-top:34px">
+       <a class="button" href="kanon.html">
+        Zum vorl&auml;ufigen Kanon &rarr;
+       </a>
+      </p>
+     </div>
+    </div>
+   </section>
+   <section aria-labelledby="quellen-title" class="method-band method-band-paper" id="quellen">
+    <div class="container">
+     <p aria-hidden="true" class="eyebrow">
+      06 / LITERATUR
+     </p>
+     <section aria-labelledby="quellen-title" class="bibliography">
+      <h2 id="quellen-title">
+       Quellen und weiterf&uuml;hrende Literatur
+      </h2>
+      <p>
+       Deutschsprachige wissenschaftliche, institutionelle und zeitgen&ouml;ssische Quellen zur Arbeitsdefinition, zu den f&uuml;nf Kriterien, den drei Aufnahmewegen und zur zeitlichen Eingrenzung. Die Nummern im Text verweisen auf die Literaturangaben. Der Katalog und seine Gewichte sind projektspezifische Festlegungen.
+      </p>
+      <ol class="sources-list">
+       <li id="quelle-1">
+        <strong>
+         Deutsche UNESCO-Kommission (2025):
+        </strong>
+        <em>
+         Brettspiele spielen &ndash; Brettspielkultur in Deutschland.
+        </em>
+        Bundesweites Verzeichnis des Immateriellen Kulturerbes.
+        <a href="https://www.unesco.de/staette/brettspiele-spielen-brettspielkultur-in-deutschland/" rel="noopener noreferrer" target="_blank">
+         Zur Quelle
+        </a>
+        .
+       </li>
+       <li id="quelle-2">
+        <strong>
+         Boch, Lukas / Falke, Anna Klara (2024):
+        </strong>
+        Brettspielforschung made in Germany &ndash; aktueller Stand und Perspektiven. In: Karla, J&uuml;rgen / Post, Christoph (Hrsg.):
+        <em>
+         Handbuch Brettspiele.
+        </em>
+        Springer, S. 729&ndash;741. DOI:
+        <a href="https://doi.org/10.1007/978-3-662-68339-2_72" rel="noopener noreferrer" target="_blank">
+         10.1007/978-3-662-68339-2_72
+        </a>
+        .
+       </li>
+       <li id="quelle-3">
+        <strong>
+         Lumme, Christin (2021):
+        </strong>
+        Deutsch-deutsche Spieleproduktion und -archivierung. In:
+        <em>
+         Jahrbuch f&uuml;r Historische Kommunismusforschung
+        </em>
+        , S. 215&ndash;225.
+        <a href="https://www.kommunismusgeschichte.de/jhk/article/detail/deutsch-deutsche-spieleproduktion-und-archivierung" rel="noopener noreferrer" target="_blank">
+         Volltext (deutsch)
+        </a>
+        .
+       </li>
+       <li id="quelle-4">
+        <strong>
+         Deutsches Spielearchiv N&uuml;rnberg (o. J.):
+        </strong>
+        <em>
+         Die Sammlung Mensenkamp.
+        </em>
+        Museen der Stadt N&uuml;rnberg.
+        <a href="https://museen.nuernberg.de/spielearchiv/sondersammlungen/sammlung-mensenkamp" rel="noopener noreferrer" target="_blank">
+         Zur Quelle
+        </a>
+        .
+       </li>
+       <li id="quelle-5">
+        <strong>
+         Sterzenbach, Barbara / Waburg, Wiebke (2021):
+        </strong>
+        Zur historischen Einbettung von Brettspielen. Eine explorative Untersuchung. In: K&uuml;hberger, Christoph (Hrsg.):
+        <em>
+         Mit Geschichte spielen
+        </em>
+        , S. 387&ndash;406. transcript Verlag.
+        <a href="https://doi.org/10.14361/9783839453582-019" rel="noopener noreferrer" target="_blank">
+         Open-Access-Ver&ouml;ffentlichung
+        </a>
+        .
+       </li>
+       <li id="quelle-6">
+        <strong>
+         Karla, J&uuml;rgen / Post, Christoph (Hrsg.) (2024):
+        </strong>
+        <em>
+         Handbuch Brettspiele. T&auml;tigkeiten und Akteure in der Brettspielbranche.
+        </em>
+        Springer.
+        <a href="https://doi.org/10.1007/978-3-662-68339-2" rel="noopener noreferrer" target="_blank">
+         Inhaltsverzeichnis und Verlagsangaben
+        </a>
+        (&uuml;berwiegend kostenpflichtiger Volltext).
+       </li>
+       <li id="quelle-7">
+        <strong>
+         H&uuml;sselmann, Claus / Litzenberger, Rolf / Schick, Nikolas / Spannenberger, Lukas M. (2019):
+        </strong>
+        <em>
+         Sensitivit&auml;tsanalyse von Nutzwerten &ndash; Systematische Betrachtungen zur Nutzwertanalyse.
+        </em>
+        Technische Hochschule Mittelhessen.
+        <a href="https://doi.org/10.25716/thm-95" rel="noopener noreferrer" target="_blank">
+         Kostenfreie Ver&ouml;ffentlichung
+        </a>
+        .
+       </li>
+       <li id="quelle-8">
+        <strong>
+         DeGEval &ndash; Gesellschaft f&uuml;r Evaluation (2016):
+        </strong>
+        <em>
+         Standards f&uuml;r Evaluation.
+        </em>
+        Revidierte Fassung, verabschiedet am 21. September 2016.
+        <a href="https://www.degeval.org/degeval-standards/" rel="noopener noreferrer" target="_blank">
+         Standards und kostenfreie Dokumente
+        </a>
+        .
+       </li>
+       <li id="quelle-9">
+        <strong>
+         Spiel des Jahres e. V. (2009):
+        </strong>
+        <em>
+         Dominion. Spielbeschreibung und Jurybegr&uuml;ndung.
+        </em>
+        <a href="https://www.spiel-des-jahres.de/spiele/dominion/" rel="noopener noreferrer" target="_blank">
+         Zur frei zug&auml;nglichen Quelle
+        </a>
+        .
+       </li>
+       <li id="quelle-10">
+        <strong>
+         Spiel des Jahres e. V. (2020):
+        </strong>
+        <em>
+         Die Crew. Spielbeschreibung und Jurybegr&uuml;ndung zum Kennerspiel des Jahres.
+        </em>
+        <a href="https://www.spiel-des-jahres.de/spiele/die-crew/" rel="noopener noreferrer" target="_blank">
+         Zur frei zug&auml;nglichen Quelle
+        </a>
+        .
+       </li>
+       <li id="quelle-11">
+        <strong>
+         Stiftung Bundeskanzler-Adenauer-Haus (o. J.):
+        </strong>
+        <em>
+         Monopoly. Historische Objekte und Rezeption in der Bundesrepublik.
+        </em>
+        <a href="https://adenauerhaus.de/digital/unsere-originale/monopoly" rel="noopener noreferrer" target="_blank">
+         Zur frei zug&auml;nglichen Quelle
+        </a>
+        .
+       </li>
+       <li id="quelle-12">
+        <strong>
+         Weber, Michael (2016):
+        </strong>
+        <em>
+         Uwe Rosenberg &uuml;ber spielerischen Ideenreichtum. Interview, Reich der Spiele, 9. Oktober 2016.
+        </em>
+        <a href="https://www.reich-der-spiele.de/specials/uwe-rosenberg-ideenreichtum-0000275" rel="noopener noreferrer" target="_blank">
+         Zur frei zug&auml;nglichen Quelle
+        </a>
+        .
+       </li>
+       <li id="quelle-13">
+        <strong>
+         Deutsches Spielearchiv N&uuml;rnberg (o. J.):
+        </strong>
+        <em>
+         Spielesammlung &ndash; Das wachsende Archiv: 1945 &ndash; &hellip;
+        </em>
+        <a href="https://museen.nuernberg.de/spielearchiv/das-deutsche-spielearchiv/spielesammlung" rel="noopener noreferrer" target="_blank">
+         Zur frei zug&auml;nglichen Quelle
+        </a>
+        .
+       </li>
+      </ol>
+      <p class="sources-footnote">
+       Quellenstand: 4. November 2026. Die Quellen st&uuml;tzen theoretische Grundlagen und ausgew&auml;hlte historische Beispiele. Die jeweilige Kanonw&uuml;rdigkeit wird in gesonderten Einzeluntersuchungen gepr&uuml;ft.
+      </p>
+     </section>
+    </div>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <div class="container footer-inner">
+    <div>
+     <a class="brand" href="index.html">
+      DER BRETTSPIELKANON
+     </a>
+     <p>
+      Brettspiele. Historische Bedeutung. Deutsche Spielekultur.
+     </p>
+     <p class="footer-note">
+      Hinweis: Eine Datenschutzerkl&auml;rung ist noch zu erg&auml;nzen.
+     </p>
+    </div>
+    <a class="back-top" href="#oben">
+     Zur&uuml;ck nach oben &uarr;
+    </a>
+    <div class="legal-links">
+     <a class="footer-imprint" href="impressum.html">
+      Impressum
+     </a>
+    </div>
+   </div>
+  </footer>
+ </body>
 </html>
+

@@ -1,82 +1,120 @@
-<!DOCTYPE html>
-
+<!doctype html>
 <html lang="de">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1" name="viewport"/>
-<meta content="#213448" name="theme-color"/>
-<meta content="Der Projektplan des Brettspielkanons: fünf Forschungsphasen von der Konzeption über die vorläufige Auswahl bis zur abschließenden Kanonentscheidung." name="description"/>
-<title>Impressum | Der Brettspielkanon</title>
-<style>
-:root {--navy:#213448;--deep:#182838;--ivory:#f4f0e8;--paper:#fffdf9;--gold:#b08d57;--ink:#343434;--muted:#5d646c;--line:#dcd4c7}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--ivory);color:var(--ink);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}a{color:inherit}button,input,select{font:inherit}button,a,input,select{outline-offset:3px}button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid var(--gold)}.container{width:min(1120px,calc(100% - 44px));margin:auto}
-.site-header{background:var(--deep);color:white;border-bottom:1px solid #415365}.header-inner{min-height:86px;display:flex;justify-content:space-between;align-items:center;gap:24px}.brand{font-size:1.05rem;font-weight:750;letter-spacing:.08em;text-decoration:none}.site-nav{display:flex;gap:10px 25px;flex-wrap:wrap}.site-nav a{font-size:.92rem;color:#f0eee9;text-decoration:none}.site-nav a:hover,.site-nav .current{color:#e8c991}.site-nav .current{text-decoration:underline;text-underline-offset:6px}
-.hero{background:var(--navy);color:#fff}.hero .container{padding:76px 0 84px}.eyebrow{margin:0 0 18px;color:var(--gold);font-size:.78rem;letter-spacing:.17em;text-transform:uppercase;font-weight:750}.hero .eyebrow{color:#ddbb83}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.18;font-weight:normal}h1{font-size:clamp(3rem,7vw,5.1rem);margin:0 0 18px}h2{font-size:clamp(1.7rem,3.5vw,2.45rem);color:var(--navy)}h3{color:var(--navy)}.hero p:last-child{max-width:740px;color:#dce3e8;font-size:1.15rem}.gold-line{width:68px;height:3px;background:var(--gold);margin:0 0 26px}
-.content{padding:55px 0 85px}.intro{max-width:750px;margin:0 0 30px}.notice{border-left:4px solid var(--gold);background:#eae3d7;padding:16px 20px;margin:28px 0 35px;font-size:.94rem}.notice strong{color:var(--navy)}
-.filters{background:var(--paper);border:1px solid var(--line);padding:24px 26px;margin-bottom:27px}.filter-title{font-weight:750;color:var(--navy);margin:0 0 18px}.filter-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px}.field label{display:block;font-size:.8rem;color:#49525a;font-weight:750;margin-bottom:5px}.field input,.field select{width:100%;padding:12px 13px;border:1px solid #bdb4a6;border-radius:3px;color:#293848;background:white;min-height:49px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin:20px 0 27px}.toolbar p{margin:0;color:#4c5760}.toolbar-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.toolbar select,.reset{border:1px solid #bdb4a6;background:var(--paper);padding:9px 12px;border-radius:3px;min-height:43px}.reset{cursor:pointer}.reset:hover{background:#eae3d7}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.card{border:1px solid var(--line);background:var(--paper);overflow:hidden;display:flex;flex-direction:column}.art{aspect-ratio:5/3;background:#e3dccf;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden}.art::before{content:"";width:130px;height:130px;border:2px solid #c0b3a0;transform:rotate(36deg);position:absolute}.art::after{content:"";width:70px;height:70px;border:1px solid #baac98;transform:rotate(-17deg);position:absolute}.art .art-title{font-family:Georgia,serif;z-index:1;color:#6c5a43;font-size:1rem;background:#e3dccfed;padding:8px 12px;text-align:center}.art small{position:absolute;bottom:10px;left:14px;font-size:.69rem;z-index:1;color:#5e5446}.card-content{padding:23px 23px 25px;flex:1;display:flex;flex-direction:column}.year{font-size:.83rem;font-weight:800;letter-spacing:.08em;color:#8a693c}.card h3{font-size:1.55rem;margin:8px 0 5px}.byline{font-size:.87rem;color:#626a72;margin:0 0 13px}.summary{font-size:.91rem;margin:0 0 18px;flex:1}.tags{display:flex;gap:7px;flex-wrap:wrap}.tag{font-size:.73rem;color:#4c5660;background:#eee8df;padding:3px 8px;border-radius:2px}.card .phase{margin-top:14px;border-top:1px solid #e5dfd6;padding-top:12px;font-size:.76rem;color:#796039}.no-results{display:none;text-align:center;border:1px solid var(--line);background:var(--paper);padding:50px 24px}.no-results h3{margin:0 0 8px;font-size:1.7rem}.no-results p{color:var(--muted)}.methods{border-top:1px solid var(--line);margin-top:60px;padding-top:28px;max-width:850px}.methods h2{margin-top:0}.methods a{color:var(--navy);text-decoration-thickness:1px;text-underline-offset:4px}.site-footer{background:var(--deep);color:#e8e9e9;padding:40px 0}.footer-inner{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-inner p{margin:8px 0 0;color:#c0cbd3;font-size:.9rem}
-@media(max-width:900px){.header-inner{flex-direction:column;align-items:start;padding-block:22px}.filter-grid{grid-template-columns:1fr 1fr}.field:first-child{grid-column:1/-1}.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:610px){.container{width:calc(100% - 32px)}.hero .container{padding:58px 0 65px}.filters{padding:18px}.filter-grid,.cards{grid-template-columns:1fr}.field:first-child{grid-column:auto}.toolbar{align-items:stretch}.toolbar-controls{width:100%}.toolbar-controls select{flex:1}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
-.button{display:inline-block;background:var(--gold);border:1px solid var(--gold);color:var(--deep)!important;text-decoration:none!important;font-weight:750;padding:13px 23px;border-radius:3px;margin-top:12px}.button:hover{background:#dec08e;border-color:#dec08e}
-/* Einheitlicher Seitenheader, Referenz: kanon.html */
-.site-header{background:#182838;color:#fff;border-bottom:1px solid #415365}
-.site-header .header-inner{min-height:86px;display:flex;justify-content:space-between;align-items:center;gap:24px;padding-block:0}
-.site-header .brand{font-size:1.05rem;font-weight:750;letter-spacing:.08em;line-height:normal;text-decoration:none}
-.site-header .site-nav{display:flex;align-items:center;flex-wrap:wrap;gap:10px 25px}
-.site-header .site-nav a{font-size:.92rem;color:#f0eee9;text-decoration:none}
-.site-header .site-nav a:hover,.site-header .site-nav .current{color:#e8c991}
-.site-header .site-nav .current{text-decoration:underline;text-underline-offset:6px}
-@media(max-width:900px){.site-header .header-inner{flex-direction:column;align-items:flex-start;padding-block:22px}}
-</style>
-<style>
-/* Einheitlicher Seitentitel nach dem Vorbild der Kanonseite. */
-.hero, main > .hero {min-height:342px;display:flex;align-items:center;}
-.hero > .container, .hero > .hero-inner, .hero .container.hero-inner,
-main > .hero > .container {width:min(1120px,calc(100% - 44px));margin-inline:auto;max-width:1120px;min-height:342px;display:flex;flex-direction:column;justify-content:center;padding:40px 0!important;box-sizing:border-box;}
-.hero h1 {font-size:clamp(2.55rem,4vw,3.85rem);line-height:1.13;margin:0 0 16px;max-width:1000px;}
-.hero .gold-line {margin:0 0 18px;}
-.hero .hero-description,.hero p:last-child {font-size:1rem;line-height:1.55;margin:0;max-width:750px;}
-.hero .hero-actions {margin-top:18px;gap:12px 22px;}
-.hero .hero-actions .button {padding:11px 18px;}
-@media(max-width:610px){.hero,main > .hero{min-height:0}.hero > .container,.hero > .hero-inner,.hero .container.hero-inner,main > .hero > .container{min-height:0;width:calc(100% - 32px);padding:54px 0!important}.hero h1{font-size:clamp(2.25rem,8vw,3.2rem)}}
-</style><style>
-main.container.content{max-width:1120px}
-.roadmap-intro{max-width:790px;margin-bottom:36px}.roadmap-intro h2{margin-top:0}.roadmap-intro p{line-height:1.8}
-.roadmap{padding:0;margin:0;list-style:none;display:grid;gap:18px;max-width:950px}
-.roadmap-step{background:var(--paper);border:1px solid var(--line);border-left:4px solid #b7afa3;padding:25px 28px}
-.roadmap-step.is-current{border-left-color:var(--gold);background:#f4ead8}
-.roadmap-top{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap}
-.roadmap-top h3{font-family:Georgia,serif;font-size:1.45rem;font-weight:normal;margin:0;color:var(--navy)}
-.roadmap-status{font-size:.78rem;font-weight:750;color:#5c5955;border:1px solid #d7cebf;padding:3px 10px;white-space:nowrap}
-.is-current .roadmap-status{background:var(--gold);border-color:var(--gold);color:var(--deep)}
-.roadmap-step p{max-width:810px;margin:13px 0 0;line-height:1.75}.roadmap-end{max-width:800px;line-height:1.75;margin-top:30px}
-.roadmap-end a{color:var(--navy);font-weight:700}
-@media(max-width:610px){.roadmap-step{padding:19px 17px}}
-</style><style>
-/* Zyklus 2: Seitenübergreifend identische Navigations- und Titelbereichsmaße. */
-.site-header .header-inner {min-height:86px;}
-.hero {height:380px !important; min-height:380px !important;display:flex !important;align-items:center !important;}
-.hero > .container, .hero > .hero-inner, .hero .container.hero-inner,
-main > .hero > .container {height:380px !important;flex:0 0 auto !important;min-height:380px !important;max-width:1120px !important;width:min(1120px,calc(100% - 44px)) !important;margin:0 auto !important;padding:20px 0 !important;display:flex !important;flex-direction:column !important;justify-content:center !important;box-sizing:border-box !important;}
-.hero h1 {font-size:clamp(2.5rem,3.9vw,3.75rem) !important;line-height:1.12 !important;margin:0 0 14px !important;max-width:1000px !important;}
-.hero .gold-line {margin:0 0 15px !important;flex-shrink:0;}
-.hero .hero-description,.hero p:last-child:not(.eyebrow) {font-size:0.99rem !important;line-height:1.5 !important;max-width:850px !important;margin:0 !important;}
-.hero .eyebrow {margin:0 0 12px !important;font-size:.73rem;line-height:1.5;letter-spacing:.16em;color:#ddbb83;}
-.hero .hero-actions {margin-top:17px !important;gap:12px 22px !important;}
-.hero .hero-actions .button {padding:10px 17px !important;}
-@media(max-width:900px) {
- .hero {height:auto !important;min-height:380px !important;}
- .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:380px !important;flex:0 0 auto !important;padding:42px 0 !important;}
-}
-@media(max-width:610px) {
- .hero {min-height:0 !important;}
- .hero > .container, .hero > .hero-inner, .hero .container.hero-inner, main > .hero > .container {height:auto !important;min-height:0 !important;flex:0 0 auto !important;width:calc(100% - 32px) !important;padding:45px 0 !important;}
- .hero h1 {font-size:clamp(2.25rem,8vw,3.2rem) !important;}
-}
-</style><style>.legal-links{display:flex;align-items:flex-start;gap:20px}.footer-imprint{color:#e8e9e9;text-decoration:underline;text-underline-offset:4px;font-size:.9rem}.footer-imprint:hover{color:#e8c991}</style><style>.content{max-width:1120px;padding:55px 0 90px}.content section{max-width:760px;margin-bottom:34px}.content h2{font-size:1.8rem;margin:0 0 13px}.content p{line-height:1.75;margin:0}.content a{color:#213448}</style></head>
-<body>
-<header class="site-header"><div class="container header-inner"><a class="brand" href="index.html">DER BRETTSPIELKANON</a><nav aria-label="Hauptnavigation" class="site-nav"><a class="" href="index.html">Startseite</a><a class="" href="kanon.html">Der Kanon</a><a class="" href="methodik.html">Die Methodik</a><a class="" href="projektplan.html">Projektplan</a></nav></div></header>
-<section aria-labelledby="page-title" class="hero"><div class="container"><h1 id="page-title">Impressum</h1><div aria-hidden="true" class="gold-line"></div><p>Angaben zum Betreiber und zur redaktionellen Verantwortung.</p></div></section>
-<main class="container content"><section><h2>Angaben zum Anbieter</h2><p>Der Brettspielkanon<br/>Patrick Jantzer<br/>Am Haus Vogelsang 26<br/>41462 Neuss<br/>Deutschland</p></section><section><h2>Kontakt</h2><p><a href="mailto:info@brettspielkanon.de">info@brettspielkanon.de</a></p></section><section><h2>Verantwortlich für journalistisch-redaktionelle Inhalte gemäß § 18 Abs. 2 MStV</h2><p>Patrick Jantzer<br/>Am Haus Vogelsang 26<br/>41462 Neuss<br/>Deutschland</p></section><section><h2>Über das Projekt</h2><p>Der Brettspielkanon ist ein unabhängiges, nicht kommerzielles Projekt zur Geschichte der modernen deutschen Brettspielkultur. Ziel des Projekts ist es, anhand nachvollziehbarer Kriterien jene Spiele zu identifizieren und zu dokumentieren, die die Entwicklung der deutschen Brettspielkultur nachhaltig geprägt haben. Die veröffentlichten Untersuchungen und Einschätzungen dienen der kulturhistorischen Auseinandersetzung mit dem Brettspiel.</p></section></main>
-<footer class="site-footer"><div class="container footer-inner"><div><a class="brand" href="index.html">DER BRETTSPIELKANON</a><p>Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.</p></div><p>Ein unabhängiges Projekt im Aufbau.</p><div class="legal-links"><a class="footer-imprint" href="impressum.html">Impressum</a></div></div></footer>
-</body></html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <meta content="#213448" name="theme-color"/>
+  <meta content="Der Projektplan des Brettspielkanons: f&uuml;nf Forschungsphasen von der Konzeption &uuml;ber die vorl&auml;ufige Auswahl bis zur abschlie&szlig;enden Kanonentscheidung." name="description"/>
+  <title>
+   Impressum | Der Brettspielkanon
+  </title>
+  <link href="css/styles.css" rel="stylesheet"/>
+  <link href="css/impressum.css" rel="stylesheet"/>
+ </head>
+ <body class="page-impressum">
+  <header class="site-header">
+   <div class="container header-inner">
+    <a class="brand" href="index.html">
+     DER BRETTSPIELKANON
+    </a>
+    <nav aria-label="Hauptnavigation" class="site-nav">
+     <a class="" href="index.html">
+      Startseite
+     </a>
+     <a class="" href="kanon.html">
+      Der Kanon
+     </a>
+     <a class="" href="methodik.html">
+      Die Methodik
+     </a>
+     <a class="" href="projektplan.html">
+      Projektplan
+     </a>
+    </nav>
+   </div>
+  </header>
+  <section aria-labelledby="page-title" class="hero">
+   <div class="container">
+    <h1 id="page-title">
+     Impressum
+    </h1>
+    <div aria-hidden="true" class="gold-line">
+    </div>
+    <p>
+     Angaben zum Betreiber und zur redaktionellen Verantwortung.
+    </p>
+   </div>
+  </section>
+  <main class="container content">
+   <section>
+    <h2>
+     Angaben zum Anbieter
+    </h2>
+    <p>
+     Der Brettspielkanon
+     <br/>
+     Patrick Jantzer
+     <br/>
+     Am Haus Vogelsang 26
+     <br/>
+     41462 Neuss
+     <br/>
+     Deutschland
+    </p>
+   </section>
+   <section>
+    <h2>
+     Kontakt
+    </h2>
+    <p>
+     <a href="mailto:info@brettspielkanon.de">
+      info@brettspielkanon.de
+     </a>
+    </p>
+   </section>
+   <section>
+    <h2>
+     Verantwortlich f&uuml;r journalistisch-redaktionelle Inhalte gem&auml;&szlig; &sect; 18 Abs. 2 MStV
+    </h2>
+    <p>
+     Patrick Jantzer
+     <br/>
+     Am Haus Vogelsang 26
+     <br/>
+     41462 Neuss
+     <br/>
+     Deutschland
+    </p>
+   </section>
+   <section>
+    <h2>
+     &Uuml;ber das Projekt
+    </h2>
+    <p>
+     Der Brettspielkanon ist ein unabh&auml;ngiges, nicht kommerzielles Projekt zur Geschichte der modernen deutschen Brettspielkultur. Ziel des Projekts ist es, anhand nachvollziehbarer Kriterien jene Spiele zu identifizieren und zu dokumentieren, die die Entwicklung der deutschen Brettspielkultur nachhaltig gepr&auml;gt haben. Die ver&ouml;ffentlichten Untersuchungen und Einsch&auml;tzungen dienen der kulturhistorischen Auseinandersetzung mit dem Brettspiel.
+    </p>
+   </section>
+  </main>
+  <footer class="site-footer">
+   <div class="container footer-inner">
+    <div>
+     <a class="brand" href="index.html">
+      DER BRETTSPIELKANON
+     </a>
+     <p>
+      Moderne Brettspiele. Historische Bedeutung. Deutsche Spielekultur.
+     </p>
+    </div>
+    <p>
+     Ein unabh&auml;ngiges Projekt im Aufbau.
+    </p>
+    <div class="legal-links">
+     <a class="footer-imprint" href="impressum.html">
+      Impressum
+     </a>
+    </div>
+   </div>
+  </footer>
+ </body>
+</html>
+

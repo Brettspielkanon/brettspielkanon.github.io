@@ -1,31 +1,110 @@
 "use strict";
-const el = (id) => document.getElementById(id);
+
+// Kanonübersicht: die Spieldaten werden aus spiele.json geladen.
+const getElement = (id) => document.getElementById(id);
 const state = { spiele: [] };
-const esc = (s) => String(s).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
-const norm = (s) => String(s).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('de');
-function filterOptions(id, values) {
-  [...new Set(values)].sort((a,b)=>a.localeCompare(b,'de')).forEach(value => {
-    const o = document.createElement('option');o.value=value;o.textContent=value;el(id).append(o);
-  });
+
+// HTML-Ausgabe absichern; die Inhalte aus JSON bleiben reine Textinhalte.
+function escapeHtml(value) {
+  const replacements = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
+  return String(value).replace(/[&<>"']/g, (character) => replacements[character]);
 }
-function render(){
- const q=norm(el('suchfeld').value.trim()), aufnahme=el('aufnahme').value, mechanic=el('mechanik').value, sort=el('sortierung').value;
- const matches=state.spiele.filter(s => (!q || norm([s.titel,s.jahr,...s.autoren,...s.mechaniken].join(' ')).includes(q)) && (!aufnahme||s.aufnahme===aufnahme) && (!mechanic||s.mechaniken.includes(mechanic)));
- matches.sort((a,b)=>sort==='az'?a.titel.localeCompare(b.titel,'de'):(sort==='neu'?b.jahr-a.jahr:a.jahr-b.jahr)||a.titel.localeCompare(b.titel,'de'));
- el('anzahl').textContent=`${matches.length} ${matches.length===1?'Spiel':'Spiele'}`;
- el('karten').innerHTML=matches.map(s=>`<article class="card"><div class="art" role="img" aria-label="Grafischer Platzhalter für eine spätere Spielabbildung"><span class="art-title">${esc(s.titel)}</span><small>Abbildung folgt</small></div><div class="card-content"><span class="year">${esc(s.jahr)}</span><h3>${esc(s.titel)}</h3><p class="byline">${s.autoren.map(esc).join(' · ')}</p><p class="summary">${esc(s.kurz)}</p><div class="tags">${s.mechaniken.map(m=>`<span class="tag">${esc(m)}</span>`).join('')}</div><div class="phase">${esc(s.aufnahme || "Vorläufig aufgenommen")} · ${esc(s.beitrag)}</div></div></article>`).join('');
- el('keine-treffer').style.display=matches.length?'none':'block';
+
+// Akzente und Groß-/Kleinschreibung für die Suche vereinheitlichen.
+function normalizeSearch(value) {
+  return String(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLocaleLowerCase("de");
 }
-async function init(){
- try{
-  const response=await fetch('spiele.json',{cache:'no-cache'});
-  if(!response.ok)throw new Error('HTTP '+response.status);
-  const data=await response.json();if(!Array.isArray(data))throw Error('Ungültige Daten');
-  state.spiele=data;
-    filterOptions('mechanik',data.flatMap(s=>s.mechaniken));
-  ['suchfeld','aufnahme','mechanik','sortierung'].forEach(id=>el(id).addEventListener(id==='suchfeld'?'input':'change',render));
-  el('zuruecksetzen').addEventListener('click',()=>{el('suchfeld').value='';el('aufnahme').value='';el('mechanik').value='';el('sortierung').value='alt';render()});
+
+function addFilterOptions(selectId, values) {
+  [...new Set(values)]
+    .sort((a, b) => a.localeCompare(b, "de"))
+    .forEach((value) => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = value;
+      getElement(selectId).append(option);
+    });
+}
+
+function getFilteredGames() {
+  const query = normalizeSearch(getElement("suchfeld").value.trim());
+  const status = getElement("aufnahme").value;
+  const mechanic = getElement("mechanik").value;
+  const order = getElement("sortierung").value;
+
+  return state.spiele
+    .filter((game) => {
+      const searchable = [game.titel, game.jahr, ...game.autoren, ...game.mechaniken].join(" ");
+      return (!query || normalizeSearch(searchable).includes(query))
+        && (!status || game.aufnahme === status)
+        && (!mechanic || game.mechaniken.includes(mechanic));
+    })
+    .sort((a, b) => {
+      if (order === "az") return a.titel.localeCompare(b.titel, "de");
+      const yearDifference = order === "neu" ? b.jahr - a.jahr : a.jahr - b.jahr;
+      return yearDifference || a.titel.localeCompare(b.titel, "de");
+    });
+}
+
+function gameCard(game) {
+  const title = escapeHtml(game.titel);
+  return `
+    <article class="card">
+      <div class="art" role="img" aria-label="Grafischer Platzhalter für eine spätere Spielabbildung">
+        <span class="art-title">${title}</span>
+        <small>Abbildung folgt</small>
+      </div>
+      <div class="card-content">
+        <span class="year">${escapeHtml(game.jahr)}</span>
+        <h3>${title}</h3>
+        <p class="byline">${game.autoren.map(escapeHtml).join(" · ")}</p>
+        <p class="summary">${escapeHtml(game.kurz)}</p>
+        <div class="tags">${game.mechaniken.map((value) => `<span class="tag">${escapeHtml(value)}</span>`).join("")}</div>
+        <div class="phase">${escapeHtml(game.aufnahme || "Vorläufig aufgenommen")} · ${escapeHtml(game.beitrag)}</div>
+      </div>
+    </article>
+  `;
+}
+
+function render() {
+  const games = getFilteredGames();
+  const count = games.length;
+  getElement("anzahl").textContent = `${count} ${count === 1 ? "Spiel" : "Spiele"}`;
+  getElement("karten").innerHTML = games.map(gameCard).join("");
+  getElement("keine-treffer").style.display = count ? "none" : "block";
+}
+
+function resetFilters() {
+  getElement("suchfeld").value = "";
+  getElement("aufnahme").value = "";
+  getElement("mechanik").value = "";
+  getElement("sortierung").value = "alt";
   render();
- }catch(e){el('anzahl').textContent='Spieldaten konnten nicht geladen werden.';el('karten').innerHTML='<p>Bitte prüfen, ob spiele.json im selben Ordner liegt. Die Seite muss über GitHub Pages (nicht direkt als lokale Datei) geöffnet werden.</p>';}
 }
-document.addEventListener('DOMContentLoaded',init);
+
+async function init() {
+  try {
+    const response = await fetch("spiele.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+
+    const games = await response.json();
+    if (!Array.isArray(games)) throw new Error("Ungültige Daten");
+    state.spiele = games;
+
+    addFilterOptions("mechanik", games.flatMap((game) => game.mechaniken));
+    ["suchfeld", "aufnahme", "mechanik", "sortierung"].forEach((id) => {
+      getElement(id).addEventListener(id === "suchfeld" ? "input" : "change", render);
+    });
+    getElement("zuruecksetzen").addEventListener("click", resetFilters);
+    render();
+  } catch (error) {
+    console.error("Die Spieldaten konnten nicht geladen werden:", error);
+    getElement("anzahl").textContent = "Spieldaten konnten nicht geladen werden.";
+    getElement("karten").innerHTML = "<p>Bitte prüfen, ob spiele.json im selben Ordner liegt. Die Seite muss über GitHub Pages (nicht direkt als lokale Datei) geöffnet werden.</p>";
+  }
+}
+
+document.addEventListener("DOMContentLoaded", init);
