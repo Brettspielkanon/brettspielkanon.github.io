@@ -1,0 +1,25 @@
+/* impressum.html – nur seitenspezifische Gestaltung.
+   Grundfarben, Navigation und Titelbereiche: styles.css. */
+
+main.container.content {
+  max-width: 1120px;
+}
+
+.content section {
+  max-width: 760px;
+  margin-bottom: 34px;
+}
+
+.content h2 {
+  font-size: 1.8rem;
+  margin: 0 0 13px;
+}
+
+.content p {
+  line-height: 1.75;
+  margin: 0;
+}
+
+.content a {
+  color: #213448;
+}

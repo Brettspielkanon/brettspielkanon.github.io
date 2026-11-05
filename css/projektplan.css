@@ -1,0 +1,94 @@
+/* projektplan.html – nur seitenspezifische Gestaltung.
+   Grundfarben, Navigation und Titelbereiche: styles.css. */
+
+main.container.content {
+  max-width: 1120px;
+}
+
+.roadmap-intro {
+  max-width: 790px;
+  margin-bottom: 36px;
+}
+
+.roadmap-intro h2 {
+  margin-top: 0;
+}
+
+.roadmap-intro p {
+  line-height: 1.8;
+}
+
+.roadmap {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: grid;
+  gap: 18px;
+  max-width: 950px;
+}
+
+.roadmap-step {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 4px solid #b7afa3;
+  padding: 25px 28px;
+}
+
+.roadmap-step.is-current {
+  border-left-color: var(--gold);
+  background: #f4ead8;
+}
+
+.roadmap-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.roadmap-top h3 {
+  font-family: Georgia,serif;
+  font-size: 1.45rem;
+  font-weight: normal;
+  margin: 0;
+  color: var(--navy);
+}
+
+.roadmap-status {
+  font-size: .78rem;
+  font-weight: 750;
+  color: #5c5955;
+  border: 1px solid #d7cebf;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.is-current .roadmap-status {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--deep);
+}
+
+.roadmap-step p {
+  max-width: 810px;
+  margin: 13px 0 0;
+  line-height: 1.75;
+}
+
+.roadmap-end {
+  max-width: 800px;
+  line-height: 1.75;
+  margin-top: 30px;
+}
+
+.roadmap-end a {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+@media (max-width:610px) {
+  .roadmap-step {
+    padding: 19px 17px;
+  }
+}

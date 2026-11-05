@@ -1,0 +1,292 @@
+/* methodik.html – nur seitenspezifische Gestaltung.
+   Grundfarben, Navigation und Titelbereiche: styles.css. */
+
+/* Abschnitts- und Literaturstruktur der Methodikseite. */
+.page-methodik main > section.method-band {
+  padding: clamp(58px, 7vw, 100px) 0;
+}
+.section-grid h2, .section-title {
+  font-size: clamp(2.05rem,3.8vw,3.25rem);
+  color: var(--navy);
+  margin: 0 0 23px;
+}
+
+.section-heading .section-title {
+  margin-bottom: 0;
+}
+
+.method-text {
+  max-width: 800px;
+}
+
+.method-text h3 {
+  font-size: clamp(1.3rem,2.3vw,1.7rem);
+  color: var(--navy);
+  margin: 40px 0 12px;
+}
+
+.method-text p {
+  font-size: 1.03rem;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.method-text .method-closing {
+  margin-top: 34px;
+  padding: 23px 26px;
+  border-left: 3px solid var(--gold);
+  background: var(--paper);
+  font-family: Georgia,serif;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+.method-text .definition-note {
+  font-size: .91rem;
+  line-height: 1.65;
+  color: var(--muted);
+  background: var(--paper);
+  border-left: 3px solid var(--gold);
+  padding: 12px 17px;
+  margin-top: 16px;
+}
+
+.method-text .source-ref {
+  font-size: .8em;
+  font-weight: 650;
+  color: #735327;
+  text-decoration: none;
+  vertical-align: super;
+  white-space: nowrap;
+}
+
+.method-text .source-ref:hover {
+  text-decoration: underline;
+}
+
+.bibliography {
+  margin-top: 65px;
+  padding-top: 30px;
+  border-top: 1px solid var(--line);
+  max-width: 800px;
+}
+
+.bibliography h2 {
+  font-family: Georgia,serif;
+  color: var(--navy);
+  font-size: clamp(1.65rem,3vw,2.2rem);
+  margin: 0 0 16px;
+}
+
+.bibliography>p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.sources-list {
+  padding-left: 27px;
+  margin: 22px 0;
+}
+
+.sources-list li {
+  padding-left: 7px;
+  margin: 0 0 18px;
+  line-height: 1.7;
+  scroll-margin-top: 24px;
+  overflow-wrap: anywhere;
+}
+
+.sources-list a {
+  color: var(--navy);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.bibliography .sources-footnote {
+  color: var(--muted);
+  font-size: .87rem;
+}
+
+.method-text h4 {
+  color: var(--navy);
+  font-size: 1.13rem;
+  margin: 26px 0 8px;
+  line-height: 1.4;
+}
+
+.method-text h4 + p {
+  margin-top: 0;
+}
+
+.method-text p + p {
+  margin-top: 14px;
+}
+
+.method-text .exception-list {
+  padding-left: 24px;
+  margin: 18px 0 24px;
+}
+
+.method-text .exception-list li {
+  padding-left: 6px;
+  margin-bottom: 12px;
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.method-text p .source-ref {
+  margin-left: 2px;
+}
+
+.method-text h4 {
+  font-family: Georgia,"Times New Roman",serif;
+  font-size: 1.23rem;
+  font-weight: normal;
+  color: var(--navy);
+  margin: 25px 0 8px;
+}
+
+.method-text h4+p {
+  margin-top: 0;
+}
+
+.method-text p + p {
+  margin-top: 15px;
+}
+
+.criteria-table-wrap {
+  overflow-x: auto;
+  margin: 20px 0 26px;
+}
+
+.criteria-table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: .98rem;
+  background: var(--paper);
+}
+
+.criteria-table caption {
+  text-align: left;
+  font-size: .86rem;
+  color: var(--muted);
+  padding: 0 0 7px;
+}
+
+.criteria-table th,.criteria-table td {
+  border-bottom: 1px solid var(--line);
+  padding: 9px 14px;
+  text-align: left;
+}
+
+.criteria-table th {
+  background: #eae3d7;
+  color: var(--navy);
+}
+
+.criteria-table th:last-child,.criteria-table td:last-child {
+  white-space: nowrap;
+  text-align: right;
+}
+
+.method-band {
+  padding: clamp(58px,7vw,100px) 0;
+  border-top: 1px solid #ded7cb;
+  scroll-margin-top: 20px;
+}
+
+.method-band-ivory {
+  background: var(--ivory);
+}
+
+.method-band-paper {
+  background: var(--paper);
+}
+
+.method-band .container {
+  width: min(1120px,calc(100% - 44px));
+  margin-inline: auto;
+}
+
+.method-band .eyebrow {
+  color: #987143;
+  margin: 0 0 16px;
+  font-size: .77rem;
+  font-weight: 760;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.method-band .section-title {
+  max-width: 900px;
+  margin: 0 0 25px;
+  color: var(--navy);
+  font-family: Georgia,serif;
+  font-weight: normal;
+  font-size: clamp(1.9rem,3.25vw,2.7rem);
+  line-height: 1.18;
+}
+
+.method-band .method-text {
+  max-width: 800px;
+}
+
+.method-band .method-text>h3:first-child {
+  margin-top: 12px;
+}
+
+.method-band .method-intro {
+  margin: -8px 0 25px;
+  color: var(--muted);
+  font-size: 1.12rem;
+}
+
+.method-band .method-text h3 {
+  margin-top: 36px;
+}
+
+.method-band .method-text p {
+  max-width: 800px;
+}
+
+.method-band .definition-note {
+  background: #ede6da;
+}
+
+.method-band-paper .definition-note {
+  background: #f4f0e8;
+}
+
+.method-band .criteria-table {
+  background: #fff;
+}
+
+.method-band .bibliography {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  max-width: 800px;
+}
+
+.method-band .bibliography h2 {
+  margin: 0 0 20px;
+  font-size: clamp(1.65rem,3vw,2.2rem);
+}
+
+.method-band .bibliography .sources-list li {
+  scroll-margin-top: 28px;
+}
+
+@media (max-width:610px) {
+  .method-band {
+    padding: 48px 0;
+  }
+
+  .method-band .container {
+    width: calc(100% - 32px);
+  }
+
+  .method-band .section-title {
+    font-size: clamp(1.85rem,7vw,2.4rem);
+  }
+}

@@ -1,0 +1,187 @@
+/* ====================================================================
+   DER BRETTSPIELKANON – GEMEINSAMES DESIGN
+   Farben, Navigation, Seitentitel, Buttons und Footer werden hier gepflegt.
+   Seitenspezifische Elemente stehen in css/<seitenname>.css.
+   ==================================================================== */
+
+:root {
+  --navy: #213448;
+  --deep: #182838;
+  --navy-deep: #182838;
+  --ivory: #f4f0e8;
+  --paper: #fffdf9;
+  --gold: #b08d57;
+  --ink: #343434;
+  --muted: #5d646c;
+  --line: #dcd4c7;
+  --page-width: 1120px;
+  --hero-height: 380px;
+}
+
+/* Grundlagen */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 88px; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--ivory);
+  font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+}
+body.page-home { line-height: 1.7; }
+a { color: inherit; }
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, summary:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+button, input, select { font: inherit; }
+.container { width: min(var(--page-width), calc(100% - 44px)); margin-inline: auto; }
+h1, h2, h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: normal;
+  line-height: 1.18;
+}
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.45rem); color: var(--navy); }
+h3 { color: var(--navy); }
+/* Die ursprünglichen redaktionellen Überschriften verwendeten engere Buchstabenabstände. */
+.page-home h1, .page-home h2, .page-home h3,
+.page-methodik h1, .page-methodik h2, .page-methodik h3 {
+  letter-spacing: -.025em;
+}
+
+/* Navigation: eine Definition für alle Seiten */
+.site-header {
+  background: var(--deep);
+  color: #fff;
+  border-bottom: 1px solid #415365;
+}
+.site-header .header-inner {
+  min-height: 86px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.brand {
+  font-size: 1.05rem;
+  font-weight: 750;
+  letter-spacing: .08em;
+  line-height: normal;
+  text-decoration: none;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 25px;
+}
+.site-nav a { font-size: .92rem; color: #f0eee9; text-decoration: none; }
+.site-nav a:hover, .site-nav .current { color: #e8c991; }
+.site-nav .current { text-decoration: underline; text-underline-offset: 6px; }
+
+/* Einheitlicher dunkelblauer Titelbereich */
+.hero {
+  height: var(--hero-height);
+  min-height: var(--hero-height);
+  display: flex;
+  align-items: center;
+  color: #fff;
+  background: var(--navy);
+}
+.hero > .container {
+  width: min(var(--page-width), calc(100% - 44px));
+  height: var(--hero-height);
+  min-height: var(--hero-height);
+  margin-inline: auto;
+  padding-block: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero h1 {
+  margin: 0 0 14px;
+  max-width: 1000px;
+  font-size: clamp(2.5rem, 3.9vw, 3.75rem);
+  line-height: 1.12;
+}
+.gold-line { width: 68px; height: 3px; background: var(--gold); margin: 0 0 15px; flex-shrink: 0; }
+.hero .hero-description, .hero p:last-child:not(.eyebrow) {
+  margin: 0;
+  max-width: 850px;
+  font-size: .99rem;
+  line-height: 1.5;
+  color: #e0e5e9;
+}
+.eyebrow {
+  margin: 0 0 18px;
+  color: var(--gold);
+  font-size: .78rem;
+  font-weight: 750;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+.hero .eyebrow {
+  margin: 0 0 12px;
+  color: #ddbb83;
+  font-size: .73rem;
+  letter-spacing: .16em;
+  line-height: 1.5;
+}
+.hero-actions { display: flex; align-items: center; flex-wrap: wrap; margin-top: 17px; gap: 12px 22px; }
+
+/* Links und Schaltflächen */
+.button {
+  display: inline-block;
+  padding: 13px 23px;
+  border: 1px solid var(--gold);
+  border-radius: 3px;
+  color: var(--deep);
+  background: var(--gold);
+  text-decoration: none;
+  font-weight: 750;
+}
+.button:hover { background: #dec08e; border-color: #dec08e; }
+.hero-actions .button { padding: 10px 17px; }
+.text-link { text-decoration: none; font-weight: 650; border-bottom: 1px solid currentColor; padding-bottom: 3px; }
+.text-link:hover { color: var(--gold); }
+
+/* Gemeinsamer Seitenabschluss */
+.site-footer { padding: 45px 0; background: var(--deep); color: #e8e9e9; }
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.footer-inner p { margin: 8px 0 0; color: #c0cbd3; font-size: .92rem; }
+.footer-note { max-width: 450px; color: #c0cbd3; font-size: .85rem; }
+.back-top { color: #fff; font-size: .9rem; text-underline-offset: 4px; }
+.legal-links { display: flex; align-items: flex-start; gap: 20px; }
+.footer-imprint { color: #e8e9e9; font-size: .9rem; text-decoration: underline; text-underline-offset: 4px; }
+.footer-imprint:hover { color: #e8c991; }
+.content { padding: 55px 0 85px; }
+
+/* Schmale Bildschirmbreiten */
+@media (max-width: 900px) {
+  .site-header .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 22px;
+  }
+  .hero { height: auto; min-height: var(--hero-height); }
+  .hero > .container {
+    height: auto;
+    min-height: var(--hero-height);
+    padding-block: 42px;
+  }
+}
+@media (max-width: 610px) {
+  .container, .hero > .container { width: calc(100% - 32px); }
+  .hero { min-height: 0; }
+  .hero > .container { min-height: 0; padding-block: 45px; }
+  .hero h1 { font-size: clamp(2.25rem, 8vw, 3.2rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}

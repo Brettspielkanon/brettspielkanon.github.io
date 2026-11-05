@@ -1,0 +1,290 @@
+/* kanon.html – nur seitenspezifische Gestaltung.
+   Grundfarben, Navigation und Titelbereiche: styles.css. */
+
+h2 {
+  font-size: clamp(1.7rem,3.5vw,2.45rem);
+  color: var(--navy);
+}
+
+h3 {
+  color: var(--navy);
+}
+
+.intro {
+  max-width: 750px;
+  margin: 0 0 30px;
+}
+
+.notice {
+  border-left: 4px solid var(--gold);
+  background: #eae3d7;
+  padding: 16px 20px;
+  margin: 28px 0 35px;
+  font-size: .94rem;
+}
+
+.notice strong {
+  color: var(--navy);
+}
+
+.filters {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 24px 26px;
+  margin-bottom: 27px;
+}
+
+.filter-title {
+  font-weight: 750;
+  color: var(--navy);
+  margin: 0 0 18px;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: .8rem;
+  color: #49525a;
+  font-weight: 750;
+  margin-bottom: 5px;
+}
+
+.field input,.field select {
+  width: 100%;
+  padding: 12px 13px;
+  border: 1px solid #bdb4a6;
+  border-radius: 3px;
+  color: #293848;
+  background: white;
+  min-height: 49px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 20px 0 27px;
+}
+
+.toolbar p {
+  margin: 0;
+  color: #4c5760;
+}
+
+.toolbar-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.toolbar select,.reset {
+  border: 1px solid #bdb4a6;
+  background: var(--paper);
+  padding: 9px 12px;
+  border-radius: 3px;
+  min-height: 43px;
+}
+
+.reset {
+  cursor: pointer;
+}
+
+.reset:hover {
+  background: #eae3d7;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 22px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  background: var(--paper);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.art {
+  aspect-ratio: 5/3;
+  background: #e3dccf;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.art::before {
+  content: "";
+  width: 130px;
+  height: 130px;
+  border: 2px solid #c0b3a0;
+  transform: rotate(36deg);
+  position: absolute;
+}
+
+.art::after {
+  content: "";
+  width: 70px;
+  height: 70px;
+  border: 1px solid #baac98;
+  transform: rotate(-17deg);
+  position: absolute;
+}
+
+.art .art-title {
+  font-family: Georgia,serif;
+  z-index: 1;
+  color: #6c5a43;
+  font-size: 1rem;
+  background: #e3dccfed;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.art small {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  font-size: .69rem;
+  z-index: 1;
+  color: #5e5446;
+}
+
+.card-content {
+  padding: 23px 23px 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.year {
+  font-size: .83rem;
+  font-weight: 800;
+  letter-spacing: .08em;
+  color: #8a693c;
+}
+
+.card h3 {
+  font-size: 1.55rem;
+  margin: 8px 0 5px;
+}
+
+.byline {
+  font-size: .87rem;
+  color: #626a72;
+  margin: 0 0 13px;
+}
+
+.summary {
+  font-size: .91rem;
+  margin: 0 0 18px;
+  flex: 1;
+}
+
+.tags {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: .73rem;
+  color: #4c5660;
+  background: #eee8df;
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+
+.card .phase {
+  margin-top: 14px;
+  border-top: 1px solid #e5dfd6;
+  padding-top: 12px;
+  font-size: .76rem;
+  color: #796039;
+}
+
+.no-results {
+  display: none;
+  text-align: center;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  padding: 50px 24px;
+}
+
+.no-results h3 {
+  margin: 0 0 8px;
+  font-size: 1.7rem;
+}
+
+.no-results p {
+  color: var(--muted);
+}
+
+.methods {
+  border-top: 1px solid var(--line);
+  margin-top: 60px;
+  padding-top: 28px;
+  max-width: 850px;
+}
+
+.methods h2 {
+  margin-top: 0;
+}
+
+.methods a {
+  color: var(--navy);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+@media (max-width:900px) {
+  .filter-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .field:first-child {
+    grid-column: 1/-1;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+@media (max-width:610px) {
+  .filters {
+    padding: 18px;
+  }
+
+  .filter-grid,.cards {
+    grid-template-columns: 1fr;
+  }
+
+  .field:first-child {
+    grid-column: auto;
+  }
+
+  .toolbar {
+    align-items: stretch;
+  }
+
+  .toolbar-controls {
+    width: 100%;
+  }
+
+  .toolbar-controls select {
+    flex: 1;
+  }
+}
